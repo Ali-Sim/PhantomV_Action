@@ -7,8 +7,10 @@ public class SpellcastInputs : MonoBehaviour
 
     public int PageNum = 0;
     public string[] combos = new string[] {"qe", "frq", "qreeq", "efr", "fqereq", "erfqee", "rrr" } ;
+    public string[] Spells = new string[] { "Fireball", "Whirlwind", "Shield", "Healing", "Lightning Cloud", "Ghost", "Enhancement" };
     public char PlayerInput;
     public string CurrentCombo = "";
+    public bool SpellHeld = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,6 +27,7 @@ public class SpellcastInputs : MonoBehaviour
             Debug.Log(PageNum);
             CurrentCombo = combos[PageNum];
             Debug.Log(CurrentCombo);
+            SpellHeld = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -64,8 +67,8 @@ public class SpellcastInputs : MonoBehaviour
 
             if (CurrentCombo == "")
             {
-                Debug.Log("Successful Spell Casted");
-
+                Debug.Log("You casted: " + Spells[PageNum]);
+                SpellHeld = true;
             }
         }
 
