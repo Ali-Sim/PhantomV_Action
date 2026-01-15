@@ -7,7 +7,7 @@ public class SpellcastInputs : MonoBehaviour
 
     public int PageNum = 0;
     public string[] combos = new string[] {"qe", "frq", "qreeq", "efr", "fqereq", "erfqee", "rrr" } ;
-    public string PlayerInput = "";
+    public char PlayerInput;
     public string CurrentCombo = "";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,10 +25,54 @@ public class SpellcastInputs : MonoBehaviour
             Debug.Log(PageNum);
             CurrentCombo = combos[PageNum];
             Debug.Log(CurrentCombo);
-            
-            
-            
+        }
 
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            PlayerInput = 'q';
+            CheckSpell();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            PlayerInput = 'r';
+            CheckSpell();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            PlayerInput = 'e';
+            CheckSpell();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            PlayerInput = 'f';
+            CheckSpell();
+        }
+    }
+
+
+    void CheckSpell()
+    {
+        char FirstLetter = CurrentCombo[0];
+        if (PlayerInput == FirstLetter)
+        {
+            Debug.Log("OG:" + CurrentCombo);
+            CurrentCombo = CurrentCombo.Remove(0,1);
+            Debug.Log("After:" + CurrentCombo);
+
+            if (CurrentCombo == "")
+            {
+                Debug.Log("Successful Spell Casted");
+
+            }
+        }
+
+        else
+        {
+            CurrentCombo = combos[PageNum];
+            Debug.Log("U got it wrong");
         }
     }
 }
