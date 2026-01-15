@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Windows.Input;
 using NUnit.Framework;
+using UnityEngine.UI;
+using System.Dynamic;
 
 public class SpellcastInputs : MonoBehaviour
 {
@@ -11,10 +13,14 @@ public class SpellcastInputs : MonoBehaviour
     public char PlayerInput;
     public string CurrentCombo = "";
     public bool SpellHeld = false;
+
+    public GameObject[] BookImages = new GameObject[7];
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         CurrentCombo = combos[PageNum];
+        ResetImages();
+        BookImages[PageNum].SetActive(true);
     }
 
     // Update is called once per frame
@@ -28,6 +34,9 @@ public class SpellcastInputs : MonoBehaviour
             CurrentCombo = combos[PageNum];
             Debug.Log(CurrentCombo);
             SpellHeld = false;
+
+            ResetImages();
+            BookImages[PageNum].SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -77,5 +86,16 @@ public class SpellcastInputs : MonoBehaviour
             CurrentCombo = combos[PageNum];
             Debug.Log("U got it wrong");
         }
+    }
+
+    void ResetImages()
+    {
+        BookImages[0].SetActive(false);
+        BookImages[1].SetActive(false);
+        BookImages[2].SetActive(false);
+        BookImages[3].SetActive(false);
+        BookImages[4].SetActive(false);
+        BookImages[5].SetActive(false);
+        BookImages[6].SetActive(false);
     }
 }
