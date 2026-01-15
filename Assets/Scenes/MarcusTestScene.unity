@@ -326,8 +326,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   cam: {fileID: 1274966068}
-  projectile: {fileID: 967393212440472218, guid: dd72fee8181f6ed47815b408b8d3fe41, type: 3}
+  projectile: {fileID: 1048645373}
   firePoint: {fileID: 2028970303}
+  projectileSpeed: 30
 --- !u!1 &1039108140
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,6 +362,11 @@ Transform:
   - {fileID: 77488969}
   m_Father: {fileID: 365588333}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1048645373 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 967393212440472218, guid: dd72fee8181f6ed47815b408b8d3fe41, type: 3}
+  m_PrefabInstance: {fileID: 1978888975}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1274966066
 GameObject:
   m_ObjectHideFlags: 0

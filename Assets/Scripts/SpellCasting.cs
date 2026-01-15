@@ -7,6 +7,7 @@ public class SpellCasting : MonoBehaviour
     public Camera cam;
     public GameObject projectile;
     public Transform firePoint;
+    public float projectileSpeed = 10f;
 
     private Vector3 destination;
     void Start()
@@ -33,12 +34,13 @@ public class SpellCasting : MonoBehaviour
         else
             destination = ray.GetPoint(1000);
 
-        InstantiateProjectile();
+        InstantiateProjectile(firePoint);
     }
 
-    void InstantiateProjectile()
+    void InstantiateProjectile(Transform firePoint)
     {
-        Vector3 firePointPos = new Vector3(firePoint.position.x, firePoint.position.y - 5, firePoint.position.z);
+        Vector3 firePointPos = new Vector3(firePoint.position.x, firePoint.position.y - 4, firePoint.position.z);
         var projectileObj = Instantiate(projectile, firePointPos, Quaternion.identity) as GameObject;
+        projectileObj.GetComponent<Rigidbody>().linearVelocity = (destination = firePoint.position).normalized * projectileSpeed;
     }
 }
