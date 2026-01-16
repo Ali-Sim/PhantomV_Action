@@ -13,8 +13,11 @@ public class SpellcastInputs : MonoBehaviour
     public char PlayerInput;
     public string CurrentCombo = "";
     public bool SpellHeld = false;
+    private int KeyLightUp;
+    
 
     public GameObject[] BookImages = new GameObject[7];
+    public GameObject[] KeyImages = new GameObject[4];
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -41,25 +44,33 @@ public class SpellcastInputs : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            ResetColor();
             PlayerInput = 'q';
+            KeyLightUp = 3;
             CheckSpell();
         }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
+            ResetColor();
             PlayerInput = 'r';
+            KeyLightUp = 0;
             CheckSpell();
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            ResetColor();
             PlayerInput = 'e';
+            KeyLightUp = 1;
             CheckSpell();
         }
 
         if (Input.GetKeyDown(KeyCode.F))
         {
+            ResetColor();
             PlayerInput = 'f';
+            KeyLightUp = 2;
             CheckSpell();
         }
     }
@@ -73,6 +84,8 @@ public class SpellcastInputs : MonoBehaviour
             Debug.Log("OG:" + CurrentCombo);
             CurrentCombo = CurrentCombo.Remove(0,1);
             Debug.Log("After:" + CurrentCombo);
+            KeyImages[KeyLightUp].GetComponent<Image>().color = Color.green;
+            Invoke("ResetColor", .5f);
 
             if (CurrentCombo == "")
             {
@@ -97,5 +110,10 @@ public class SpellcastInputs : MonoBehaviour
         BookImages[4].SetActive(false);
         BookImages[5].SetActive(false);
         BookImages[6].SetActive(false);
+    }
+
+    void ResetColor()
+    {
+        KeyImages[KeyLightUp].GetComponent<Image>().color = Color.white;
     }
 }
