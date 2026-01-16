@@ -6,7 +6,8 @@ public class PlayerController : MonoBehaviour
     public int health, mana = 100;
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame

@@ -9,7 +9,7 @@ public class SpellCasting : MonoBehaviour
     public Transform firePoint;
     public float projectileSpeed = 10f;
 
-    private Vector3 destination;
+    public Vector3 destination;
     void Start()
     {
         
@@ -31,16 +31,18 @@ public class SpellCasting : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
             destination = hit.point;
-        else
-            destination = ray.GetPoint(1000);
+        /*else
+            destination = ray.GetPoint(1000);*/
 
         InstantiateProjectile(firePoint);
     }
 
     void InstantiateProjectile(Transform firePoint)
     {
-        Vector3 firePointPos = new Vector3(firePoint.position.x, firePoint.position.y - 4, firePoint.position.z);
-        var projectileObj = Instantiate(projectile, firePointPos, Quaternion.identity) as GameObject;
-        projectileObj.GetComponent<Rigidbody>().linearVelocity = (destination = firePoint.position).normalized * projectileSpeed;
+        //Vector3 firePointPos = new Vector3(firePoint.position.x, firePoint.position.y, firePoint.position.z);
+        var projectileObj = Instantiate(projectile, firePoint.position, Quaternion.identity) as GameObject;
+        projectileObj.GetComponent<Rigidbody>().linearVelocity = (destination).normalized * projectileSpeed;
+        Destroy(projectileObj, 5f);
+        
     }
 }
