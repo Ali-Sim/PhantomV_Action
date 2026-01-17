@@ -10,39 +10,30 @@ public class SpellCasting : MonoBehaviour
     public float projectileSpeed = 10f;
 
     public Vector3 destination;
+    public int health, mana = 100;
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && mana > 0)
         {
-            ShootProjectile();
+            ShootProjectile(firePoint);
+            mana -= 10;
+            Debug.Log(mana);
         }
     }
-    
-    void ShootProjectile()
-    {
-        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit))
-            destination = hit.point;
-        /*else
-            destination = ray.GetPoint(1000);*/
-
-        InstantiateProjectile(firePoint);
-    }
-
-    void InstantiateProjectile(Transform firePoint)
+    void ShootProjectile(Transform firePoint)
     {
         //Vector3 firePointPos = new Vector3(firePoint.position.x, firePoint.position.y, firePoint.position.z);
         var projectileObj = Instantiate(projectile, firePoint.position, Quaternion.identity) as GameObject;
-        projectileObj.GetComponent<Rigidbody>().linearVelocity = (destination).normalized * projectileSpeed;
+        projectileObj.GetComponent<Rigidbody>().linearVelocity = firePoint.forward * projectileSpeed;
         Destroy(projectileObj, 5f);
-        
+
     }
 }

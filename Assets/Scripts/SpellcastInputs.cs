@@ -14,6 +14,8 @@ public class SpellcastInputs : MonoBehaviour
     public string CurrentCombo = "";
     public bool SpellHeld = false;
     private int KeyLightUp;
+    //Added fireBall GObj to the code -Marcus
+    public GameObject fireBall;
     
 
     public GameObject[] BookImages = new GameObject[7];
@@ -92,6 +94,13 @@ public class SpellcastInputs : MonoBehaviour
                 Debug.Log("You casted: " + Spells[PageNum]);
                 SpellHeld = true;
             }
+            //Makes it so the fireball appears in the players hand
+            //I didn't code any of the logic behind it but I just thought it would be cool-Marcus
+            if (SpellHeld)
+            {
+                fireBall.SetActive(true);
+            }
+            else { fireBall.SetActive(false); }
         }
 
         else
