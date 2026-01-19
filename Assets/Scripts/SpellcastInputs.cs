@@ -23,7 +23,7 @@ public class SpellcastInputs : MonoBehaviour
 
 
     //Added fireBall GObj to the code -Marcus
-    public GameObject fireBall;
+    public GameObject fireBall, whirlWind;
     
     // Hold the UI Images for the InputKeys and the Book Pages
     public GameObject[] BookImages = new GameObject[7];
@@ -60,7 +60,7 @@ public class SpellcastInputs : MonoBehaviour
             Debug.Log(CurrentCombo);
 
             //Sets spell held to false if the player flips to a new page
-            SpellHeld = false;
+            //SpellHeld = false;
 
             // Sets the book image to whatever page the player is on
             ResetImages();
@@ -166,7 +166,7 @@ public class SpellcastInputs : MonoBehaviour
                 WhatSpell();
             }
 
-            else { fireBall.SetActive(false); }
+            else { fireBall.SetActive(false); whirlWind.SetActive(false); }
         }
 
         else
@@ -195,6 +195,12 @@ public class SpellcastInputs : MonoBehaviour
         KeyImages[KeyLightUp].GetComponent<Image>().color = Color.white;
     }
 
+    void ResetSpells()
+    {
+        fireBall.SetActive(false); 
+        whirlWind.SetActive(false);
+    }
+
     void WhatSpell()
     {
         switch (CurrentSpell)
@@ -202,7 +208,15 @@ public class SpellcastInputs : MonoBehaviour
         {
             case "Fireball":
 
+                ResetSpells();
                 fireBall.SetActive(true);
+
+                break;
+
+            case "Whirlwind":
+
+                ResetSpells();
+                whirlWind.SetActive(true);
 
                 break;
 

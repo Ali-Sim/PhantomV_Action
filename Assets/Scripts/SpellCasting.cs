@@ -9,16 +9,22 @@ public class SpellCasting : MonoBehaviour
     public GameObject projectile;
     public Transform firePoint;
     public float projectileSpeed = 10f;
+    public float jumpForce = 5f;
 
     public GameObject GameManager;
+    public bool IsGrounded = true;
 
     public Vector3 destination;
     public int health, mana, stamina = 100;
     public Slider healthBar, staminaBar, manaBar;
+
+    private Rigidbody rb;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -36,7 +42,13 @@ public class SpellCasting : MonoBehaviour
                     UpdateData();
                     break;
 
-                
+                case "Whirlwind":
+
+                    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                    mana -= 30;
+                    Debug.Log(mana);
+                    UpdateData();
+                    break;
             }
             
         }
@@ -54,5 +66,18 @@ public class SpellCasting : MonoBehaviour
         healthBar.value = health;
         staminaBar.value = stamina;
         manaBar.value = mana;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Ground")
+        {
+            IsGrounded = true;
+        }
+
+        else
+        {
+            IsGrounded = false;
+        }
     }
 }
