@@ -1,3 +1,4 @@
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.Apple;
 using UnityEngine.UI;
@@ -9,10 +10,18 @@ public class SpellCasting : MonoBehaviour
     public GameObject projectile;
     public Transform firePoint;
     public float projectileSpeed = 10f;
-    public float jumpForce = 5f;
+   
 
     public GameObject GameManager;
     public bool IsGrounded = true;
+
+    // Jump Variables
+    public CharacterController controller;
+    public float jumpHeight = 6.0f;
+    public float gravity = -9.81f;
+    private Vector3 velocity; 
+
+
 
     public Vector3 destination;
     public int health, mana, stamina = 100;
@@ -30,7 +39,7 @@ public class SpellCasting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && mana > 0 && GameManager.GetComponent<SpellcastInputs>().SpellHeld == true)
+        if (Input.GetMouseButtonDown(0) && GameManager.GetComponent<SpellcastInputs>().CurrentValue <= mana && GameManager.GetComponent<SpellcastInputs>().SpellHeld == true)
         {
             switch (GameManager.GetComponent<SpellcastInputs>().CurrentSpell)
             {
@@ -44,7 +53,9 @@ public class SpellCasting : MonoBehaviour
 
                 case "Whirlwind":
 
-                    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                    velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                    
+                    Debug.Log("Jumped");
                     mana -= 30;
                     Debug.Log(mana);
                     UpdateData();
@@ -52,6 +63,15 @@ public class SpellCasting : MonoBehaviour
             }
             
         }
+
+        if (controller.isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+
+        velocity.y += gravity * Time.deltaTime;
+
+        controller.Move(velocity * Time.deltaTime);
     }
 
     void ShootProjectile(Transform firePoint)

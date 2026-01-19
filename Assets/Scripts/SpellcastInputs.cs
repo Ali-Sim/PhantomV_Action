@@ -12,11 +12,13 @@ public class SpellcastInputs : MonoBehaviour
     // Arrays that hold the Spell names and their combos required to cast them
     public string[] combos = new string[] {"qe", "frq", "qreeq", "efr", "fqereq", "erfqee", "rrr" } ;
     public string[] Spells = new string[] { "Fireball", "Whirlwind", "Shield", "Healing", "Lightning Cloud", "Ghost", "Enhancement" };
+    public int[] Values = new int[] { 10, 30, 50, 30, 70, 70, 30 };
 
 
     public char PlayerInput;
     public string CurrentCombo = "";
     public string CurrentSpell = "";
+    public int CurrentValue = 10;
     public bool SpellHeld = false;
     private int KeyLightUp;
 
@@ -57,6 +59,7 @@ public class SpellcastInputs : MonoBehaviour
 
             // Sets the current combination to the corresponding spell on the page
             CurrentCombo = combos[PageNum];
+            CurrentValue = Values[PageNum];
             Debug.Log(CurrentCombo);
 
             //Sets spell held to false if the player flips to a new page
@@ -154,7 +157,7 @@ public class SpellcastInputs : MonoBehaviour
 
             if (CurrentCombo == "")
             {
-                // If the player completes the combination, it tells the player what spell they casted and sets SpellHeld to true
+                // If the player completes the combination, it tells the player what spell they casted and sets SpellHeld to true, changes CurrentSpell to the spell that the player is holding
                 Debug.Log("You casted: " + Spells[PageNum]);
                 CurrentSpell = Spells[PageNum];
                 SpellHeld = true;

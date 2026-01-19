@@ -840,7 +840,6 @@ GameObject:
   - component: {fileID: 365588332}
   - component: {fileID: 365588331}
   - component: {fileID: 365588334}
-  - component: {fileID: 365588335}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -929,9 +928,11 @@ MonoBehaviour:
   projectile: {fileID: 967393212440472218, guid: 484f176b4baf73c42a8797af7b9d9559, type: 3}
   firePoint: {fileID: 1763730533}
   projectileSpeed: 30
-  jumpForce: 5
   GameManager: {fileID: 1146060733}
   IsGrounded: 1
+  controller: {fileID: 365588332}
+  jumpHeight: 2
+  gravity: -9.81
   destination: {x: 0, y: 0, z: 0}
   health: 0
   mana: 100
@@ -939,33 +940,6 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   staminaBar: {fileID: 0}
   manaBar: {fileID: 0}
---- !u!54 &365588335
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 365588330}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!1 &488590499
 GameObject:
   m_ObjectHideFlags: 0
@@ -6462,9 +6436,11 @@ MonoBehaviour:
   - Lightning Cloud
   - Ghost
   - Enhancement
+  Values: 0a0000001e000000320000001e00000046000000460000001e000000
   PlayerInput: 0
   CurrentCombo: 
   CurrentSpell: 
+  CurrentValue: 10
   SpellHeld: 0
   fireBall: {fileID: 533638111}
   whirlWind: {fileID: 1458350616}
