@@ -6,73 +6,127 @@ using System.Dynamic;
 
 public class SpellcastInputs : MonoBehaviour
 {
-
+    // Page of the book that the player is on
     public int PageNum = 0;
+
+    // Arrays that hold the Spell names and their combos required to cast them
     public string[] combos = new string[] {"qe", "frq", "qreeq", "efr", "fqereq", "erfqee", "rrr" } ;
     public string[] Spells = new string[] { "Fireball", "Whirlwind", "Shield", "Healing", "Lightning Cloud", "Ghost", "Enhancement" };
+
+
     public char PlayerInput;
     public string CurrentCombo = "";
     public bool SpellHeld = false;
     private int KeyLightUp;
+
+
+
     //Added fireBall GObj to the code -Marcus
     public GameObject fireBall;
     
-
+    // Hold the UI Images for the InputKeys and the Book Pages
     public GameObject[] BookImages = new GameObject[7];
     public GameObject[] KeyImages = new GameObject[4];
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // Resets the page number and images to always start on the fireball page
         CurrentCombo = combos[PageNum];
         ResetImages();
         BookImages[PageNum].SetActive(true);
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        // If the player clicks the right mouse button
         if (Input.GetMouseButtonDown(1))
         {
+            // Increments the page by one
             PageNum += 1;
+
+            // resets the page number to 0 if PageNum goes beyond the max number of pages
             if (PageNum == 7) { PageNum = 0;}
             Debug.Log(PageNum);
+
+            // Sets the current combination to the corresponding spell on the page
             CurrentCombo = combos[PageNum];
             Debug.Log(CurrentCombo);
+
+            //Sets spell held to false if the player flips to a new page
             SpellHeld = false;
 
+            // Sets the book image to whatever page the player is on
             ResetImages();
             BookImages[PageNum].SetActive(true);
         }
 
+        // If the player presses the Q key
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            // Resets the color back to white in the event a player presses two buttons in rapid succession
             ResetColor();
+
+            // Sets PlayerInput to the character "q"
             PlayerInput = 'q';
+
+            //Sets the key to be lit up in the event the player pressed the correct key
             KeyLightUp = 3;
+
+            //Checks whether or not the button pressed is the correct button in the order of the spell combination
             CheckSpell();
         }
 
+        // If the player presses the R key
         if (Input.GetKeyDown(KeyCode.R))
         {
+            // Resets the color back to white in the event a player presses two buttons in rapid succession
             ResetColor();
+
+            // Sets PlayerInput to the character "r"
             PlayerInput = 'r';
+
+            //Sets the key to be lit up in the event the player pressed the correct key
             KeyLightUp = 0;
+
+            //Checks whether or not the button pressed is the correct button in the order of the spell combination
             CheckSpell();
         }
 
+        // If the player presses the E key
         if (Input.GetKeyDown(KeyCode.E))
         {
+            // Resets the color back to white in the event a player presses two buttons in rapid succession
             ResetColor();
+
+            // Sets PlayerInput to the character "e"
             PlayerInput = 'e';
+
+            //Sets the key to be lit up in the event the player pressed the correct key
             KeyLightUp = 1;
+
+            //Checks whether or not the button pressed is the correct button in the order of the spell combination
             CheckSpell();
         }
 
+        // If the player presses the F key
         if (Input.GetKeyDown(KeyCode.F))
         {
+            // Resets the color back to white in the event a player presses two buttons in rapid succession
             ResetColor();
+
+            // Sets PlayerInput to the character "f"
             PlayerInput = 'f';
+
+            //Sets the key to be lit up in the event the player pressed the correct key
             KeyLightUp = 2;
+
+            //Checks whether or not the button pressed is the correct button in the order of the spell combination
             CheckSpell();
         }
     }
@@ -80,17 +134,26 @@ public class SpellcastInputs : MonoBehaviour
 
     void CheckSpell()
     {
+        //Creates a variable that holds the first character of the combination (Even after a character has been removed)
         char FirstLetter = CurrentCombo[0];
+
+        //Checks if the players character input (QERF) is equal to the first letter in the combination (Player must enter the character in order)
         if (PlayerInput == FirstLetter)
         {
             Debug.Log("OG:" + CurrentCombo);
+
+            // If the player entered the correct character, it removes that character from the combination
             CurrentCombo = CurrentCombo.Remove(0,1);
+
             Debug.Log("After:" + CurrentCombo);
+
+            // Lights up the corresponding letter that the player pressed, and resets it back to white after .5 seconds
             KeyImages[KeyLightUp].GetComponent<Image>().color = Color.green;
             Invoke("ResetColor", .5f);
 
             if (CurrentCombo == "")
             {
+                // If the player completes the combination, it tells the player what spell they casted and sets SpellHeld to true
                 Debug.Log("You casted: " + Spells[PageNum]);
                 SpellHeld = true;
             }
@@ -100,16 +163,19 @@ public class SpellcastInputs : MonoBehaviour
             {
                 fireBall.SetActive(true);
             }
+
             else { fireBall.SetActive(false); }
         }
 
         else
         {
+            // if the player gets a letter wrong, resets the combination back to the original combo and tells the player they got it wrong
             CurrentCombo = combos[PageNum];
             Debug.Log("U got it wrong");
         }
     }
 
+    //Resets all of the book images
     void ResetImages()
     {
         BookImages[0].SetActive(false);
@@ -121,6 +187,7 @@ public class SpellcastInputs : MonoBehaviour
         BookImages[6].SetActive(false);
     }
 
+    // Resets the color of the key that was pressed
     void ResetColor()
     {
         KeyImages[KeyLightUp].GetComponent<Image>().color = Color.white;
