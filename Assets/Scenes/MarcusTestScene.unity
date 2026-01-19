@@ -665,9 +665,14 @@ MonoBehaviour:
   projectile: {fileID: 967393212440472218, guid: 484f176b4baf73c42a8797af7b9d9559, type: 3}
   firePoint: {fileID: 1763730533}
   projectileSpeed: 30
+  GameManager: {fileID: 1146060733}
   destination: {x: 0, y: 0, z: 0}
   health: 0
   mana: 100
+  stamina: 100
+  healthBar: {fileID: 0}
+  staminaBar: {fileID: 0}
+  manaBar: {fileID: 0}
 --- !u!1 &488590499
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +897,7 @@ GameObject:
   - component: {fileID: 533638112}
   - component: {fileID: 533638114}
   - component: {fileID: 533638113}
+  - component: {fileID: 533638115}
   m_Layer: 2
   m_Name: FbInHand
   m_TagString: Untagged
@@ -5717,6 +5723,33 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!54 &533638115
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533638111}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &743531183
 GameObject:
   m_ObjectHideFlags: 0

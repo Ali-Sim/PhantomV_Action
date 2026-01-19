@@ -10,6 +10,8 @@ public class SpellCasting : MonoBehaviour
     public Transform firePoint;
     public float projectileSpeed = 10f;
 
+    public GameObject GameManager;
+
     public Vector3 destination;
     public int health, mana, stamina = 100;
     public Slider healthBar, staminaBar, manaBar;
@@ -22,7 +24,7 @@ public class SpellCasting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && mana > 0)
+        if (Input.GetMouseButtonDown(0) && mana > 0 && GameManager.GetComponent<SpellcastInputs>().SpellHeld == true)
         {
             ShootProjectile(firePoint);
             mana -= 10;
