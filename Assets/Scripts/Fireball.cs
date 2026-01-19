@@ -5,11 +5,19 @@ public class Fireball : MonoBehaviour
     private bool collided;
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Target")
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
+
         if (other.gameObject.tag != "Player" && other.gameObject.tag != "Fireball" && !collided)
         {
             collided = true;
             Destroy(gameObject);
         }
+
+        
 
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created

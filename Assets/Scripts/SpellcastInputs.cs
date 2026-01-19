@@ -16,6 +16,7 @@ public class SpellcastInputs : MonoBehaviour
 
     public char PlayerInput;
     public string CurrentCombo = "";
+    public string CurrentSpell = "";
     public bool SpellHeld = false;
     private int KeyLightUp;
 
@@ -155,13 +156,14 @@ public class SpellcastInputs : MonoBehaviour
             {
                 // If the player completes the combination, it tells the player what spell they casted and sets SpellHeld to true
                 Debug.Log("You casted: " + Spells[PageNum]);
+                CurrentSpell = Spells[PageNum];
                 SpellHeld = true;
             }
             //Makes it so the fireball appears in the players hand
             //I didn't code any of the logic behind it but I just thought it would be cool-Marcus
             if (SpellHeld)
             {
-                fireBall.SetActive(true);
+                WhatSpell();
             }
 
             else { fireBall.SetActive(false); }
@@ -191,5 +193,20 @@ public class SpellcastInputs : MonoBehaviour
     void ResetColor()
     {
         KeyImages[KeyLightUp].GetComponent<Image>().color = Color.white;
+    }
+
+    void WhatSpell()
+    {
+        switch (CurrentSpell)
+            
+        {
+            case "Fireball":
+
+                fireBall.SetActive(true);
+
+                break;
+
+
+        }
     }
 }

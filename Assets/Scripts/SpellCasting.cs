@@ -26,10 +26,19 @@ public class SpellCasting : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && mana > 0 && GameManager.GetComponent<SpellcastInputs>().SpellHeld == true)
         {
-            ShootProjectile(firePoint);
-            mana -= 10;
-            UpdateData();
-            Debug.Log(mana);
+            switch (GameManager.GetComponent<SpellcastInputs>().CurrentSpell)
+            {
+                case "Fireball":
+
+                    ShootProjectile(firePoint);
+                    mana -= 10;
+                    Debug.Log(mana);
+                    UpdateData();
+                    break;
+
+                
+            }
+            
         }
     }
 
