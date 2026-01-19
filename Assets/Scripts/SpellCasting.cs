@@ -121,4 +121,15 @@ public class SpellCasting : MonoBehaviour
             IsGrounded = false;
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Enemy":
+                health -= 10;
+                UpdateData();
+                break;
+        }
+
+    }
 }
