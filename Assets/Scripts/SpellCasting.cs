@@ -24,15 +24,18 @@ public class SpellCasting : MonoBehaviour
 
 
     public Vector3 destination;
-    public int health, mana, stamina = 100;
+    public int health, mana = 100;
+    public float stamina = 100;
     public Slider healthBar, staminaBar, manaBar;
 
     private Rigidbody rb;
+
+    public float sprintDepletionRate;
+    public float staminaRegenRate;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
         rb = GetComponent<Rigidbody>();
     }
 
@@ -47,21 +50,19 @@ public class SpellCasting : MonoBehaviour
 
                     ShootProjectile(firePoint);
                     mana -= 10;
-                    Debug.Log(mana);
                     UpdateData();
+                    Debug.Log(mana);
                     break;
-
                 case "Whirlwind":
 
                     velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
                     
                     Debug.Log("Jumped");
                     mana -= 30;
-                    Debug.Log(mana);
                     UpdateData();
+                    Debug.Log(mana);
                     break;
             }
-            
         }
 
         if (controller.isGrounded && velocity.y < 0)
@@ -72,6 +73,26 @@ public class SpellCasting : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        // --- 1. SPRINTING LOGIC (Depletion)
+        if (Input.GetKey(KeyCode.LeftShift) && stamina > 0)
+        {
+            // **FIXED LINE:** Depletion is now framerate-independent
+            stamina -= sprintDepletionRate * Time.deltaTime;
+
+            UpdateData(); // Assuming this updates your UI/slider
+        }
+        // --- 2. REGENERATION LOGIC
+        else if (stamina < 100f)
+        {
+            // **FIXED LINE:** Regeneration is now framerate-independent
+            stamina += staminaRegenRate * Time.deltaTime;
+
+            // Clamp the stamina to make sure it doesn't go over 100
+            stamina = Mathf.Min(stamina, 100f);
+
+            UpdateData();
+        }
     }
 
     void ShootProjectile(Transform firePoint)
