@@ -6,7 +6,7 @@ public class UIManager : MonoBehaviour
 {
     string mainMenuScene = "MainMenu";
     string levelTutorial = "MS1CompleteProto";
-    string levelOne = "N/A";
+    string levelOne = "AlejandroTest";
     string levelTwo = "N/A";
     string levelBoss = "N/A";
     string creditsScene = "Credits";
@@ -36,9 +36,12 @@ public class UIManager : MonoBehaviour
             IsInTheGame = true;
             UnpauseGame();
 
-            Player = GameObject.Find("Player");
+            //Player = GameObject.Find("Player");
             pauseMenu.SetActive(false);
             gameOverMenu.SetActive(false);
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         else
