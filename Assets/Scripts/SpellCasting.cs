@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Apple;
+using UnityEngine.UI;
 
 public class SpellCasting : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class SpellCasting : MonoBehaviour
     public float projectileSpeed = 10f;
 
     public Vector3 destination;
-    public int health, mana = 100;
+    public int health, mana, stamina = 100;
+    public Slider healthBar, staminaBar, manaBar;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -24,6 +26,7 @@ public class SpellCasting : MonoBehaviour
         {
             ShootProjectile(firePoint);
             mana -= 10;
+            UpdateData();
             Debug.Log(mana);
         }
     }
@@ -34,6 +37,11 @@ public class SpellCasting : MonoBehaviour
         var projectileObj = Instantiate(projectile, firePoint.position, Quaternion.identity) as GameObject;
         projectileObj.GetComponent<Rigidbody>().linearVelocity = firePoint.forward * projectileSpeed;
         Destroy(projectileObj, 5f);
-
+    }
+    public void UpdateData()
+    {
+        healthBar.value = health;
+        staminaBar.value = stamina;
+        manaBar.value = mana;
     }
 }
