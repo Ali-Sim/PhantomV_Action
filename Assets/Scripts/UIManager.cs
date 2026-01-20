@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     string mainMenuScene = "MainMenu";
-    string levelTutorial = "MarcusTestScene";
+    string levelTutorial = "LvlOneProto";
     string levelOne = "LvlOneProto";
     string levelTwo = "MarcusTestScene";
     string levelBoss = "SOUNDSMarcusTest";

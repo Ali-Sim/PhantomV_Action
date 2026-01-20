@@ -8,6 +8,7 @@ public class Fireball : MonoBehaviour
     {
         if (other.gameObject.tag == "Target")
         {
+            Instantiate(fireBallSound, transform.position, Quaternion.identity);
             Destroy(other.gameObject);
             Destroy(gameObject);
 
@@ -15,11 +16,12 @@ public class Fireball : MonoBehaviour
 
         if (other.gameObject.tag != "Player" && other.gameObject.tag != "Fireball" && !collided)
         {
+            Instantiate(fireBallSound, transform.position, Quaternion.identity);
             collided = true;
             Destroy(gameObject);
         }
 
-        Instantiate(fireBallSound, transform.position, Quaternion.identity);
+        
 
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
