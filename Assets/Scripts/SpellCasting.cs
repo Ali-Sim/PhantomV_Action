@@ -2,6 +2,8 @@ using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.Apple;
 using UnityEngine.UI;
+using System.Collections;
+using JetBrains.Annotations;
 
 public class SpellCasting : MonoBehaviour
 {
@@ -33,6 +35,8 @@ public class SpellCasting : MonoBehaviour
     public float sprintDepletionRate;
     public float staminaRegenRate;
 
+    public bool manaIncBool;
+
     //audiosource and sound effects
     public AudioSource SpellCastingProducer;
     public AudioClip[] spellSoundEffects = new AudioClip[7]; //  0 = "Fireball", 1 = "Whirlwind", 2 = "Shield", 3 = "Healing", 4 = "Lightning Cloud", 5 = "Ghost", 6 = "Enhancement"
@@ -42,11 +46,16 @@ public class SpellCasting : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
+        StartCoroutine(ManaIncrement(1f));
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        
+            
+
         if (Input.GetMouseButtonDown(0) && GameManager.GetComponent<SpellcastInputs>().CurrentValue <= mana && GameManager.GetComponent<SpellcastInputs>().SpellHeld == true)
         {
             //plays the casting sound effect for each spell
@@ -58,6 +67,7 @@ public class SpellCasting : MonoBehaviour
 
                     ShootProjectile(firePoint);
                     mana -= 10;
+                    manaIncBool = true;
                     UpdateData();
                     Debug.Log(mana);
                     break;
@@ -67,8 +77,20 @@ public class SpellCasting : MonoBehaviour
                     
                     Debug.Log("Jumped");
                     mana -= 30;
+                    manaIncBool = true;
                     UpdateData();
                     Debug.Log(mana);
+                    break;
+
+                case "Shield":
+
+                    break;
+
+                case "Healing":
+                    health += 30;
+                    mana -= 30;
+                    manaIncBool = true;
+                    UpdateData();
                     break;
             }
         }
@@ -156,5 +178,29 @@ public class SpellCasting : MonoBehaviour
 
     }
 
+    public IEnumerator ManaIncrement(float deltaTime)
+    {
+        Debug.Log("Increment Started");
+        
+        while(true)
+        {
+            yield return new WaitForSeconds(deltaTime);
+
+            if (mana >= 100)
+            {
+                mana = 100;
+                manaIncBool = false;
+            }
+
+            else
+            {
+                mana += 2;
+                UpdateData();
+            }
+
+
+        }
+        Debug.Log("Increment Ended");
+    }
 
 }

@@ -25,7 +25,7 @@ public class SpellcastInputs : MonoBehaviour
 
 
     //Added fireBall GObj to the code -Marcus
-    public GameObject fireBall, whirlWind;
+    public GameObject fireBall, whirlWind, healing;
 
     // Hold the UI Images for the InputKeys and the Book Pages
     public GameObject[] BookImages = new GameObject[7];
@@ -217,6 +217,7 @@ public class SpellcastInputs : MonoBehaviour
     {
         fireBall.SetActive(false); 
         whirlWind.SetActive(false);
+        healing.SetActive(false);
     }
 
     void WhatSpell()
@@ -238,6 +239,18 @@ public class SpellcastInputs : MonoBehaviour
 
                 ResetSpells();
                 whirlWind.SetActive(true);
+
+                break;
+
+
+            case "Shield":
+                break;
+
+
+            case "Healing":
+
+                ResetSpells();
+                healing.SetActive(true);
 
                 break;
 
