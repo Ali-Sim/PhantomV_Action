@@ -1,9 +1,9 @@
-using UnityEditor.ShaderGraph.Internal;
+
 using UnityEngine;
-using UnityEngine.Apple;
+
 using UnityEngine.UI;
 using System.Collections;
-using JetBrains.Annotations;
+
 
 public class SpellCasting : MonoBehaviour
 {
@@ -87,10 +87,18 @@ public class SpellCasting : MonoBehaviour
                     break;
 
                 case "Healing":
-                    health += 30;
-                    mana -= 30;
-                    manaIncBool = true;
-                    UpdateData();
+                    if (health < 100)
+                    {
+                        health += 30;
+                        mana -= 30;
+                        manaIncBool = true;
+                        UpdateData();
+                    }
+                   
+                    if (health > 100)
+                    {
+                        health = 100;
+                    }
                     break;
             }
         }
@@ -146,10 +154,15 @@ public class SpellCasting : MonoBehaviour
             case "Fireball":
                 
                 break;
+            case "Healing":
+                SpellCastingProducer.clip = spellSoundEffects[3];
+                SpellCastingProducer.Play();
+                break;
             case "Whirlwind":
                 SpellCastingProducer.clip = spellSoundEffects[1];
                 SpellCastingProducer.Play();
                 break;
+            
         }
     }
 

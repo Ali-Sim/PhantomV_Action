@@ -284,6 +284,11 @@ public class SpellcastInputs : MonoBehaviour
                 SpellActivationProducer.Play();
                 break;
 
+            case "Healing":
+                SpellActivationProducer.clip = spellSoundEffects[3];
+                SpellActivationProducer.Play();
+                break;
+
 
         }
     }
