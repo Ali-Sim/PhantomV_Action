@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     string mainMenuScene = "MainMenu";
-    string levelTutorial = "MS1CompleteProto";
+    string levelTutorial = "MarcusTestScene";
     string levelOne = "AlejandroTest";
-    string levelTwo = "N/A";
+    string levelTwo = "MarcusTestScene";
     string levelBoss = "N/A";
     string creditsScene = "Credits";
     string helpScene = "Controls";

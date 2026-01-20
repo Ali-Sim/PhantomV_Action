@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ProtoScene/MS1CompleteProto.unity
     guid: e2cf71e8bc006984aa580634e54f4059
+  - enabled: 1
+    path: Assets/Scenes/MarcusTestScene.unity
+    guid: e228a6fad27dae4438944ab27fff34e8
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 993ec8ab7eecda7488ebbcbc3f2e1798, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

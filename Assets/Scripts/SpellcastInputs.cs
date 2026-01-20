@@ -10,7 +10,7 @@ public class SpellcastInputs : MonoBehaviour
     public int PageNum = 0;
 
     // Arrays that hold the Spell names and their combos required to cast them
-    public string[] combos = new string[] {"qe", "frq", "qreeq", "efr", "fqereq", "erfqee", "rrr" } ;
+    public string[] combos = new string[] { "qe", "frq", "qreeq", "efr", "fqereq", "erfqee", "rrr" };
     public string[] Spells = new string[] { "Fireball", "Whirlwind", "Shield", "Healing", "Lightning Cloud", "Ghost", "Enhancement" };
     public int[] Values = new int[] { 10, 30, 50, 30, 70, 70, 30 };
 
@@ -26,10 +26,17 @@ public class SpellcastInputs : MonoBehaviour
 
     //Added fireBall GObj to the code -Marcus
     public GameObject fireBall, whirlWind;
-    
+
     // Hold the UI Images for the InputKeys and the Book Pages
     public GameObject[] BookImages = new GameObject[7];
     public GameObject[] KeyImages = new GameObject[4];
+
+    //audiosources and clips for the sound effects
+    public AudioSource SpellInputProducer;
+    public AudioSource SpellActivationProducer;
+
+    public AudioClip[] spellSoundEffects = new AudioClip[7]; //  0 = "Fireball", 1 = "Whirlwind", 2 = "Shield", 3 = "Healing", 4 = "Lightning Cloud", 5 = "Ghost", 6 = "Enhancement"
+    public AudioClip[] bellSoundEffects = new AudioClip[2]; // 0 = Good Bell, 1 = Bad Bell
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -138,12 +145,17 @@ public class SpellcastInputs : MonoBehaviour
 
     void CheckSpell()
     {
+        
+
         //Creates a variable that holds the first character of the combination (Even after a character has been removed)
         char FirstLetter = CurrentCombo[0];
 
         //Checks if the players character input (QERF) is equal to the first letter in the combination (Player must enter the character in order)
         if (PlayerInput == FirstLetter)
         {
+            //plays first bell sound
+            PlayCorrectSound();
+
             Debug.Log("OG:" + CurrentCombo);
 
             // If the player entered the correct character, it removes that character from the combination
@@ -174,6 +186,9 @@ public class SpellcastInputs : MonoBehaviour
 
         else
         {
+            //plays the bad bell sounds for an incoreect answer
+            PlayWrongSound();
+
             // if the player gets a letter wrong, resets the combination back to the original combo and tells the player they got it wrong
             CurrentCombo = combos[PageNum];
             Debug.Log("U got it wrong");
@@ -206,6 +221,9 @@ public class SpellcastInputs : MonoBehaviour
 
     void WhatSpell()
     {
+        //plays the sound for activating a spell
+        ActivationSound(); 
+
         switch (CurrentSpell)
             
         {
@@ -221,6 +239,36 @@ public class SpellcastInputs : MonoBehaviour
                 ResetSpells();
                 whirlWind.SetActive(true);
 
+                break;
+
+
+        }
+    }
+
+    void PlayCorrectSound() //plays a bad bell sound
+    {
+        SpellInputProducer.clip = bellSoundEffects[0];
+        SpellInputProducer.Play();
+    }
+
+    void PlayWrongSound() //plays a good bell sound
+    {
+        SpellInputProducer.clip = bellSoundEffects[1];
+        SpellInputProducer.Play();
+    }
+
+    void ActivationSound() //plays a sound depending on the spell when they get activated
+    {
+        switch (CurrentSpell)
+        {
+            case "Fireball":
+                SpellActivationProducer.clip = spellSoundEffects[0];
+                SpellActivationProducer.Play();
+                break;
+
+            case "Whirlwind":
+                SpellActivationProducer.clip = spellSoundEffects[1];
+                SpellActivationProducer.Play();
                 break;
 
 

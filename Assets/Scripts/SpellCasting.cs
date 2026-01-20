@@ -32,6 +32,11 @@ public class SpellCasting : MonoBehaviour
 
     public float sprintDepletionRate;
     public float staminaRegenRate;
+
+    //audiosource and sound effects
+    public AudioSource SpellCastingProducer;
+    public AudioClip[] spellSoundEffects = new AudioClip[7]; //  0 = "Fireball", 1 = "Whirlwind", 2 = "Shield", 3 = "Healing", 4 = "Lightning Cloud", 5 = "Ghost", 6 = "Enhancement"
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -44,6 +49,9 @@ public class SpellCasting : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && GameManager.GetComponent<SpellcastInputs>().CurrentValue <= mana && GameManager.GetComponent<SpellcastInputs>().SpellHeld == true)
         {
+            //plays the casting sound effect for each spell
+            PlayCastingSound();
+
             switch (GameManager.GetComponent<SpellcastInputs>().CurrentSpell)
             {
                 case "Fireball":
@@ -109,6 +117,21 @@ public class SpellCasting : MonoBehaviour
         manaBar.value = mana;
     }
 
+    private void PlayCastingSound()
+    {
+        switch (GameManager.GetComponent<SpellcastInputs>().CurrentSpell)
+        {
+            case "Fireball":
+                SpellCastingProducer.clip = spellSoundEffects[0];
+                SpellCastingProducer.Play();
+                break;
+            case "Whirlwind":
+                SpellCastingProducer.clip = spellSoundEffects[1];
+                SpellCastingProducer.Play();
+                break;
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Ground")
@@ -132,4 +155,6 @@ public class SpellCasting : MonoBehaviour
         }
 
     }
+
+
 }
