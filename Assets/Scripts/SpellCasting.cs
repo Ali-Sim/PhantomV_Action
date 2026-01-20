@@ -144,8 +144,7 @@ public class SpellCasting : MonoBehaviour
         switch (GameManager.GetComponent<SpellcastInputs>().CurrentSpell)
         {
             case "Fireball":
-                SpellCastingProducer.clip = spellSoundEffects[0];
-                SpellCastingProducer.Play();
+                
                 break;
             case "Whirlwind":
                 SpellCastingProducer.clip = spellSoundEffects[1];
