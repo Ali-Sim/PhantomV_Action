@@ -6,7 +6,7 @@ public class UIManager : MonoBehaviour
     string levelTutorial = "MarcusTestScene";
     string levelOne = "AlejandroTest";
     string levelTwo = "MarcusTestScene";
-    string levelBoss = "N/A";
+    string levelBoss = "SOUNDSMarcusTest";
     string creditsScene = "Credits";
     string helpScene = "Controls";
     string winScene = "WIN";
