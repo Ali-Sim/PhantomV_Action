@@ -212,7 +212,7 @@ public class SpellCasting : MonoBehaviour
 
 
         }
-        Debug.Log("Increment Ended");
+        
     }
 
 }
