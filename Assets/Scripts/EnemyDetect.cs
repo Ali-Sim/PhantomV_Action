@@ -1,54 +1,29 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyDetect : MonoBehaviour
 {
-    public GameObject player;
-    public bool followPlayer = false;
     public GameObject enemy;
+    public GameObject player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         player = GameObject.Find("Player");
     }
 
-    private void OnTriggerEnter(Collider other)
+    // Update is called once per frame
+    void Update()
     {
-        if (other.CompareTag("Player"))
-        { 
-            followPlayer = true;
-            EnemyFollow();
-        }
+        
     }
-
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
-        { 
-            followPlayer = true;
-            EnemyFollow();
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        { 
-            followPlayer = false;
-            EnemyFollow();
-        }
-    }
-
-    void EnemyFollow()
-    {
-        if (followPlayer)
+        switch (other.gameObject.tag)
         {
-            Vector3 playerPos = player.transform.position;
-            enemy.GetComponent<EnemyScript>().transform.position = Vector3.MoveTowards(transform.position, playerPos, Time.deltaTime * 1.5f);
-        }
-
-        else if (!followPlayer)
-        {
-            transform.position = transform.position;
+            case "Player":
+                if (player.GetComponent<SpellCasting>().canMove == true) { enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, player.transform.position, 5f * Time.deltaTime); }
+                else { enemy.transform.position = enemy.transform.position; }
+                    break;
         }
     }
 }

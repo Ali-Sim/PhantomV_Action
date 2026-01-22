@@ -36,7 +36,7 @@ public class SpellCasting : MonoBehaviour
     public float staminaRegenRate;
 
     public bool manaIncBool;
-
+    public bool canMove = true;
     //audiosource and sound effects
     public AudioSource SpellCastingProducer;
     public AudioClip[] spellSoundEffects = new AudioClip[7]; //  0 = "Fireball", 1 = "Whirlwind", 2 = "Shield", 3 = "Healing", 4 = "Lightning Cloud", 5 = "Ghost", 6 = "Enhancement"
@@ -184,10 +184,15 @@ public class SpellCasting : MonoBehaviour
         {
             case "Enemy":
                 health -= 10;
+                canMove = false;
                 UpdateData();
+                Invoke("AllowEnemyMovement", 3f);
                 break;
         }
-
+    }
+    void AllowEnemyMovement()
+    {
+        canMove = true;
     }
 
     public IEnumerator ManaIncrement(float deltaTime)

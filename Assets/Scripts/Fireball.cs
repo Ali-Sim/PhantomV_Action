@@ -8,31 +8,17 @@ public class Fireball : MonoBehaviour
     {
         if (other.gameObject.tag == "Target")
         {
-            Instantiate(fireBallSound, transform.position, Quaternion.identity);
-            Destroy(other.gameObject);
+            GameObject fbSound = Instantiate(fireBallSound, transform.position, Quaternion.identity);
+            Destroy(fbSound, 3f);
             Destroy(gameObject);
-
         }
 
         if (other.gameObject.tag != "Player" && other.gameObject.tag != "Fireball" && other.gameObject.tag != "Tree" && !collided)
         {
-            Instantiate(fireBallSound, transform.position, Quaternion.identity);
+            GameObject fbSound = Instantiate(fireBallSound, transform.position, Quaternion.identity);
             collided = true;
+            Destroy(fbSound, 3f);
             Destroy(gameObject);
         }
-
-        
-
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
