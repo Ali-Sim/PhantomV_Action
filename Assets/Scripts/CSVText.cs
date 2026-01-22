@@ -5,6 +5,7 @@ public class CSVText : MonoBehaviour
     //CSV 
     public TextAsset csvDialogue;
     public string[,] grid;
+    private string commaCheck;
 
     //
 
@@ -14,7 +15,9 @@ public class CSVText : MonoBehaviour
         grid = getCSVGrid(csvDialogue.text);
 
         //How to call items in the CSV - grid[x, y] where x and y are numbers starting from 0 (A1 on the excel sheet would be 0,0 and A2 on the excell sheet would be 0,1)
-        Debug.Log(grid[0, 1]);
+        commaCheck = grid[2, 1];
+        commaCheck = commaCheck.Replace("`", ",");
+        Debug.Log(commaCheck);
     }
 
     

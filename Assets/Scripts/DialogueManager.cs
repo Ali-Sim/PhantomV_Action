@@ -1,34 +1,46 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using static UnityEditor.Rendering.MaterialUpgrader;
 
 public class DialogueManager : MonoBehaviour
 {
     //CSV Finder
     public TextAsset csvDialogue;
-    public string[,] grid;
+    public string[,] dialougeGrid;
 
     //Diolouge Box
     public GameObject dialougeBox;
     public TMP_Text dialougeTxt, nameTxt;
     public float dialogueType = 0.025f;
+    public GameObject SpeakingFace;
 
     //DialougeVariables
     public bool canTalk, startedPlaying, currentlyPlaying, donePlaying;
     public bool doneTyping;
+    public string commaCheckTxt;
+    public string commaCheckName;
 
     //Indexes
     public int characterID;
     public int currentTextIndex;
     public int lengthOfDialouge;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //How to call items in the CSV - grid[x, y] where x and y are numbers starting from 0 (A1 on the excel sheet would be 0,0 and A2 on the excell sheet would be 0,1)
         //How to call certain characters - grid[2 + currentTextIndex, characterID]
-        grid = getCSVGrid(csvDialogue.text);
+        csvDialogue = Resources.Load<TextAsset>("CSVFiles/TestingDialouge02");
+        dialougeGrid = getCSVGrid(csvDialogue.text);
+
+        characterID = 1;
+        currentTextIndex = 0;
+
+        doneTyping = true;
     }
 
     // Update is called once per frame
@@ -86,13 +98,31 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    public void OpenTextBox(int index)
+    public void OpenTextBox(int characterIndex)
     {
-
+        currentTextIndex = 0;
+        characterID = characterIndex;
+        dialougeBox.SetActive(true);
+        PlayDio();
     }
 
     public void ClickForward()
     {
+        if (dialougeGrid[currentTextIndex + 3, characterID] == "END TEXT")
+        {
+            CloseTextBox();
+        }
+        else
+        {
+            if (doneTyping)
+            {
+                currentTextIndex += 1;
+            }
+
+            PlayDio();
+        }
+        
+        
 
     }
 
@@ -103,6 +133,59 @@ public class DialogueManager : MonoBehaviour
 
     public void CloseTextBox()
     {
+        dialougeBox.SetActive(false);
+    }
 
+    void PlayDio() //plays the dialouge inside the text box depending on the character ID and page index
+    {
+        commaCheckName = dialougeGrid[1, characterID];
+        commaCheckName = commaCheckName.Replace("`", ",");
+
+        commaCheckTxt = dialougeGrid[currentTextIndex + 2, characterID];
+        commaCheckTxt = commaCheckTxt.Replace("`", ",");
+
+        if (doneTyping) //if the player clicks the button after typing, move to the next text dialouge
+        {
+            StopAllCoroutines();
+            nameTxt.text = commaCheckName;
+            StartCoroutine(Dialogue(commaCheckTxt));
+
+        }
+
+        else //if they click forwards before the text types, skip to the end and finish the text
+        {
+            doneTyping = true;
+            StopAllCoroutines();
+            nameTxt.text = commaCheckName;
+            dialougeTxt.text = commaCheckTxt;
+        }
+
+        ChangeCharacter();
+    }
+
+    void ChangeCharacter()
+    {
+        switch (characterID)
+        {
+            case 1:
+                SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("GoodWizard");
+                break;
+            case 2:
+                SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("BadWizard");
+                break;
+
+
+        }
+    }
+
+    public void DebugOne()
+    {
+        OpenTextBox(1);
+    }
+
+    public void DebugTwo()
+    {
+        OpenTextBox(2);
     }
 }
+
