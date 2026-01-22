@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Enemy
   - Tree
+  - Hitbox
   layers:
   - Default
   - TransparentFX
