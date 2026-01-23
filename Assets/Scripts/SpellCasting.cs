@@ -190,7 +190,6 @@ public class SpellCasting : MonoBehaviour
             case "FireballEnemy":
                 health -= 20;
                 UpdateData();
-                Invoke("AllowEnemyShooting", 3f);
                 break;
         }
     }

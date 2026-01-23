@@ -26,7 +26,6 @@ public class RangedEnemyDetect : MonoBehaviour
                     canShoot = false;
                     Invoke("AllowEnemyShooting", 3f);
                 }
-                else { }
                 break;
         }
     }
@@ -37,7 +36,8 @@ public class RangedEnemyDetect : MonoBehaviour
     void ShootProjectile(Transform firePoint)
     {
         var projectileObj = Instantiate(fireBall, firePoint.position, Quaternion.identity) as GameObject;
-        projectileObj.GetComponent<Rigidbody>().linearVelocity = Vector3.MoveTowards(firePoint.position, player.transform.position, projectileSpeed * Time.deltaTime); //Fix this bum
+        Vector3 direction = (player.transform.position - firePoint.position).normalized;
+        projectileObj.GetComponent<Rigidbody>().linearVelocity = direction * projectileSpeed;
         Destroy(projectileObj, 5f);
     }
 }
