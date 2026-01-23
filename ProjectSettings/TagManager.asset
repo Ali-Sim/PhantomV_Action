@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Tree
   - Hitbox
+  - FireballEnemy
   layers:
   - Default
   - TransparentFX

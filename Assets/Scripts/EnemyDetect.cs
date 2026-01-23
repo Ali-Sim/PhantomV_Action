@@ -10,18 +10,12 @@ public class EnemyDetect : MonoBehaviour
     {
         player = GameObject.Find("Player");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerStay(Collider other)
     {
         switch (other.gameObject.tag)
         {
             case "Player":
-                if (player.GetComponent<SpellCasting>().canMove == true) { enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, player.transform.position, 5f * Time.deltaTime); }
+                if (player.GetComponent<SpellCasting>().canMove) { enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, player.transform.position, 5f * Time.deltaTime); }
                 else { enemy.transform.position = enemy.transform.position; }
                     break;
         }

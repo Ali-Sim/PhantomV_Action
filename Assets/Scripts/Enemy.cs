@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public int lives = 3;
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        switch(other.gameObject.tag)
+        {
+            case "Fireball":
+                lives--;
+                if (lives == 0)
+                {
+                    Destroy(gameObject);
+                }
+                break;
+        }
     }
 }
+
