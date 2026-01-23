@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
 
     //DialougeVariables
     public bool canTalk, startedPlaying, currentlyPlaying, donePlaying;
-    public bool doneTyping;
+    public bool doneTyping, textBoxOpen;
     public string commaCheckTxt;
     public string commaCheckName;
 
@@ -37,6 +37,9 @@ public class DialogueManager : MonoBehaviour
         csvDialogue = Resources.Load<TextAsset>("CSVFiles/TestingDialouge02");
         dialougeGrid = getCSVGrid(csvDialogue.text);
 
+        dialougeBox.SetActive(false);
+        textBoxOpen = false;
+
         characterID = 1;
         currentTextIndex = 0;
 
@@ -46,7 +49,10 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.K) && textBoxOpen)
+        {
+            ClickForward();
+        }
     }
 
     public string[,] getCSVGrid(string csvText)
@@ -100,16 +106,24 @@ public class DialogueManager : MonoBehaviour
 
     public void OpenTextBox(int characterIndex)
     {
+        textBoxOpen = true;
         currentTextIndex = 0;
         characterID = characterIndex;
+        doneTyping = false;
         dialougeBox.SetActive(true);
         PlayDio();
     }
 
     public void ClickForward()
     {
-        if (dialougeGrid[currentTextIndex + 3, characterID] == "END TEXT")
+        Debug.Log(currentTextIndex);
+        Debug.Log(dialougeGrid[currentTextIndex + 3, characterID]);
+        string EndCheck = dialougeGrid[currentTextIndex + 3, characterID];
+        Debug.Log(EndCheck);
+
+        if (dialougeGrid[currentTextIndex + 3, characterID] == "END TEXT" || dialougeGrid[currentTextIndex + 3, characterID] == null || dialougeGrid[currentTextIndex + 3, characterID] == "END TEXT\r\n")
         {
+            Debug.Log("Attempting To Close");
             CloseTextBox();
         }
         else
@@ -134,6 +148,7 @@ public class DialogueManager : MonoBehaviour
     public void CloseTextBox()
     {
         dialougeBox.SetActive(false);
+        textBoxOpen = false;
     }
 
     void PlayDio() //plays the dialouge inside the text box depending on the character ID and page index
