@@ -11,14 +11,17 @@ public class Fireball : MonoBehaviour
             GameObject fbSound = Instantiate(fireBallSound, transform.position, Quaternion.identity);
             Destroy(fbSound, 3f);
             Destroy(gameObject);
+            Destroy(other.gameObject);
+            //print("Target");
         }
 
-        if (other.gameObject.tag != "Player" && other.gameObject.tag != "Fireball" && other.gameObject.tag != "Tree" && other.gameObject.tag != "Hitbox" && !collided)
+        else if (other.gameObject.tag != "Player" && other.gameObject.tag != "Fireball" && other.gameObject.tag != "Tree" && other.gameObject.tag != "Hitbox" && !collided)
         {
             GameObject fbSound = Instantiate(fireBallSound, transform.position, Quaternion.identity);
             collided = true;
             Destroy(fbSound, 3f);
             Destroy(gameObject);
+            //print("other");
         }
     }
 }

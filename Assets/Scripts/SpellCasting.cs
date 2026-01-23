@@ -135,7 +135,6 @@ public class SpellCasting : MonoBehaviour
 
     void ShootProjectile(Transform firePoint)
     {
-        //Vector3 firePointPos = new Vector3(firePoint.position.x, firePoint.position.y, firePoint.position.z);
         var projectileObj = Instantiate(projectile, firePoint.position, Quaternion.identity) as GameObject;
         projectileObj.GetComponent<Rigidbody>().linearVelocity = firePoint.forward * projectileSpeed;
         Destroy(projectileObj, 5f);
@@ -188,13 +187,16 @@ public class SpellCasting : MonoBehaviour
                 UpdateData();
                 Invoke("AllowEnemyMovement", 3f);
                 break;
+            case "FireballEnemy":
+                health -= 20;
+                UpdateData();
+                break;
         }
     }
     void AllowEnemyMovement()
     {
         canMove = true;
     }
-
     public IEnumerator ManaIncrement(float deltaTime)
     {
         Debug.Log("Increment Started");
