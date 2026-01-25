@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MarcusTestScene.unity
     guid: e228a6fad27dae4438944ab27fff34e8
   - enabled: 1
+    path: Assets/Scenes/Lvl1DETAILED.unity
+    guid: 789621d1b834551449e8ecbd7fff0d95
+  - enabled: 0
     path: Assets/Scenes/LvlOneProto.unity
     guid: e849199b392fee048ac0f1067c5ee278
   m_configObjects:
