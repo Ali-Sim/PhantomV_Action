@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
     }
 
     void Update()
@@ -40,6 +41,16 @@ public class PlayerMovement : MonoBehaviour
         if (!characterController.isGrounded)
         {
             moveDirection.y -= gravity * Time.deltaTime;
+        }
+
+        if (GetComponent<SpellCasting>().stamina < 5)
+        {
+            runSpeed = walkSpeed;
+        }
+
+        if (GetComponent<SpellCasting>().stamina > 5)
+        {
+            runSpeed = 12f;
         }
 
         characterController.Move(moveDirection * Time.deltaTime);
