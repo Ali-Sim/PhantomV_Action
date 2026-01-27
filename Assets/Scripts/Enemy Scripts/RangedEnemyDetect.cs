@@ -9,7 +9,7 @@ public class RangedEnemyDetect : MonoBehaviour
     public GameObject fireBall;
     public Transform firePoint;
     public float projectileSpeed = 10f;
-    public bool canShoot = true;
+    public bool canShoot, canMove = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +26,11 @@ public class RangedEnemyDetect : MonoBehaviour
                     canShoot = false;
                     Invoke("AllowEnemyShooting", 3f);
                 }
+                
+                if (canMove) 
+                { enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, player.transform.position, 5f * Time.deltaTime); }
+                else 
+                { enemy.transform.position = enemy.transform.position; }
                 break;
         }
     }
