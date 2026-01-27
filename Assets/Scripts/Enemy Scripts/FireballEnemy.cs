@@ -14,7 +14,7 @@ public class FireballEnemy : MonoBehaviour
             //Debug.Log(other.gameObject.tag);
         }
 
-        else if (other.gameObject.tag != "Enemy" && other.gameObject.tag != "Hitbox" && !collided)
+        else if (other.gameObject.tag != "Enemy" && other.gameObject.tag != "Hitbox" && other.gameObject.tag != "Tree" && !collided)
         {
             GameObject fbSound = Instantiate(fireBallSound, transform.position, Quaternion.identity);
             collided = true;
