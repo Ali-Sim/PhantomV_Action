@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.ProBuilder;
 
-public class RangedEnemyDetect : MonoBehaviour
+public class CrossbowStationary : MonoBehaviour
 {
     public GameObject enemy;
     public GameObject player;

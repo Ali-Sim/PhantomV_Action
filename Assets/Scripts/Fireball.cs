@@ -15,7 +15,7 @@ public class Fireball : MonoBehaviour
             //print("Target");
         }
 
-        else if (other.gameObject.tag != "Player" && other.gameObject.tag != "Fireball" && other.gameObject.tag != "Tree" && other.gameObject.tag != "Hitbox" && !collided)
+        else if (other.gameObject.tag != "Player" && other.gameObject.tag != "Fireball" && other.gameObject.tag != "Tree" && other.gameObject.tag != "Hitbox" && other.gameObject.tag != "Crossbow" && !collided)
         {
             GameObject fbSound = Instantiate(fireBallSound, transform.position, Quaternion.identity);
             collided = true;

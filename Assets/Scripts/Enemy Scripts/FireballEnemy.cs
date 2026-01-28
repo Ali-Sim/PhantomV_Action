@@ -9,12 +9,14 @@ public class FireballEnemy : MonoBehaviour
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "MainCamera")
         {
             GameObject fbSound = Instantiate(fireBallSound, transform.position, Quaternion.identity);
+            other.GetComponent<SpellCasting>().health -= 20;
+            other.GetComponent<SpellCasting>().UpdateData();
             Destroy(fbSound, 3f);
             Destroy(gameObject);
             //Debug.Log(other.gameObject.tag);
         }
 
-        else if (other.gameObject.tag != "Enemy" && other.gameObject.tag != "Hitbox" && other.gameObject.tag != "Tree" && !collided)
+        else if (other.gameObject.tag != "Enemy" && other.gameObject.tag != "Hitbox" && other.gameObject.tag != "Tree" && other.gameObject.tag != "Crossbow" && !collided)
         {
             GameObject fbSound = Instantiate(fireBallSound, transform.position, Quaternion.identity);
             collided = true;

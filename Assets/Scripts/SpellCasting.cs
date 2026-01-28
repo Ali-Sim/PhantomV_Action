@@ -41,12 +41,15 @@ public class SpellCasting : MonoBehaviour
     public AudioSource SpellCastingProducer;
     public AudioClip[] spellSoundEffects = new AudioClip[7]; //  0 = "Fireball", 1 = "Whirlwind", 2 = "Shield", 3 = "Healing", 4 = "Lightning Cloud", 5 = "Ghost", 6 = "Enhancement"
 
+
+    public GameObject ActualShield;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
         StartCoroutine(ManaIncrement(1f));
+        ActualShield.SetActive(false);
     }
 
     // Update is called once per frame
@@ -83,6 +86,7 @@ public class SpellCasting : MonoBehaviour
                     break;
 
                 case "Shield":
+                    ActualShield.SetActive(true);
 
                     break;
 
@@ -188,8 +192,6 @@ public class SpellCasting : MonoBehaviour
                 Invoke("AllowEnemyMovement", 3f);
                 break;
             case "FireballEnemy":
-                health -= 20;
-                UpdateData();
                 break;
         }
     }
