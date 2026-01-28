@@ -13,7 +13,7 @@ public class CrossbowStationary : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = GameObject.Find("Player");
+        
     }
     private void OnTriggerStay(Collider other)
     {
@@ -27,7 +27,7 @@ public class CrossbowStationary : MonoBehaviour
                     Invoke("AllowEnemyShooting", 3f);
                 }
                 
-                if (canMove) 
+                if (player.GetComponent<SpellCasting>().canMove) 
                 { enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, player.transform.position, 5f * Time.deltaTime); }
                 else 
                 { enemy.transform.position = enemy.transform.position; }

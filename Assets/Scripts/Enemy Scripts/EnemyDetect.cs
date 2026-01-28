@@ -8,7 +8,7 @@ public class EnemyDetect : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = GameObject.Find("Player");
+        
     }
     private void OnTriggerStay(Collider other)
     {
