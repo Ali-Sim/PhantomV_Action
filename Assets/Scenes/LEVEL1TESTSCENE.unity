@@ -10819,6 +10819,7 @@ MonoBehaviour:
   manaBar: {fileID: 1253244011}
   sprintDepletionRate: 20
   staminaRegenRate: 10
+  EnhancementActive: 0
   manaIncBool: 0
   canMove: 1
   SpellCastingProducer: {fileID: 1276363392}
@@ -19127,6 +19128,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8867215440742068669, guid: 97aeba4266469cd4cab4ff58f1a738e8, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 389099323}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
