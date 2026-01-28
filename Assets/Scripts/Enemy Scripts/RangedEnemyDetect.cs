@@ -27,10 +27,7 @@ public class CrossbowStationary : MonoBehaviour
                     Invoke("AllowEnemyShooting", 3f);
                 }
                 
-                if (player.GetComponent<SpellCasting>().canMove) 
-                { enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, player.transform.position, 5f * Time.deltaTime); }
-                else 
-                { enemy.transform.position = enemy.transform.position; }
+               
                 break;
         }
     }

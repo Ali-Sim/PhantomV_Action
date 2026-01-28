@@ -27,6 +27,7 @@ public class ShieldHealth : MonoBehaviour
             if (HealthShield <= 0)
             {
                 Player.GetComponent<SpellCasting>().ActualShield.SetActive(false);
+                HealthShield = 100;
             }
         }
     }

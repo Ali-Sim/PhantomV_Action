@@ -35,6 +35,7 @@ public class SpellCasting : MonoBehaviour
     public float sprintDepletionRate;
     public float staminaRegenRate;
 
+    public bool EnhancementActive = false;
     public bool manaIncBool;
     public bool canMove = true;
     //audiosource and sound effects
@@ -75,17 +76,40 @@ public class SpellCasting : MonoBehaviour
                     Debug.Log(mana);
                     break;
                 case "Whirlwind":
+                    if (EnhancementActive)
+                    {
+                        jumpHeight = 12f;
+                        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                        Debug.Log("Jumped");
+                        mana -= 30;
+                        manaIncBool = true;
+                        UpdateData();
+                        Debug.Log(mana);
+                        EnhancementActive = false;
+                        
+                        break;
+                    }
 
-                    velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-                    
-                    Debug.Log("Jumped");
-                    mana -= 30;
-                    manaIncBool = true;
-                    UpdateData();
-                    Debug.Log(mana);
-                    break;
+                    else
+                    {
+                        jumpHeight = 6f;
+                        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+
+                        Debug.Log("Jumped");
+                        mana -= 30;
+                        manaIncBool = true;
+                        UpdateData();
+                        Debug.Log(mana);
+                        break;
+                    }
+                       
 
                 case "Shield":
+                    if (EnhancementActive)
+                    {
+                        ActualShield.GetComponent<ShieldHealth>().HealthShield = 200;
+                        EnhancementActive = false;
+                    }
                     ActualShield.SetActive(true);
 
                     break;
@@ -93,16 +117,50 @@ public class SpellCasting : MonoBehaviour
                 case "Healing":
                     if (health < 100)
                     {
-                        health += 30;
-                        mana -= 30;
-                        manaIncBool = true;
-                        UpdateData();
+                        if (EnhancementActive)
+                        {
+                            health += 60;
+                            mana -= 30;
+                            manaIncBool = true;
+                            UpdateData();
+                            EnhancementActive = false;
+
+                            if (health > 100)
+                            {
+                                health = 100;
+                            }
+                            break;
+                        }
+
+                        else
+                        {
+                            health += 30;
+                            mana -= 30;
+                            manaIncBool = true;
+                            UpdateData();
+
+                            if (health > 100)
+                            {
+                                health = 100;
+                            }
+                            break;
+                        }
+                           
                     }
                    
                     if (health > 100)
                     {
                         health = 100;
                     }
+                    break;
+
+                case "Enhancement":
+
+                    EnhancementActive = true;
+                    mana -= 30;
+                    manaIncBool = true;
+                    UpdateData();
+
                     break;
             }
         }
