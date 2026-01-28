@@ -13,6 +13,8 @@ TagManager:
   - FireballEnemy
   - Crossbow
   - Shield
+  - Target1
+  - Target2
   layers:
   - Default
   - TransparentFX

@@ -11,7 +11,7 @@ public class Fireball : MonoBehaviour
             GameObject fbSound = Instantiate(fireBallSound, transform.position, Quaternion.identity);
             Destroy(fbSound, 3f);
             Destroy(gameObject);
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
             //print("Target");
         }
 
