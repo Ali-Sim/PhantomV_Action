@@ -1328,6 +1328,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  ActualShield: {fileID: 0}
 --- !u!136 &365588335
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19383,6 +19384,7 @@ MonoBehaviour:
   firePoint: {fileID: 181922484}
   projectileSpeed: 10
   canShoot: 1
+  canMove: 1
 --- !u!65 &1920418928
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ TagManager:
   - Hitbox
   - FireballEnemy
   - Crossbow
+  - Shield
   layers:
   - Default
   - TransparentFX
