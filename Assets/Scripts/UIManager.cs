@@ -4,7 +4,7 @@ public class UIManager : MonoBehaviour
 {
     string mainMenuScene = "MainMenu";
     string levelTutorial = "LvlOneProto";
-    string levelOne = "LvlOneProto";
+    string levelOne = "AlejandroTest";
     string levelTwo = "MarcusTestScene";
     string levelBoss = "SOUNDSMarcusTest";
     string creditsScene = "Credits";
@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     string winScene = "WIN";
 
     
-    bool Paused = false;
+    public bool Paused = false;
     bool isDead = false;
     public GameObject Player;
 
@@ -31,8 +31,10 @@ public class UIManager : MonoBehaviour
         if ((SceneManager.GetActiveScene().name == levelTutorial) || (SceneManager.GetActiveScene().name == levelOne)
             || (SceneManager.GetActiveScene().name == levelTwo) || (SceneManager.GetActiveScene().name == levelBoss))
         {
+            Debug.Log("Open Pause Close");
             IsInTheGame = true;
             UnpauseGame();
+            Paused = false;
 
             //Player = GameObject.Find("Player");
             pauseMenu.SetActive(false);

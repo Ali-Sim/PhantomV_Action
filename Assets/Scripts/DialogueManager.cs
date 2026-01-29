@@ -27,7 +27,7 @@ public class DialogueManager : MonoBehaviour
     public int characterID;
     public int currentTextIndex;
     public int lengthOfDialouge;
-
+    public Coroutine dioCor;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -106,10 +106,13 @@ public class DialogueManager : MonoBehaviour
 
     public void OpenTextBox(int characterIndex)
     {
+        StopAllCoroutines();
+        CloseTextBox();
+
         textBoxOpen = true;
         currentTextIndex = 0;
         characterID = characterIndex;
-        doneTyping = false;
+        doneTyping = true;
         dialougeBox.SetActive(true);
         PlayDio();
     }
@@ -159,18 +162,23 @@ public class DialogueManager : MonoBehaviour
         commaCheckTxt = dialougeGrid[currentTextIndex + 2, characterID];
         commaCheckTxt = commaCheckTxt.Replace("`", ",");
 
-        if (doneTyping) //if the player clicks the button after typing, move to the next text dialouge
+        if (doneTyping && currentTextIndex == 0) //if the player clicks the button after typing, move to the next text dialouge
         {
-            StopAllCoroutines();
             nameTxt.text = commaCheckName;
-            StartCoroutine(Dialogue(commaCheckTxt));
+            dioCor = StartCoroutine(Dialogue(commaCheckTxt));
 
+        }
+
+        else if (doneTyping)
+        {
+            nameTxt.text = commaCheckName;
+            dioCor = StartCoroutine(Dialogue(commaCheckTxt));
         }
 
         else //if they click forwards before the text types, skip to the end and finish the text
         {
             doneTyping = true;
-            StopAllCoroutines();
+            StopCoroutine(dioCor);
             nameTxt.text = commaCheckName;
             dialougeTxt.text = commaCheckTxt;
         }
@@ -180,12 +188,12 @@ public class DialogueManager : MonoBehaviour
 
     void ChangeCharacter()
     {
-        switch (characterID)
+        switch (nameTxt.text)
         {
-            case 1:
+            case "":
                 SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("GoodWizard");
                 break;
-            case 2:
+            case " ":
                 SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("BadWizard");
                 break;
 
@@ -201,6 +209,44 @@ public class DialogueManager : MonoBehaviour
     public void DebugTwo()
     {
         OpenTextBox(2);
+    }
+
+    public IEnumerator PleaseShowUp()
+    {
+
+        OpenTextBox(1);
+
+        print("FirstPart");
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(0.07f);
+            print("SecondPart");
+        }
+
+        OpenTextBox(2);
+
+    }
+
+    public void Debug3()
+    {
+
+        OpenTextBox(1);
+
+        print("FirstPart");
+
+        while (textBoxOpen)
+        {
+            print("SecondPart");
+        }
+
+        OpenTextBox(2);
+
+    }
+
+    public void DebugOneTwo()
+    {
+        StartCoroutine(PleaseShowUp());
     }
 }
 
