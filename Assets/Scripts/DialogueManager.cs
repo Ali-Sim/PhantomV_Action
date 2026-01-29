@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
     public bool doneTyping, textBoxOpen;
     public string commaCheckTxt;
     public string commaCheckName;
+    public float inBetweenNumber = 0.01f ;
 
     //Indexes
     public int characterID;
@@ -34,7 +35,7 @@ public class DialogueManager : MonoBehaviour
     {
         //How to call items in the CSV - grid[x, y] where x and y are numbers starting from 0 (A1 on the excel sheet would be 0,0 and A2 on the excell sheet would be 0,1)
         //How to call certain characters - grid[2 + currentTextIndex, characterID]
-        csvDialogue = Resources.Load<TextAsset>("CSVFiles/TestingDialouge02");
+        csvDialogue = Resources.Load<TextAsset>("CSVFiles/ActualDialogue");
         dialougeGrid = getCSVGrid(csvDialogue.text);
 
         dialougeBox.SetActive(false);
@@ -44,6 +45,12 @@ public class DialogueManager : MonoBehaviour
         currentTextIndex = 0;
 
         doneTyping = true;
+
+        if (SceneManager.GetActiveScene().name == "LevelOneActual")
+        {
+            Lvl01Dio01FUNC();
+        }
+
     }
 
     // Update is called once per frame
@@ -106,7 +113,6 @@ public class DialogueManager : MonoBehaviour
 
     public void OpenTextBox(int characterIndex)
     {
-        StopAllCoroutines();
         CloseTextBox();
 
         textBoxOpen = true;
@@ -124,7 +130,7 @@ public class DialogueManager : MonoBehaviour
         string EndCheck = dialougeGrid[currentTextIndex + 3, characterID];
         Debug.Log(EndCheck);
 
-        if (dialougeGrid[currentTextIndex + 3, characterID] == "END TEXT" || dialougeGrid[currentTextIndex + 3, characterID] == null || dialougeGrid[currentTextIndex + 3, characterID] == "END TEXT\r\n")
+        if ((dialougeGrid[currentTextIndex + 3, characterID] == "END TEXT" || dialougeGrid[currentTextIndex + 3, characterID] == null || dialougeGrid[currentTextIndex + 3, characterID] == "END TEXT\r\n") & doneTyping)
         {
             Debug.Log("Attempting To Close");
             CloseTextBox();
@@ -150,6 +156,7 @@ public class DialogueManager : MonoBehaviour
 
     public void CloseTextBox()
     {
+
         dialougeBox.SetActive(false);
         textBoxOpen = false;
     }
@@ -201,6 +208,149 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public IEnumerator Lvl01Dio01()
+    {
+
+        OpenTextBox(1);
+
+        textBoxOpen = true;
+
+
+        while (textBoxOpen)
+        {
+            print("Waiting");
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(2);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(3);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(4);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(5);
+    }
+
+    public IEnumerator Lvl01Dio02()
+    {
+
+        OpenTextBox(6);
+
+        textBoxOpen = true;
+
+
+        while (textBoxOpen)
+        {
+            print("Waiting");
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(7);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(8);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(9);
+
+
+    }
+
+    public IEnumerator Lvl01Dio03()
+    {
+
+        OpenTextBox(10);
+
+        textBoxOpen = true;
+
+
+        while (textBoxOpen)
+        {
+            print("Waiting");
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(11);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(12);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(13);
+
+
+    }
+
+    public void Lvl01Dio01FUNC()
+    {
+        StopAllCoroutines();
+        StartCoroutine(Lvl01Dio01());
+    }
+
+    public void Lvl01Dio02FUNC()
+    {
+        StopAllCoroutines();
+        StartCoroutine(Lvl01Dio02());
+    }
+    public void Lvl01Dio03FUNC()
+    {
+        StopAllCoroutines();
+        StartCoroutine(Lvl01Dio03());
+    }
+
+
+    /*
     public void DebugOne()
     {
         OpenTextBox(1);
@@ -248,5 +398,7 @@ public class DialogueManager : MonoBehaviour
     {
         StartCoroutine(PleaseShowUp());
     }
+
+    */
 }
 

@@ -60,7 +60,16 @@ public class SpellCasting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(TargetCount == 5)
+        {
+            TargetCount += 1;
+
+        }
+
+        if(FirstTimeShield == -1)
+        {
+            FirstTimeShield -= 1;
+        }
         
             
 
