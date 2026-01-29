@@ -42,6 +42,10 @@ public class SpellCasting : MonoBehaviour
     public AudioSource SpellCastingProducer;
     public AudioClip[] spellSoundEffects = new AudioClip[7]; //  0 = "Fireball", 1 = "Whirlwind", 2 = "Shield", 3 = "Healing", 4 = "Lightning Cloud", 5 = "Ghost", 6 = "Enhancement"
 
+    public int TargetCount = 0;
+    //AFTER DESTROYING ALL TARGETS PLAY DIALOGUE
+    public int FirstTimeShield = 2;
+    // AFTER COMPLETED SHIELD FOR FIRST TIME PLAY DIALOGUE
 
     public GameObject ActualShield;
     void Start()
@@ -111,6 +115,7 @@ public class SpellCasting : MonoBehaviour
                         EnhancementActive = false;
                     }
                     ActualShield.SetActive(true);
+                    FirstTimeShield--;
 
                     break;
 
