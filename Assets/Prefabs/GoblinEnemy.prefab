@@ -516,8 +516,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3748655087740287278}
-  - component: {fileID: 8555990601202591162}
   - component: {fileID: 6769951372024168830}
+  - component: {fileID: 7074617443971367088}
   m_Layer: 0
   m_Name: GoblinEnemy
   m_TagString: Hitbox
@@ -533,7 +533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4709560657257896378}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.5290504, z: -0, w: 0.84859043}
+  m_LocalRotation: {x: 0, y: 0.5290531, z: 0, w: 0.84858876}
   m_LocalPosition: {x: 64.52584, y: 0.82874274, z: 174.4165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -541,7 +541,22 @@ Transform:
   - {fileID: 134884228502686771}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 63.883, z: 0}
---- !u!65 &8555990601202591162
+--- !u!114 &6769951372024168830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709560657257896378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d767d76fa89e66f4d8304e6f7fe3d38f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotateToPlayer
+  playerTransform: {fileID: 0}
+  rotationSpeed: 5
+  Player: {fileID: 0}
+--- !u!65 &7074617443971367088
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -562,21 +577,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 20, y: 1, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6769951372024168830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4709560657257896378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d767d76fa89e66f4d8304e6f7fe3d38f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RotateToPlayer
-  playerTransform: {fileID: 0}
-  rotationSpeed: 5
-  Player: {fileID: 0}
 --- !u!1 &5253493105616089893
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,8 +607,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5253493105616089893}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3051801, y: 0.44177002, z: 0.02398014}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
