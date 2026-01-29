@@ -1,9 +1,6 @@
 using UnityEngine;
-using System.Windows.Input;
-using NUnit.Framework;
-using UnityEngine.UI;
-using System.Dynamic;
 
+using UnityEngine.UI;
 public class SpellcastInputs : MonoBehaviour
 {
     // Page of the book that the player is on
