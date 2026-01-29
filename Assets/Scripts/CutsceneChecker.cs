@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,8 +7,8 @@ public class CutsceneChecker : MonoBehaviour
     string mainMenuScene = "MainMenu";
     string LevelOneIntro = "IntroLevelOneAnimation";
     string LevelOne = "LevelOneActual";
-    string LevelOneOutro = "AlejandroTest";
-    string LevelTwoIntro = "MarcusTestScene";
+    string LevelOneOutro = "OutroLevelOneAnimation";
+    string LevelTwoIntro = "LvlTwoProto";
     string LevelTwoOutro = "SOUNDSMarcusTest";
     string LevelThreeIntro = "Credits";
     string LevelThreeOutro = "Controls";
@@ -20,6 +21,11 @@ public class CutsceneChecker : MonoBehaviour
         {
             Invoke("LoadLevelOne",24.5f);
         }
+
+        if (SceneManager.GetActiveScene().name == LevelOneOutro)
+        {
+            Invoke("LoadLevelTwoIntro", 5f);
+        }
     }
 
     // Update is called once per frame
@@ -28,8 +34,39 @@ public class CutsceneChecker : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "EndOfTutorialTrigger":
+                if (SceneManager.GetActiveScene().name == LevelOneIntro)
+                {
+                    LoadLevelOneEnd();
+                }
+                else if (SceneManager.GetActiveScene().name == LevelOneOutro)
+                {
+                    SceneManager.LoadScene(winScene);
+                }
+                    break;
+
+        }
+    }
+
     void LoadLevelOne()
     {
         SceneManager.LoadScene(LevelOne);
     }
+
+    void LoadLevelTwoIntro()
+    {
+        SceneManager.LoadScene(LevelTwoIntro);
+    }
+
+    void LoadLevelOneEnd()
+    {
+        SceneManager.LoadScene(LevelOneOutro);
+    }
+
+
+
 }

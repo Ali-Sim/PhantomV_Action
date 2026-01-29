@@ -30,6 +30,9 @@ public class DialogueManager : MonoBehaviour
     public int lengthOfDialouge;
     public Coroutine dioCor;
 
+    //Targets + Sheild
+    public GameObject SpellCastingVariable;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,6 +54,13 @@ public class DialogueManager : MonoBehaviour
             Lvl01Dio01FUNC();
         }
 
+        if (SceneManager.GetActiveScene().name == "LvlTwoProto")
+        {
+            OpenTextBox(14);
+        }
+
+        SpellCastingVariable  = GameObject.Find("PlayerMain");
+
     }
 
     // Update is called once per frame
@@ -60,6 +70,21 @@ public class DialogueManager : MonoBehaviour
         {
             ClickForward();
         }
+
+        if (SpellCastingVariable.GetComponent<SpellCasting>().TargetCount == 11)
+        {
+            
+            Lvl01Dio02FUNC();
+            SpellCastingVariable.GetComponent<SpellCasting>().TargetCount += 1;
+
+        }
+
+        if (SpellCastingVariable.GetComponent<SpellCasting>().FirstTimeShield == -1)
+        {
+            SpellCastingVariable.GetComponent<SpellCasting>().FirstTimeShield -= 1;
+            Lvl01Dio03FUNC();   
+        }
+
     }
 
     public string[,] getCSVGrid(string csvText)

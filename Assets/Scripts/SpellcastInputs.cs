@@ -254,6 +254,11 @@ public class SpellcastInputs : MonoBehaviour
 
                 break;
 
+            case "Enhancement":
+
+
+                break;
+
 
         }
     }
@@ -287,6 +292,17 @@ public class SpellcastInputs : MonoBehaviour
             case "Healing":
                 SpellActivationProducer.clip = spellSoundEffects[3];
                 SpellActivationProducer.Play();
+                break;
+
+            case "Enhancement":
+                SpellActivationProducer.clip = spellSoundEffects[6];
+                SpellActivationProducer.Play();
+                break;
+
+            case "Shield":
+                SpellActivationProducer.clip = spellSoundEffects[2];
+                SpellActivationProducer.Play();
+        
                 break;
 
 

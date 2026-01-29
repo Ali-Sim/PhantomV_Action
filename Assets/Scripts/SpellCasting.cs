@@ -53,14 +53,14 @@ public class SpellCasting : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
-        StartCoroutine(ManaIncrement(1f));
+        StartCoroutine(ManaIncrement(0.5f));
         ActualShield.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(TargetCount == 5)
+        if(TargetCount == 10)
         {
             TargetCount += 1;
 
@@ -68,7 +68,7 @@ public class SpellCasting : MonoBehaviour
 
         if(FirstTimeShield == -1)
         {
-            FirstTimeShield -= 1;
+            FirstTimeShield -=0;
         }
         
             
@@ -237,7 +237,18 @@ public class SpellCasting : MonoBehaviour
                 SpellCastingProducer.clip = spellSoundEffects[1];
                 SpellCastingProducer.Play();
                 break;
-            
+            case "Enhancement":
+                SpellCastingProducer.clip = spellSoundEffects[6];
+                SpellCastingProducer.Play();
+                break;
+
+            case "Shield":
+                SpellCastingProducer.clip = spellSoundEffects[2];
+                SpellCastingProducer.Play();
+
+                break;
+
+
         }
     }
 

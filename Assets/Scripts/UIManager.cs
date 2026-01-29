@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     string mainMenuScene = "MainMenu";
-    string levelOne = "LevelOneActual";
-    string levelTwo = "MarcusTestScene";
-    string levelThree = "N/A";
+    string levelOne = "IntroLevelOneAnimation";
+    string levelTwo = "LvlTwoProto";
+    string levelThree = "LevelOneActual";
     string levelBoss = "SOUNDSMarcusTest";
     string creditsScene = "Credits";
     string helpScene = "Controls";
@@ -19,7 +19,8 @@ public class UIManager : MonoBehaviour
     public GameObject gameOverMenu;
     public GameObject pauseMenu;
 
-    private bool IsInTheGame; 
+    private bool IsInTheGame;
+    public int DeathCheck = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,7 +30,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1.0f; //sets time scale
 
         if ((SceneManager.GetActiveScene().name == levelOne) || (SceneManager.GetActiveScene().name == levelOne)
-            || (SceneManager.GetActiveScene().name == levelTwo) || (SceneManager.GetActiveScene().name == levelBoss))
+            || (SceneManager.GetActiveScene().name == levelTwo) || (SceneManager.GetActiveScene().name == levelThree))
         {
             Debug.Log("Open Pause Close");
             IsInTheGame = true;
@@ -56,11 +57,19 @@ public class UIManager : MonoBehaviour
         }
 
         
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if ((Player.GetComponent<SpellCasting>().health == 0) && DeathCheck == 0)
+        {
+            GameOver();
+            DeathCheck += 1;
+        }
+
         {
             if (Input.GetKeyDown(KeyCode.Escape) && !isDead)
             {
@@ -150,6 +159,8 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0f;
 
         gameOverMenu.SetActive(true);
+
+        isDead = true;
 
     }
 

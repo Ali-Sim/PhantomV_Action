@@ -30,8 +30,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Actual Scenes/IntroLevelOneAnimation.unity
     guid: 4245f57888cf70c429f7d1666847c7a4
   - enabled: 1
+    path: Assets/Scenes/LvlTwoProto.unity
+    guid: 488a8f6b255088546bc3024f19c291fd
+  - enabled: 1
     path: Assets/Scenes/Actual Scenes/LevelOneActual.unity
     guid: 102f7056558ffb444b5fff729bc3f0e8
+  - enabled: 1
+    path: Assets/Scenes/Actual Scenes/OutroLevelOneAnimation.unity
+    guid: 766ad23941c991e4c881e52a8eb58b76
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 993ec8ab7eecda7488ebbcbc3f2e1798, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
