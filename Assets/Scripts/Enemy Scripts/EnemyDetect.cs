@@ -12,6 +12,7 @@ public class EnemyDetect : MonoBehaviour
     private bool isMoving = false;
     private SpellCasting playerSpellScript;
 
+    public GameObject EnemyAttack1, EnemyAttack2;
     void Start()
     {
         // calling the script for better performance
@@ -19,6 +20,10 @@ public class EnemyDetect : MonoBehaviour
 
         // Ensures only the first stance is active at start
         SetStance(0);
+
+
+        EnemyAttack1.SetActive(false);
+        EnemyAttack2.SetActive(false);
     }
 
     private void OnTriggerStay(Collider other)
@@ -34,6 +39,7 @@ public class EnemyDetect : MonoBehaviour
                 if (!isMoving)
                 {
                     isMoving = true;
+                    
                     stanceRoutine = StartCoroutine(StanceLoop());
                 }
             }
@@ -55,12 +61,18 @@ public class EnemyDetect : MonoBehaviour
     private void StopMovement()
     {
         isMoving = false;
+
         if (stanceRoutine != null)
         {
             StopCoroutine(stanceRoutine);
             stanceRoutine = null;
         }
         SetStance(0); // Return to Idle/Default stance
+        enemyStance[0].SetActive(false);
+        EnemyAttack1.SetActive(true);
+        Invoke("EnemySecondAttack", 1.5f);
+        Invoke("EndEnemyAttack", 3f);
+        
     }
 
     IEnumerator StanceLoop()
@@ -83,8 +95,21 @@ public class EnemyDetect : MonoBehaviour
         {
             if (enemyStance[i] != null)
             {
+                
                 enemyStance[i].SetActive(i == index);
+                
             }
         }
+    }
+
+    void EnemySecondAttack()
+    {
+        EnemyAttack1.SetActive(false);
+        EnemyAttack2.SetActive(true);
+    }
+
+    void EndEnemyAttack()
+    {
+        EnemyAttack2.SetActive(false);
     }
 }
