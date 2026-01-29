@@ -2366,6 +2366,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -8331,6 +8335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -13580,6 +13588,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -13875,6 +13887,10 @@ PrefabInstance:
     - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_Name
       value: Boulder (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
@@ -25341,6 +25357,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -29097,6 +29117,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -30099,6 +30123,10 @@ PrefabInstance:
     - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_Name
       value: Boulder (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
@@ -36240,6 +36268,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -39215,6 +39247,10 @@ PrefabInstance:
     - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_Name
       value: Boulder (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
@@ -59041,6 +59077,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -60119,6 +60159,10 @@ PrefabInstance:
     - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_Name
       value: Boulder (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
@@ -67092,6 +67136,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -69057,6 +69105,10 @@ PrefabInstance:
     - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_Name
       value: Boulder (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
@@ -71255,6 +71307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -73003,6 +73059,10 @@ PrefabInstance:
     - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_Name
       value: Boulder (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
@@ -79606,6 +79666,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -80141,6 +80205,10 @@ PrefabInstance:
     - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_Name
       value: Boulder (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
@@ -83427,6 +83495,10 @@ PrefabInstance:
     - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_Name
       value: Boulder (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
@@ -98406,6 +98478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -99633,6 +99709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -100485,6 +100565,10 @@ PrefabInstance:
     - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_Name
       value: Boulder (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
@@ -103690,6 +103774,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -103837,6 +103925,10 @@ PrefabInstance:
     - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_Name
       value: Boulder (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
@@ -109303,6 +109395,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -109563,6 +109659,10 @@ PrefabInstance:
     - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_Name
       value: Boulder (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
@@ -110836,6 +110936,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -111997,6 +112101,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -112874,6 +112982,10 @@ PrefabInstance:
     - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_Name
       value: Boulder (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
@@ -116187,6 +116299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -116922,6 +117038,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -117182,6 +117302,10 @@ PrefabInstance:
     - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_Name
       value: Boulder (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
@@ -122359,6 +122483,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boulder (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
+      objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.5436296
@@ -123025,6 +123153,10 @@ PrefabInstance:
     - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_Name
       value: Boulder (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 349450967953182250, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
+      propertyPath: m_TagString
+      value: Hitbox
       objectReference: {fileID: 0}
     - target: {fileID: 5006455708618881932, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
       propertyPath: m_LocalScale.x
