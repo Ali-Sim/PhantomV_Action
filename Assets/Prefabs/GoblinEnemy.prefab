@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 6769951372024168830}
   m_Layer: 0
   m_Name: GoblinEnemy
-  m_TagString: Untagged
+  m_TagString: Hitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -533,14 +533,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4709560657257896378}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.99482, y: 0.67823, z: 11.21602}
+  m_LocalRotation: {x: -0, y: 0.5290504, z: -0, w: 0.84859043}
+  m_LocalPosition: {x: 64.52584, y: 0.82874274, z: 174.4165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 134884228502686771}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 63.883, z: 0}
 --- !u!65 &8555990601202591162
 BoxCollider:
   m_ObjectHideFlags: 0
