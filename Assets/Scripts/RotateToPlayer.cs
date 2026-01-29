@@ -25,6 +25,15 @@ public class RotateToPlayer : MonoBehaviour
         }
     }
 
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInTrigger = true;
+        }
+    }
+
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
