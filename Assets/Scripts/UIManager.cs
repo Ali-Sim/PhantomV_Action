@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     string mainMenuScene = "MainMenu";
-    string levelTutorial = "LvlOneProto";
-    string levelOne = "AlejandroTest";
+    string levelOne = "LevelOneActual";
     string levelTwo = "MarcusTestScene";
+    string levelThree = "N/A";
     string levelBoss = "SOUNDSMarcusTest";
     string creditsScene = "Credits";
     string helpScene = "Controls";
@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
 
         Time.timeScale = 1.0f; //sets time scale
 
-        if ((SceneManager.GetActiveScene().name == levelTutorial) || (SceneManager.GetActiveScene().name == levelOne)
+        if ((SceneManager.GetActiveScene().name == levelOne) || (SceneManager.GetActiveScene().name == levelOne)
             || (SceneManager.GetActiveScene().name == levelTwo) || (SceneManager.GetActiveScene().name == levelBoss))
         {
             Debug.Log("Open Pause Close");
@@ -86,7 +86,7 @@ public class UIManager : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(levelTutorial);
+        SceneManager.LoadScene(levelOne);
     }
 
     public void GameOver()

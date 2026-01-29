@@ -5,8 +5,15 @@ public class Target : MonoBehaviour
 {
     public GameObject brokenTarget;
     public GameObject Player;
+
+    private void Start()
+    {
+        Player = GameObject.Find("PlayerMain");
+    }
     private void OnTriggerEnter(Collider other)
     {
+        
+
         switch (other.gameObject.tag)
         {
             case "Fireball":
