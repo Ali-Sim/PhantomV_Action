@@ -39,11 +39,11 @@ public class CutsceneChecker : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "EndOfTutorialTrigger":
-                if (SceneManager.GetActiveScene().name == LevelOneIntro)
+                if (SceneManager.GetActiveScene().name == LevelOne)
                 {
                     LoadLevelOneEnd();
                 }
-                else if (SceneManager.GetActiveScene().name == LevelOneOutro)
+                else if (SceneManager.GetActiveScene().name == LevelTwoIntro)
                 {
                     SceneManager.LoadScene(winScene);
                 }
