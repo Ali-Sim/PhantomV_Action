@@ -11,6 +11,7 @@ public class Target : MonoBehaviour
         {
             case "Fireball":
                 Vector3 targetPos = gameObject.transform.position;
+                Player.GetComponent<SpellCasting>().TargetCount++;
                 Player.GetComponent<SpellCasting>().TargetCount += 1;
                 gameObject.SetActive(false);
                 brokenTarget.SetActive(true);
