@@ -500,7 +500,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TBA
+  m_text: 'Aidan Hendrix - Lead Programmer
+
+    Alejandro Armas - UI/Scene Management
+    & Animations
+
+    Alivia Simmons - Level Design & Art
+
+    Marcus Gaudreau -
+    Programmer
+
+    Nylah Connor - Lead Artist'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fcf8cea8622559743a16214e72ddc987, type: 2}
   m_sharedMaterial: {fileID: -5458903379732113487, guid: fcf8cea8622559743a16214e72ddc987, type: 2}
@@ -527,8 +537,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52.1
-  m_fontSizeBase: 52.1
+  m_fontSize: 78.66
+  m_fontSizeBase: 78.66
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -540,9 +550,9 @@ MonoBehaviour:
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -49.24
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: 31.2
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
@@ -865,6 +875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0aab5b9d6badb340b20a0726cc96c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  Paused: 0
   Player: {fileID: 0}
   gameOverMenu: {fileID: 0}
   pauseMenu: {fileID: 0}
@@ -1066,7 +1077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.4392157}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1141,14 +1152,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 1a1dc1c5acd558d46a07acb61ec2c69f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1223,7 +1234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Credit Scene
+  m_text: Credits
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fcf8cea8622559743a16214e72ddc987, type: 2}
   m_sharedMaterial: {fileID: -5458903379732113487, guid: fcf8cea8622559743a16214e72ddc987, type: 2}
@@ -1250,8 +1261,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52.1
-  m_fontSizeBase: 52.1
+  m_fontSize: 115.01
+  m_fontSizeBase: 115.01
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
