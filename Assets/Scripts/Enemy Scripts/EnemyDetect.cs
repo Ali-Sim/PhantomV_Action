@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class EnemyDetect : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class EnemyDetect : MonoBehaviour
     private SpellCasting playerSpellScript;
 
     public GameObject EnemyAttack1, EnemyAttack2;
+
+    public bool CancelAnimation = false;
     void Start()
     {
         // calling the script for better performance
@@ -55,6 +58,16 @@ public class EnemyDetect : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             StopMovement();
+        }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            CancelAnimation = true;
+
         }
     }
 
@@ -105,13 +118,37 @@ public class EnemyDetect : MonoBehaviour
 
     void EnemySecondAttack()
     {
-        EnemyAttack1.SetActive(false);
-        EnemyAttack2.SetActive(true);
+        if (CancelAnimation)
+        {
+            EnemyAttack1.SetActive(false);
+            EnemyAttack2.SetActive(false);
+            enemyStance[0].SetActive(true);
+            CancelAnimation = false;
+        }
+        else
+        {
+            EnemyAttack1.SetActive(false);
+            EnemyAttack2.SetActive(true);
+        }
+            
     }
 
     void EndEnemyAttack()
     {
-        EnemyAttack2.SetActive(false);
-        enemyStance[0].SetActive(true);
+        if (CancelAnimation)
+        {
+            EnemyAttack1.SetActive(false);
+            EnemyAttack2.SetActive(false);
+            enemyStance[0].SetActive(true);
+            CancelAnimation = false;
+        }
+
+        else
+        {
+            EnemyAttack2.SetActive(false);
+            enemyStance[0].SetActive(true);
+        }
+
+            
     }
 }
