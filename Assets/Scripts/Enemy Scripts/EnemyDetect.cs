@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class EnemyDetect : MonoBehaviour
 {
@@ -13,17 +14,15 @@ public class EnemyDetect : MonoBehaviour
     private SpellCasting playerSpellScript;
 
     public GameObject EnemyAttack1, EnemyAttack2;
+
+    public bool CancelAnimation = false;
     void Start()
     {
         // calling the script for better performance
         playerSpellScript = player.GetComponent<SpellCasting>();
 
         // Ensures only the first stance is active at start
-        SetStance(0);
-
-
-        EnemyAttack1.SetActive(false);
-        EnemyAttack2.SetActive(false);
+       
     }
 
     private void OnTriggerStay(Collider other)
@@ -58,6 +57,16 @@ public class EnemyDetect : MonoBehaviour
         }
     }
 
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            CancelAnimation = true;
+
+        }
+    }
+
     private void StopMovement()
     {
         isMoving = false;
@@ -72,6 +81,7 @@ public class EnemyDetect : MonoBehaviour
         EnemyAttack1.SetActive(true);
         Invoke("EnemySecondAttack", 1.5f);
         Invoke("EndEnemyAttack", 3f);
+        
         
     }
 
@@ -104,12 +114,37 @@ public class EnemyDetect : MonoBehaviour
 
     void EnemySecondAttack()
     {
-        EnemyAttack1.SetActive(false);
-        EnemyAttack2.SetActive(true);
+        if (CancelAnimation)
+        {
+            EnemyAttack1.SetActive(false);
+            EnemyAttack2.SetActive(false);
+            enemyStance[0].SetActive(true);
+            CancelAnimation = false;
+        }
+        else
+        {
+            EnemyAttack1.SetActive(false);
+            EnemyAttack2.SetActive(true);
+        }
+            
     }
 
     void EndEnemyAttack()
     {
-        EnemyAttack2.SetActive(false);
+        if (CancelAnimation)
+        {
+            EnemyAttack1.SetActive(false);
+            EnemyAttack2.SetActive(false);
+            enemyStance[0].SetActive(true);
+            CancelAnimation = false;
+        }
+
+        else
+        {
+            EnemyAttack2.SetActive(false);
+            enemyStance[0].SetActive(true);
+        }
+
+            
     }
 }
