@@ -39,16 +39,12 @@ public class EnemyDetect : MonoBehaviour
                 GoblinAnim.SetBool("Walking", true);
 
                 // Start the loop if we aren't already moving
-                if (!isMoving)
-                {
-                    GoblinAnim.SetBool("Walking", false);
-                    GoblinAnim.SetBool("Attack", true);
-                    //isMoving = true;
-                    //stanceRoutine = StartCoroutine(StanceLoop());
-                }
+
             }
             else
             {
+
+                GoblinAnim.SetBool("Attack", true);
                 //StopMovement();
             }
         }
@@ -59,6 +55,7 @@ public class EnemyDetect : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GoblinAnim.SetBool("Walking", false);
+            GoblinAnim.SetBool("Attack", false);
             //StopMovement();
         }
     }
@@ -68,6 +65,8 @@ public class EnemyDetect : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            GoblinAnim.SetBool("Walking", true);
+            GoblinAnim.SetBool("Attack", false);
             //CancelAnimation = true;
 
         }
