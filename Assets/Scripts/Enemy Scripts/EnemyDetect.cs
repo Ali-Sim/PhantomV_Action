@@ -16,6 +16,8 @@ public class EnemyDetect : MonoBehaviour
     public GameObject EnemyAttack1, EnemyAttack2;
 
     public bool CancelAnimation = false;
+
+    public Animator GoblinAnim;
     void Start()
     {
         // calling the script for better performance
@@ -33,18 +35,21 @@ public class EnemyDetect : MonoBehaviour
             {
                 // Movement Logic
                 enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, player.transform.position, 5f * Time.deltaTime);
+                GoblinAnim.SetBool("Attack", false);
+                GoblinAnim.SetBool("Walking", true);
 
                 // Start the loop if we aren't already moving
                 if (!isMoving)
                 {
-                    isMoving = true;
-                    
-                    stanceRoutine = StartCoroutine(StanceLoop());
+                    GoblinAnim.SetBool("Walking", false);
+                    GoblinAnim.SetBool("Attack", true);
+                    //isMoving = true;
+                    //stanceRoutine = StartCoroutine(StanceLoop());
                 }
             }
             else
             {
-                StopMovement();
+                //StopMovement();
             }
         }
     }
@@ -53,7 +58,8 @@ public class EnemyDetect : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            StopMovement();
+            GoblinAnim.SetBool("Walking", false);
+            //StopMovement();
         }
     }
 
@@ -62,12 +68,12 @@ public class EnemyDetect : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            CancelAnimation = true;
+            //CancelAnimation = true;
 
         }
     }
 
-    private void StopMovement()
+    /*private void StopMovement()
     {
         isMoving = false;
 
@@ -99,7 +105,7 @@ public class EnemyDetect : MonoBehaviour
         }
     }
 
-    void SetStance(int index)
+    /*void SetStance(int index)
     {
         for (int i = 0; i < enemyStance.Length; i++)
         {
@@ -110,7 +116,7 @@ public class EnemyDetect : MonoBehaviour
                 
             }
         }
-    }
+    }*/
 
     void EnemySecondAttack()
     {
