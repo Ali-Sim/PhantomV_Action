@@ -73,6 +73,7 @@ public class EnemyDetect : MonoBehaviour
         Invoke("EnemySecondAttack", 1.5f);
         Invoke("EndEnemyAttack", 3f);
         
+        
     }
 
     IEnumerator StanceLoop()
@@ -111,5 +112,6 @@ public class EnemyDetect : MonoBehaviour
     void EndEnemyAttack()
     {
         EnemyAttack2.SetActive(false);
+        enemyStance[0].SetActive(true);
     }
 }
