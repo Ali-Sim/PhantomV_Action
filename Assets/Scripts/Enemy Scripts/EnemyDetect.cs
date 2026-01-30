@@ -22,11 +22,7 @@ public class EnemyDetect : MonoBehaviour
         playerSpellScript = player.GetComponent<SpellCasting>();
 
         // Ensures only the first stance is active at start
-        SetStance(0);
-
-
-        EnemyAttack1.SetActive(false);
-        EnemyAttack2.SetActive(false);
+       
     }
 
     private void OnTriggerStay(Collider other)
