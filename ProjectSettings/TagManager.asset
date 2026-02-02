@@ -17,6 +17,8 @@ TagManager:
   - Target2
   - LightningCloudDetect
   - EndOfTutorialTrigger
+  - HealingSpellPickup
+  - EnhancementSpellPickup
   layers:
   - Default
   - TransparentFX

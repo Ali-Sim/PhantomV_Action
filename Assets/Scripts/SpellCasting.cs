@@ -21,8 +21,11 @@ public class SpellCasting : MonoBehaviour
     public CharacterController controller;
     public float jumpHeight = 6.0f;
     public float gravity = -9.81f;
-    private Vector3 velocity; 
+    private Vector3 velocity;
 
+
+    public bool HealthPagePickedUp = false;
+    public bool EnhancementPagePickedUp = false;
 
 
     public Vector3 destination;
@@ -275,6 +278,16 @@ public class SpellCasting : MonoBehaviour
                 Invoke("AllowEnemyMovement", 3f);
                 break;
             case "FireballEnemy":
+                break;
+
+            case "HealingSpellPickup":
+                HealthPagePickedUp = true;
+                Destroy(other.gameObject);
+                break;
+
+            case "EnhancementSpellPickup":
+                EnhancementPagePickedUp = true;
+                Destroy(other.gameObject);
                 break;
         }
     }
