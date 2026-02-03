@@ -19,6 +19,8 @@ TagManager:
   - EndOfTutorialTrigger
   - HealingSpellPickup
   - EnhancementSpellPickup
+  - DialogueTrigger1
+  - DialogueTrigger2
   layers:
   - Default
   - TransparentFX
