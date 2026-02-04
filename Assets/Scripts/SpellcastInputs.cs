@@ -19,14 +19,18 @@ public class SpellcastInputs : MonoBehaviour
     public bool SpellHeld = false;
     private int KeyLightUp;
 
-
+    public GameObject Player;
 
     //Added fireBall GObj to the code -Marcus
-    public GameObject fireBall, whirlWind, healing;
+    public GameObject fireBall, whirlWind, healing, enhancement, shield;
 
     // Hold the UI Images for the InputKeys and the Book Pages
     public GameObject[] BookImages = new GameObject[7];
     public GameObject[] KeyImages = new GameObject[4];
+    public GameObject HealingPage;
+    public GameObject EnhancementPage;
+    public GameObject HealingPageEMPTY;
+    public GameObject EnhancementPageEMPTY;
 
     //audiosources and clips for the sound effects
     public AudioSource SpellInputProducer;
@@ -44,7 +48,10 @@ public class SpellcastInputs : MonoBehaviour
         ResetImages();
         BookImages[PageNum].SetActive(true);
 
+        Player = GameObject.Find("PlayerMain");
 
+        HealingPage.SetActive(false);
+        EnhancementPage.SetActive(false);
     }
 
     // Update is called once per frame
@@ -137,6 +144,22 @@ public class SpellcastInputs : MonoBehaviour
             //Checks whether or not the button pressed is the correct button in the order of the spell combination
             CheckSpell();
         }
+
+
+
+        if (Player.GetComponent<SpellCasting>().HealthPagePickedUp)
+        {
+           
+            BookImages[3] = HealingPage;
+            HealingPageEMPTY.SetActive(false);
+        }
+
+        if (Player.GetComponent<SpellCasting>().EnhancementPagePickedUp)
+        {
+            
+            BookImages[6] = EnhancementPage;
+            EnhancementPageEMPTY.SetActive(false);
+        }
     }
 
 
@@ -215,6 +238,8 @@ public class SpellcastInputs : MonoBehaviour
         fireBall.SetActive(false); 
         whirlWind.SetActive(false);
         healing.SetActive(false);
+        enhancement.SetActive(false);
+        shield.SetActive(false);
     }
 
     void WhatSpell()
@@ -241,6 +266,8 @@ public class SpellcastInputs : MonoBehaviour
 
 
             case "Shield":
+                ResetSpells();
+                shield.SetActive(true);
                 break;
 
 
@@ -252,7 +279,8 @@ public class SpellcastInputs : MonoBehaviour
                 break;
 
             case "Enhancement":
-
+                ResetSpells();
+                enhancement.SetActive(true);
 
                 break;
 
