@@ -34,6 +34,7 @@ public class Fireball : MonoBehaviour
             {
                 Destroy(other.gameObject);
                 Player.GetComponent<SpellCasting>().EnhancementActive = false;
+
             }
             
             //Destroy(other.gameObject);
