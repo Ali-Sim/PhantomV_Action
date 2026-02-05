@@ -4,6 +4,7 @@ public class Fireball : MonoBehaviour
 {
     private bool collided;
     public GameObject fireBallSound;
+    public GameObject Player;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Target")
@@ -23,5 +24,24 @@ public class Fireball : MonoBehaviour
             Destroy(gameObject);
             //print("other");
         }
+
+
+        if (other.gameObject.tag == "EndBoulder")
+        {
+            GameObject fbSound = Instantiate(fireBallSound, transform.position, Quaternion.identity);
+            Destroy(fbSound, 3f);
+            if (Player.GetComponent<SpellCasting>().EnhancementActive)
+            {
+                Destroy(gameObject);
+            }
+            
+            //Destroy(other.gameObject);
+            //print("Target");
+        }
+    }
+
+    private void Start()
+    {
+        Player = GameObject.Find("Player");
     }
 }

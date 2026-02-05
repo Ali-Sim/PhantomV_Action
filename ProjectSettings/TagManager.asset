@@ -21,6 +21,8 @@ TagManager:
   - EnhancementSpellPickup
   - DialogueTrigger1
   - DialogueTrigger2
+  - EndBoulder
+  - DialogueTrigger3
   layers:
   - Default
   - TransparentFX
