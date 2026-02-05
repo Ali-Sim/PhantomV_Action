@@ -16,7 +16,7 @@ public class Fireball : MonoBehaviour
             //print("Target");
         }
 
-        else if (other.gameObject.tag != "Player" && other.gameObject.tag != "Fireball" && other.gameObject.tag != "Tree" && other.gameObject.tag != "Hitbox" && other.gameObject.tag != "Crossbow" && !collided)
+        else if (other.gameObject.tag != "Player" && other.gameObject.tag != "Fireball" && other.gameObject.tag != "Tree" && other.gameObject.tag != "Hitbox" && other.gameObject.tag != "Crossbow" && other.gameObject.tag != "DialogueTrigger1" && other.gameObject.tag != "DialogueTrigger2" && other.gameObject.tag != "DialogueTrigger3" && !collided)
         {
             GameObject fbSound = Instantiate(fireBallSound, transform.position, Quaternion.identity);
             collided = true;
@@ -32,7 +32,8 @@ public class Fireball : MonoBehaviour
             Destroy(fbSound, 3f);
             if (Player.GetComponent<SpellCasting>().EnhancementActive)
             {
-                Destroy(gameObject);
+                Destroy(other.gameObject);
+                Player.GetComponent<SpellCasting>().EnhancementActive = false;
             }
             
             //Destroy(other.gameObject);
@@ -42,6 +43,6 @@ public class Fireball : MonoBehaviour
 
     private void Start()
     {
-        Player = GameObject.Find("Player");
+        Player = GameObject.Find("PlayerMain");
     }
 }
