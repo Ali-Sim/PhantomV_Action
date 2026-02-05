@@ -6,10 +6,11 @@ public class UIManager : MonoBehaviour
     string levelOne = "IntroLevelOneAnimation";
     string levelTwo = "LvlTwoProto";
     string levelThree = "LevelOneActual";
-    string levelBoss = "SOUNDSMarcusTest";
+    string levelBoss = "LEVEL2TESTSCENE";
     string creditsScene = "Credits";
     string helpScene = "Controls";
     string winScene = "WIN";
+
 
     
     public bool Paused = false;
@@ -29,7 +30,7 @@ public class UIManager : MonoBehaviour
 
         Time.timeScale = 1.0f; //sets time scale
 
-        if ((SceneManager.GetActiveScene().name == levelOne) || (SceneManager.GetActiveScene().name == levelOne)
+        if ((SceneManager.GetActiveScene().name == levelOne) || (SceneManager.GetActiveScene().name == levelBoss)
             || (SceneManager.GetActiveScene().name == levelTwo) || (SceneManager.GetActiveScene().name == levelThree))
         {
             Debug.Log("Open Pause Close");
