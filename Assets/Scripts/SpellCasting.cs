@@ -51,6 +51,8 @@ public class SpellCasting : MonoBehaviour
     // AFTER COMPLETED SHIELD FOR FIRST TIME PLAY DIALOGUE
 
     public GameObject ActualShield;
+    public GameObject LightningCloud;
+    public GameObject EnhancedLightningCloud;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -58,6 +60,7 @@ public class SpellCasting : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         StartCoroutine(ManaIncrement(0.5f));
         ActualShield.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -179,6 +182,27 @@ public class SpellCasting : MonoBehaviour
                     UpdateData();
 
                     break;
+
+                case "Lightning Cloud":
+                    if (EnhancementActive)
+                    {
+                        Instantiate(EnhancedLightningCloud, new Vector3(transform.position.x -18.1f, transform.position.y + 19.99f, transform.position.z -93.54f), Quaternion.identity);
+                        mana -= 70;
+                        manaIncBool = true;
+                        UpdateData();
+                       EnhancementActive=false;
+                        break;
+                    }
+
+                    else
+                    {
+                        Instantiate(LightningCloud, new Vector3(transform.position.x - 7.55f, transform.position.y + 9.06f, transform.position.z + 6.87f), Quaternion.identity);
+                        mana -= 70;
+                        manaIncBool = true;
+                        UpdateData();
+                        
+                    }
+                        break;
             }
         }
 
@@ -251,6 +275,12 @@ public class SpellCasting : MonoBehaviour
 
                 break;
 
+            case "Lightning Cloud":
+                SpellCastingProducer.clip = spellSoundEffects[4];
+                SpellCastingProducer.Play();
+
+                break;
+
 
         }
     }
@@ -317,6 +347,11 @@ public class SpellCasting : MonoBehaviour
 
 
         }
+        
+    }
+
+    void ResetLightning()
+    {
         
     }
 

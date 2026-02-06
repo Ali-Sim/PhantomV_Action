@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -21,7 +22,27 @@ public class Enemy : MonoBehaviour
                     Destroy(gameObject);
                 }
                 break;
+
+            
         }
+
+        
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "LightningCloud":
+                EnemyHealth -= 100;
+                Invoke("DestroyEnemy", 1f);
+                break;
+        }
+    }
+
+    void DestroyEnemy()
+    {
+        Destroy(gameObject);
     }
 }
 

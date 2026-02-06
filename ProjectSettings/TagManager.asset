@@ -23,6 +23,7 @@ TagManager:
   - DialogueTrigger2
   - EndBoulder
   - DialogueTrigger3
+  - LightningCloud
   layers:
   - Default
   - TransparentFX
