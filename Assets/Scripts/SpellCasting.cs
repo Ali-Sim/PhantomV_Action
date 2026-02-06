@@ -337,6 +337,10 @@ public class SpellCasting : MonoBehaviour
                 Lvl2DioInt = 5;
                 Destroy(other.gameObject);
                 break;
+            case "Water":
+                health = 0;
+                UpdateData();
+                break;
         }
     }
     void AllowEnemyMovement()

@@ -24,6 +24,7 @@ TagManager:
   - EndBoulder
   - DialogueTrigger3
   - LightningCloud
+  - Water
   layers:
   - Default
   - TransparentFX
