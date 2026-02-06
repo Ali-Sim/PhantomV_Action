@@ -250,16 +250,16 @@ public class DialogueManager : MonoBehaviour
         switch (nameTxt.text)
         {
             case "Kaslvas The Great":
-                SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("KasMainImage");
+                SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("KaslavasHeadshot");
                 break;
             case "Goblin":
                 SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("GoblinMainImage");
                 break;
             case "Good Spellow":
-                SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("MCPlaceHolder");
+                SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("GoodSpellowHeadshot");
                 break;
             case "Arthur Good-Spellow":
-                SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("MCPlaceHolder");
+                SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("GoodSpellowHeadshot");
                 break;
 
 
