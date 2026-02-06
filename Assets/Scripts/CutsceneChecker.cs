@@ -1,4 +1,5 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,9 +9,11 @@ public class CutsceneChecker : MonoBehaviour
     string LevelOneIntro = "IntroLevelOneAnimation";
     string LevelOne = "LevelOneActual";
     string LevelOneOutro = "OutroLevelOneAnimation";
-    string LevelTwoIntro = "LvlTwoProto";
-    string LevelTwoOutro = "SOUNDSMarcusTest";
+    string LevelTwoIntro = "IntroLevelTwo";
+    string LevelTwo = "LvlTwoProto";
+    string LevelTwoOutro = "OutroLevelTwo";
     string LevelThreeIntro = "Credits";
+    string LevelThree = "N/A";
     string LevelThreeOutro = "Controls";
     string winScene = "WIN";
 
@@ -25,6 +28,16 @@ public class CutsceneChecker : MonoBehaviour
         if (SceneManager.GetActiveScene().name == LevelOneOutro)
         {
             Invoke("LoadLevelTwoIntro", 5f);
+        }
+
+        if (SceneManager.GetActiveScene().name == LevelTwoIntro)
+        {
+            Invoke("LoadLevelTwo", 30f);
+        }
+
+        if (SceneManager.GetActiveScene().name == LevelTwoOutro)
+        {
+            Invoke("LoadLevelThreeIntro", 7f);
         }
     }
 
@@ -67,6 +80,15 @@ public class CutsceneChecker : MonoBehaviour
         SceneManager.LoadScene(LevelOneOutro);
     }
 
+    void LoadLevelTwo()
+    {
+        SceneManager.LoadScene(LevelTwo);
+    }
+
+    void LoadLevelThreeIntro()
+    {
+        SceneManager.LoadScene(winScene);
+    }
 
 
 }

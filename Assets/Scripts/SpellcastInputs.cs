@@ -22,7 +22,7 @@ public class SpellcastInputs : MonoBehaviour
     public GameObject Player;
 
     //Added fireBall GObj to the code -Marcus
-    public GameObject fireBall, whirlWind, healing, enhancement, shield;
+    public GameObject fireBall, whirlWind, healing, enhancement, shield, lightningcloud;
 
     // Hold the UI Images for the InputKeys and the Book Pages
     public GameObject[] BookImages = new GameObject[7];
@@ -240,6 +240,7 @@ public class SpellcastInputs : MonoBehaviour
         healing.SetActive(false);
         enhancement.SetActive(false);
         shield.SetActive(false);
+        lightningcloud.SetActive(false);
     }
 
     void WhatSpell()
@@ -282,6 +283,11 @@ public class SpellcastInputs : MonoBehaviour
                 ResetSpells();
                 enhancement.SetActive(true);
 
+                break;
+
+            case "Lightning Cloud":
+                ResetSpells();
+                lightningcloud.SetActive(true);
                 break;
 
 

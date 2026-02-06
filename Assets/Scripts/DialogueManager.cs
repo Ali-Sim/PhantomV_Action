@@ -85,6 +85,33 @@ public class DialogueManager : MonoBehaviour
             Lvl01Dio03FUNC();   
         }
 
+        switch (SpellCastingVariable.GetComponent<SpellCasting>().Lvl2DioInt)
+        {
+            case 1:
+                Lvl02Dio01FUNC();
+                SpellCastingVariable.GetComponent<SpellCasting>().Lvl2DioInt = 0;
+                break;
+            case 2:
+                Lvl02Dio02FUNC();
+                SpellCastingVariable.GetComponent<SpellCasting>().Lvl2DioInt = 0;
+                break;
+            case 3:
+                Lvl02Dio03FUNC();
+                SpellCastingVariable.GetComponent<SpellCasting>().Lvl2DioInt = 0;
+                break;
+            case 4:
+                Lvl02Dio04FUNC();
+                SpellCastingVariable.GetComponent<SpellCasting>().Lvl2DioInt = 0;
+                break;
+            case 5:
+                Lvl02Dio05FUNC();
+                SpellCastingVariable.GetComponent<SpellCasting>().Lvl2DioInt = 0;
+                break;
+
+
+        }
+
+
     }
 
     public string[,] getCSVGrid(string csvText)
@@ -222,17 +249,25 @@ public class DialogueManager : MonoBehaviour
     {
         switch (nameTxt.text)
         {
-            case "":
-                SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("GoodWizard");
+            case "Kaslvas The Great":
+                SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("KasMainImage");
                 break;
-            case " ":
-                SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("BadWizard");
+            case "Goblin":
+                SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("GoblinMainImage");
+                break;
+            case "Good Spellow":
+                SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("MCPlaceHolder");
+                break;
+            case "Arthur Good-Spellow":
+                SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("MCPlaceHolder");
                 break;
 
 
         }
     }
 
+
+    //Level One
     public IEnumerator Lvl01Dio01()
     {
 
@@ -243,7 +278,7 @@ public class DialogueManager : MonoBehaviour
 
         while (textBoxOpen)
         {
-            print("Waiting");
+
             yield return new WaitForSeconds(inBetweenNumber);
         }
 
@@ -289,7 +324,7 @@ public class DialogueManager : MonoBehaviour
 
         while (textBoxOpen)
         {
-            print("Waiting");
+
             yield return new WaitForSeconds(inBetweenNumber);
         }
 
@@ -328,7 +363,7 @@ public class DialogueManager : MonoBehaviour
 
         while (textBoxOpen)
         {
-            print("Waiting");
+
             yield return new WaitForSeconds(inBetweenNumber);
         }
 
@@ -357,6 +392,8 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    
+
     public void Lvl01Dio01FUNC()
     {
         StopAllCoroutines();
@@ -369,10 +406,76 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(Lvl01Dio02());
     }
     public void Lvl01Dio03FUNC()
+
+
     {
         StopAllCoroutines();
         StartCoroutine(Lvl01Dio03());
     }
+
+
+    //Level Two
+    public IEnumerator Lvl02Dio01()
+    {
+        OpenTextBox(15);
+
+        textBoxOpen = true;
+
+
+        while (textBoxOpen)
+        {
+
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(16);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(17);
+
+
+    }
+    public void Lvl02Dio01FUNC()
+    {
+        StopAllCoroutines();
+        StartCoroutine(Lvl02Dio01());
+    }
+
+
+    public void Lvl02Dio02FUNC()
+    {
+        StopAllCoroutines();
+        OpenTextBox(18);
+    }
+
+    public void Lvl02Dio03FUNC()
+    {
+        StopAllCoroutines();
+        OpenTextBox(19);
+    }
+
+    public void Lvl02Dio04FUNC()
+    {
+        StopAllCoroutines();
+        OpenTextBox(20);
+    }
+
+    public void Lvl02Dio05FUNC()
+    {
+        StopAllCoroutines();
+        OpenTextBox(21);
+    }
+
+
+
 
 
     /*
