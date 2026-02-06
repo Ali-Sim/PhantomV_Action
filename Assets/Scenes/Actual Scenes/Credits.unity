@@ -353,6 +353,8 @@ MonoBehaviour:
   animationSpeed: 0.4
   EnemyAttack1: {fileID: 994545669}
   EnemyAttack2: {fileID: 1558871121}
+  CancelAnimation: 0
+  GoblinAnim: {fileID: 0}
 --- !u!65 &141797147
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -429,6 +431,8 @@ MonoBehaviour:
   animationSpeed: 0.4
   EnemyAttack1: {fileID: 431206395}
   EnemyAttack2: {fileID: 1619691064}
+  CancelAnimation: 0
+  GoblinAnim: {fileID: 0}
 --- !u!65 &168324150
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -959,6 +963,8 @@ MonoBehaviour:
   animationSpeed: 0.4
   EnemyAttack1: {fileID: 1681914183}
   EnemyAttack2: {fileID: 1910627076}
+  CancelAnimation: 0
+  GoblinAnim: {fileID: 0}
 --- !u!65 &274703515
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1035,6 +1041,8 @@ MonoBehaviour:
   animationSpeed: 0.4
   EnemyAttack1: {fileID: 1730798947}
   EnemyAttack2: {fileID: 180353992}
+  CancelAnimation: 0
+  GoblinAnim: {fileID: 0}
 --- !u!65 &321736106
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2434,6 +2442,8 @@ MonoBehaviour:
   animationSpeed: 0.4
   EnemyAttack1: {fileID: 214616481}
   EnemyAttack2: {fileID: 1164598475}
+  CancelAnimation: 0
+  GoblinAnim: {fileID: 0}
 --- !u!65 &659280233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6064,7 +6074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.4392157}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.87058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6146,7 +6156,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1a1dc1c5acd558d46a07acb61ec2c69f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8dd15abfad3500445b3fc5c1c7823f58, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
