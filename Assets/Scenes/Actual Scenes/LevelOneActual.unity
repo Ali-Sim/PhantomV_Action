@@ -613,7 +613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11240,6 +11240,8 @@ MonoBehaviour:
   TargetCount: 0
   FirstTimeShield: 1
   ActualShield: {fileID: 942468984}
+  LightningCloud: {fileID: 0}
+  EnhancedLightningCloud: {fileID: 0}
 --- !u!114 &389099325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14562,6 +14564,7 @@ MonoBehaviour:
   healing: {fileID: 1998708812}
   enhancement: {fileID: 752499514}
   shield: {fileID: 1001998846}
+  lightningcloud: {fileID: 0}
   BookImages:
   - {fileID: 83208494}
   - {fileID: 1792989442}
@@ -22978,7 +22981,7 @@ MonoBehaviour:
   dialougeTxt: {fileID: 322073037}
   nameTxt: {fileID: 1420363971}
   dialogueType: 0.025
-  SpeakingFace: {fileID: 0}
+  SpeakingFace: {fileID: 26565945}
   canTalk: 0
   startedPlaying: 0
   currentlyPlaying: 0

@@ -53,6 +53,9 @@ public class SpellCasting : MonoBehaviour
     public GameObject ActualShield;
     public GameObject LightningCloud;
     public GameObject EnhancedLightningCloud;
+
+    //dialougetriggers
+    public int Lvl2DioInt = 0;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -311,12 +314,27 @@ public class SpellCasting : MonoBehaviour
                 break;
 
             case "HealingSpellPickup":
+                Lvl2DioInt = 2;
                 HealthPagePickedUp = true;
                 Destroy(other.gameObject);
                 break;
 
             case "EnhancementSpellPickup":
+                Lvl2DioInt = 4;
                 EnhancementPagePickedUp = true;
+                Destroy(other.gameObject);
+                break;
+
+            case "DialogueTrigger1":
+                Lvl2DioInt = 1;
+                Destroy(other.gameObject);
+                break;
+            case "DialogueTrigger2":
+                Lvl2DioInt = 3;
+                Destroy(other.gameObject);
+                break;
+            case "DialogueTrigger3":
+                Lvl2DioInt = 5;
                 Destroy(other.gameObject);
                 break;
         }
