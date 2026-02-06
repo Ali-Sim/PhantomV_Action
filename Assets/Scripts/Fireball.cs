@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Fireball : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class Fireball : MonoBehaviour
             Destroy(fbSound, 3f);
             if (Player.GetComponent<SpellCasting>().EnhancementActive)
             {
+                SceneManager.LoadScene("OutroLevelTwo");
                 Destroy(other.gameObject);
                 Player.GetComponent<SpellCasting>().EnhancementActive = false;
 
