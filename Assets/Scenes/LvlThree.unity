@@ -617,6 +617,7 @@ MonoBehaviour:
   healing: {fileID: 2048521301}
   enhancement: {fileID: 129766750}
   shield: {fileID: 1490017210}
+  lightningcloud: {fileID: 0}
   BookImages:
   - {fileID: 1637209316}
   - {fileID: 936775779}
@@ -21672,7 +21673,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 2006163949}
 --- !u!33 &1844053343
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -27282,7 +27283,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 829776599}
+  m_Mesh: {fileID: 920013710}
 --- !u!33 &2005723284
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -33535,6 +33536,9 @@ MonoBehaviour:
   TargetCount: 0
   FirstTimeShield: 1
   ActualShield: {fileID: 347913273}
+  LightningCloud: {fileID: 0}
+  EnhancedLightningCloud: {fileID: 0}
+  Lvl2DioInt: 0
 --- !u!114 &2103724311
 MonoBehaviour:
   m_ObjectHideFlags: 0
