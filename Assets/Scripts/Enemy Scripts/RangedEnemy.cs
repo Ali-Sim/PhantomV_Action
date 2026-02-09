@@ -1,8 +1,18 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RangedEnemy : MonoBehaviour
 {
+    public GameObject hitbox, player;
     public int lives = 5;
+    public void Update()
+    {
+        if (hitbox.GetComponent<RangedEnemyDetect>().canMove == true)
+        {
+            Vector3 moveEnemy = Vector3.MoveTowards(transform.position, player.transform.position,  + .01f);
+            transform.position = moveEnemy;
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         switch(other.gameObject.tag)
