@@ -250140,6 +250140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RangedEnemy
   hitbox: {fileID: 719543484}
+  player: {fileID: 1095828962}
   lives: 5
 --- !u!136 &1757206065
 CapsuleCollider:
