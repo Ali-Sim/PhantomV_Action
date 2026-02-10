@@ -13,6 +13,8 @@ public class RangedEnemyDetect : MonoBehaviour
     public bool canShoot = true;
     public bool canMove = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public Animator WizardAnim;
     void Start()
     {
         
