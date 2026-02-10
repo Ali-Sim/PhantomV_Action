@@ -27,13 +27,24 @@ public class RangedEnemyDetect : MonoBehaviour
                 if (canShoot)
                 {
                     canMove = false;
-                    Invoke("ShootProjectileDelay", 2f);
+                    WizardAnim.SetBool("AttackBool", true);
+                    Invoke("ShootProjectileDelay", 1.5f);
                     canShoot = false;
-                    Invoke("AllowMovement", 5f);
-                    Invoke("AllowEnemyShooting", 8f);
+                    Invoke("AllowMovement", 3.5f);
+                    Invoke("AllowEnemyShooting", 6.5f);
                    
                 }
                 break;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            WizardAnim.SetBool("WalkingBool", false);
+            WizardAnim.SetBool("AttackBool", false);
+            //StopMovement();
         }
     }
     void AllowEnemyShooting()
@@ -49,7 +60,9 @@ public class RangedEnemyDetect : MonoBehaviour
     void ShootProjectileDelay()
     {
         ShootProjectile(firePoint);
-        
+        WizardAnim.SetBool("AttackBool", false);
+        WizardAnim.SetBool("WalkingBool", false);
+
     }
 
 
