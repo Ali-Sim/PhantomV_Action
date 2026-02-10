@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fireball
   fireBallSound: {fileID: 6023454380436456471, guid: 5aefb84d24788394897eb87765f60828, type: 3}
+  Player: {fileID: 0}
 --- !u!82 &3702532081779234476
 AudioSource:
   m_ObjectHideFlags: 0
@@ -476,7 +477,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.49349722, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.65876806, b: 0.3254717, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5035,7 +5036,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 2100000, guid: 3b233d169f79d734b9e74c0d5f4deede, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
