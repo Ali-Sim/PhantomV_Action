@@ -11,8 +11,10 @@ public class RangedEnemyDetect : MonoBehaviour
     public Transform firePoint;
     public float projectileSpeed = 10f;
     public bool canShoot = true;
-    public bool canMove = false;
+    public bool canMove = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public Animator WizardAnim;
     void Start()
     {
         
@@ -24,23 +26,46 @@ public class RangedEnemyDetect : MonoBehaviour
             case "Player":
                 if (canShoot)
                 {
-                    ShootProjectile(firePoint);
+                    canMove = false;
+                    WizardAnim.SetBool("AttackBool", true);
+                    Invoke("ShootProjectileDelay", 1.5f);
                     canShoot = false;
-                    canMove = true;
-                    Invoke("AllowEnemyShooting", 3f);
-                    Invoke("DisallowEnemymovement", 1f);
+                    Invoke("AllowMovement", 3.5f);
+                    Invoke("AllowEnemyShooting", 6.5f);
+                   
                 }
                 break;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            WizardAnim.SetBool("WalkingBool", false);
+            WizardAnim.SetBool("AttackBool", false);
+            //StopMovement();
         }
     }
     void AllowEnemyShooting()
     {
         canShoot = true;
     }
-    void DisallowEnemymovement()
+    
+    void AllowMovement()
     {
-        canMove = false;
+        canMove = true;
     }
+
+    void ShootProjectileDelay()
+    {
+        ShootProjectile(firePoint);
+        WizardAnim.SetBool("AttackBool", false);
+        WizardAnim.SetBool("WalkingBool", false);
+
+    }
+
+
     void ShootProjectile(Transform firePoint)
     {
         var projectileObj = Instantiate(fireBall, firePoint.position, Quaternion.identity) as GameObject;
