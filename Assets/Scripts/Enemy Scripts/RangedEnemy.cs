@@ -9,7 +9,7 @@ public class RangedEnemy : MonoBehaviour
     {
         if (hitbox.GetComponent<RangedEnemyDetect>().canMove == true)
         {
-            Vector3 moveEnemy = Vector3.MoveTowards(transform.position, player.transform.position,  + .01f);
+            Vector3 moveEnemy = Vector3.MoveTowards(transform.position, player.transform.position, 4f * Time.deltaTime);
             transform.position = moveEnemy;
         }
     }

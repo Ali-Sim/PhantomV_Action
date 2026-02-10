@@ -11,7 +11,7 @@ public class RangedEnemyDetect : MonoBehaviour
     public Transform firePoint;
     public float projectileSpeed = 10f;
     public bool canShoot = true;
-    public bool canMove = false;
+    public bool canMove = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,11 +24,12 @@ public class RangedEnemyDetect : MonoBehaviour
             case "Player":
                 if (canShoot)
                 {
-                    ShootProjectile(firePoint);
+                    canMove = false;
+                    Invoke("ShootProjectileDelay", 2f);
                     canShoot = false;
-                    canMove = true;
-                    Invoke("AllowEnemyShooting", 3f);
-                    Invoke("DisallowEnemymovement", 1f);
+                    Invoke("AllowMovement", 5f);
+                    Invoke("AllowEnemyShooting", 8f);
+                   
                 }
                 break;
         }
@@ -37,10 +38,19 @@ public class RangedEnemyDetect : MonoBehaviour
     {
         canShoot = true;
     }
-    void DisallowEnemymovement()
+    
+    void AllowMovement()
     {
-        canMove = false;
+        canMove = true;
     }
+
+    void ShootProjectileDelay()
+    {
+        ShootProjectile(firePoint);
+        
+    }
+
+
     void ShootProjectile(Transform firePoint)
     {
         var projectileObj = Instantiate(fireBall, firePoint.position, Quaternion.identity) as GameObject;
