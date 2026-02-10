@@ -336,6 +336,16 @@ public class SpellcastInputs : MonoBehaviour
         
                 break;
 
+            case "Lightning Cloud":
+                SpellActivationProducer.clip = spellSoundEffects[4];
+                SpellActivationProducer.Play();
+                break;
+
+            case "Ghost":
+                SpellActivationProducer.clip = spellSoundEffects[5];
+                SpellActivationProducer.Play();
+                break; 
+
 
         }
     }

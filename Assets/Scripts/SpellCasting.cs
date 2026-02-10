@@ -189,7 +189,7 @@ public class SpellCasting : MonoBehaviour
                 case "Lightning Cloud":
                     if (EnhancementActive)
                     {
-                        Instantiate(EnhancedLightningCloud, new Vector3(transform.position.x -18.1f, transform.position.y + 19.99f, transform.position.z -93.54f), Quaternion.identity);
+                        Instantiate(EnhancedLightningCloud, new Vector3(transform.position.x -18.1f, transform.position.y + 19.99f, transform.position.z +15f), Quaternion.identity);
                         mana -= 70;
                         manaIncBool = true;
                         UpdateData();
@@ -282,6 +282,11 @@ public class SpellCasting : MonoBehaviour
                 SpellCastingProducer.clip = spellSoundEffects[4];
                 SpellCastingProducer.Play();
 
+                break;
+
+            case "Ghost":
+                SpellCastingProducer.clip = spellSoundEffects[5];
+                SpellCastingProducer.Play();
                 break;
 
 

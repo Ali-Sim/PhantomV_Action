@@ -144675,7 +144675,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 00fef6f60f5d41d47bb442f06c332bb9, type: 3}
   - {fileID: 8300000, guid: f02b4dc2be012224b84de3d42c19e916, type: 3}
   - {fileID: 8300000, guid: 31439266ac66efd42bf9fbfe6fab99ed, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: d277ec941a58ee54dbcb09e3ab268f27, type: 3}
   - {fileID: 8300000, guid: 0da65dd1b05b6ce41a670cfc66cfe4f0, type: 3}
   TargetCount: 0
   FirstTimeShield: 1
@@ -234139,8 +234139,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 316475e5a6ea70648be94646ece5152c, type: 3}
   - {fileID: 8300000, guid: 4b0fcf5a3b89f5347a45b896ca869f15, type: 3}
   - {fileID: 8300000, guid: d05c396f60cec4d438dafb498271d429, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: aeca548613235de4d8df830e918fa365, type: 3}
+  - {fileID: 8300000, guid: 58cce2a851e43164599d27937b640271, type: 3}
   - {fileID: 8300000, guid: 382f014b17968d54aacf7d168bd24d75, type: 3}
   bellSoundEffects:
   - {fileID: 8300000, guid: 422e38be9f0e5f149a1a1eb385331776, type: 3}
