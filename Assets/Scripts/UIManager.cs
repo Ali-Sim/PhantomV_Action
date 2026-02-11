@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     string creditsScene = "Credits";
     string helpScene = "Controls";
     string winScene = "WIN";
-    string levelThreeActual = "LevelThree";
+    string levelThreeActual = "Level Three";
 
     
     public bool Paused = false;
