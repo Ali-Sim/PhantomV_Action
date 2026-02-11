@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.08429482, g: 0.083704166, b: 0.1792453, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 9532ffac35daa0b4eb6e64763343e010, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2b002f9e279e9bd4e9efd98e68757293, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -631,7 +631,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 652688568}
+  m_Mesh: {fileID: 1785926567}
 --- !u!33 &60288514
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -52216,6 +52216,7 @@ MonoBehaviour:
   EnhancementActive: 0
   manaIncBool: 0
   canMove: 1
+  GhostActive: 0
   SpellCastingProducer: {fileID: 450894844}
   spellSoundEffects:
   - {fileID: 8300000, guid: 3edc4bc27e48a8c489b8fa08c5a9d7db, type: 3}
@@ -71000,8 +71001,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 1
-  m_Color: {r: 0.51690996, g: 0.6015889, b: 0.9056604, a: 1}
-  m_Intensity: 0.16
+  m_Color: {r: 0.45115712, g: 0.41616234, b: 0.5283019, a: 1}
+  m_Intensity: 0.17
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -72959,7 +72960,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1513036472}
+  m_Mesh: {fileID: 652688568}
 --- !u!33 &1425800682
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -75464,7 +75465,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1785926567}
+  m_Mesh: {fileID: 635791336}
 --- !u!33 &1513090895
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -83770,6 +83771,7 @@ MonoBehaviour:
   enhancement: {fileID: 2000153385}
   shield: {fileID: 1082545874}
   lightningcloud: {fileID: 1835755878}
+  ghost: {fileID: 0}
   BookImages:
   - {fileID: 831125664}
   - {fileID: 1492114429}
@@ -86506,7 +86508,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 2036988569}
+  m_Mesh: {fileID: 1513036472}
 --- !u!33 &1718880277
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -94028,7 +94030,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1950965301}
+  m_Mesh: {fileID: 2036988569}
 --- !u!33 &1920359651
 MeshFilter:
   m_ObjectHideFlags: 10
