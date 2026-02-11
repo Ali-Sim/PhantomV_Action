@@ -303389,10 +303389,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 962427099454319768, guid: 2203500aae7147c47a83c21022a8af9d, type: 3}
+      propertyPath: m_Size.x
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 962427099454319768, guid: 2203500aae7147c47a83c21022a8af9d, type: 3}
+      propertyPath: m_Size.z
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 2770721935016180582, guid: 2203500aae7147c47a83c21022a8af9d, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1095828962}
+    - target: {fileID: 2770721935016180582, guid: 2203500aae7147c47a83c21022a8af9d, type: 3}
+      propertyPath: canMove
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3100363550076687301, guid: 2203500aae7147c47a83c21022a8af9d, type: 3}
       propertyPath: m_Name
       value: WizardEnemyOFFICIAL

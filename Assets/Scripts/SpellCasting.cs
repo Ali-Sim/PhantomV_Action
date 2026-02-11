@@ -41,6 +41,7 @@ public class SpellCasting : MonoBehaviour
     public bool EnhancementActive = false;
     public bool manaIncBool;
     public bool canMove = true;
+    public bool GhostActive = false;
     //audiosource and sound effects
     public AudioSource SpellCastingProducer;
     public AudioClip[] spellSoundEffects = new AudioClip[7]; //  0 = "Fireball", 1 = "Whirlwind", 2 = "Shield", 3 = "Healing", 4 = "Lightning Cloud", 5 = "Ghost", 6 = "Enhancement"
@@ -157,11 +158,22 @@ public class SpellCasting : MonoBehaviour
 
                         else
                         {
-                            health += 30;
-                            mana -= 30;
-                            manaIncBool = true;
-                            UpdateData();
-
+                            if (EnhancementActive)
+                            {
+                                health += 60;
+                                mana -= 30;
+                                manaIncBool = true;
+                                UpdateData();
+                                EnhancementActive = false;
+                            }
+                            else 
+                            {
+                                health += 30;
+                                mana -= 30;
+                                manaIncBool = true;
+                                UpdateData();
+                            }
+                          
                             if (health > 100)
                             {
                                 health = 100;
@@ -206,6 +218,11 @@ public class SpellCasting : MonoBehaviour
                         
                     }
                         break;
+
+                case "Ghost":
+                    GhostActive = true;
+                    Invoke("ResetGhost", 10f);
+                    break;
             }
         }
 
@@ -310,11 +327,19 @@ public class SpellCasting : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Enemy":
-                health -= 10;
-                canMove = false;
-                UpdateData();
-                Invoke("AllowEnemyMovement", 3f);
-                break;
+                if (!GhostActive)
+                {
+                    health -= 10;
+                    canMove = false;
+                    UpdateData();
+                    Invoke("AllowEnemyMovement", 3f);
+                }
+               else
+                {
+                    canMove = false;
+                    Invoke("AllowEnemyMovement", 3f);
+                }
+                    break;
             case "FireballEnemy":
                 break;
 
@@ -377,9 +402,9 @@ public class SpellCasting : MonoBehaviour
         
     }
 
-    void ResetLightning()
+    void ResetGhost()
     {
-        
+        GhostActive = false;
     }
 
 }

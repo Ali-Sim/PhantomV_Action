@@ -9,8 +9,11 @@ public class Arrow : MonoBehaviour
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "MainCamera")
         {
             GameObject fbSound = Instantiate(fireBallSound, transform.position, Quaternion.identity);
-            other.GetComponent<SpellCasting>().health -= 20;
-            other.GetComponent<SpellCasting>().UpdateData();
+            if (other.GetComponent<SpellCasting>().GhostActive == false)
+            {
+                other.GetComponent<SpellCasting>().health -= 20;
+                other.GetComponent<SpellCasting>().UpdateData();
+            }
             Destroy(fbSound, 3f);
             Destroy(gameObject);
             //Debug.Log(other.gameObject.tag);
