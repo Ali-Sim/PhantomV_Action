@@ -25,6 +25,7 @@ TagManager:
   - DialogueTrigger3
   - LightningCloud
   - Water
+  - DeathTrigger
   layers:
   - Default
   - TransparentFX
