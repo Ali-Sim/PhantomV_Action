@@ -54,7 +54,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 20, y: 1.0458935, z: 20}
+  m_Size: {x: 30, y: 1.0458935, z: 30}
   m_Center: {x: 0, y: -0.97222334, z: 0}
 --- !u!114 &2403356978074864929
 MonoBehaviour:
@@ -205,7 +205,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 20, y: 1, z: 20}
+  m_Size: {x: 30, y: 1, z: 30}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2770721935016180582
 MonoBehaviour:
@@ -225,7 +225,7 @@ MonoBehaviour:
   firePoint: {fileID: 3604037387998512973}
   projectileSpeed: 10
   canShoot: 1
-  canMove: 1
+  canMove: 0
   WizardAnim: {fileID: 5671698203981625753}
 --- !u!1 &5825635149834054946
 GameObject:
