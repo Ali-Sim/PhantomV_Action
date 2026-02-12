@@ -176,7 +176,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 2100000, guid: 3634a2a377a71884d8be09e9979db565, type: 2}
+      value: {fileID: 2100000, guid: 8252d5eb6de78654796c32d803dfe91d, type: 2}
     attribute: 'm_Materials.Array.data[0]'
     path: Kaslavas
     classID: 23
@@ -271,7 +271,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 2100000, guid: 3634a2a377a71884d8be09e9979db565, type: 2}
+    - {fileID: 2100000, guid: 8252d5eb6de78654796c32d803dfe91d, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
