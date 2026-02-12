@@ -386,6 +386,10 @@ public class SpellCasting : MonoBehaviour
                 health = 0;
                 UpdateData();
                 break;
+            case "DeathTrigger":
+                health = 0;
+                UpdateData();
+                break;
         }
     }
     void AllowEnemyMovement()
