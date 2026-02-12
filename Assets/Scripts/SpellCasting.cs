@@ -26,6 +26,8 @@ public class SpellCasting : MonoBehaviour
 
     public bool HealthPagePickedUp = false;
     public bool EnhancementPagePickedUp = false;
+    public bool LightningPagePickedUp = false;
+    public bool GhostPagePickedUp = false;
 
 
     public Vector3 destination;
@@ -352,6 +354,16 @@ public class SpellCasting : MonoBehaviour
             case "EnhancementSpellPickup":
                 Lvl2DioInt = 4;
                 EnhancementPagePickedUp = true;
+                Destroy(other.gameObject);
+                break;
+
+            case "LightningSpellPickup":
+                LightningPagePickedUp = true;
+                Destroy(other.gameObject);
+                break;
+
+            case "GhostSpellPickup":
+                GhostPagePickedUp = true;
                 Destroy(other.gameObject);
                 break;
 
