@@ -38,6 +38,10 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject bgSpeaker;
 
+    public GameObject secondSound;
+    public GameObject thirdSound;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -648,6 +652,8 @@ public class DialogueManager : MonoBehaviour
 
         finalCutsceneAnimator.SetTrigger("Next");
 
+        secondSound.SetActive(true);
+
         OpenTextBox(33);
 
 
@@ -704,11 +710,17 @@ public class DialogueManager : MonoBehaviour
         StopCoroutine(dioCor);
 
         finalCutsceneAnimator.SetTrigger("Next");
+
+        thirdSound.SetActive(true);
+
         bgSpeaker.SetActive(false);
         finalRockSpeaker.SetActive(true);
-        
 
-        yield return new WaitForSeconds(16f);
+        yield return new WaitForSeconds(6f);
+
+        finalRockSpeaker.SetActive(false);
+
+        yield return new WaitForSeconds(10f);
 
         finalRockSpeaker.SetActive(false);
         bgSpeaker.SetActive(true);
