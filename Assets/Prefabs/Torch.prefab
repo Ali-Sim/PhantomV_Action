@@ -3829,7 +3829,7 @@ ParticleSystem:
     rangeCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3.06
+      scalar: 94
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3882,7 +3882,7 @@ ParticleSystem:
     intensityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.39
+      scalar: 13.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
