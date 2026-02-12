@@ -2414,7 +2414,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 2100000, guid: 3b233d169f79d734b9e74c0d5f4deede, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106022,7 +106022,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 2100000, guid: 3b233d169f79d734b9e74c0d5f4deede, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -164596,6 +164596,8 @@ MonoBehaviour:
   gravity: -9.81
   HealthPagePickedUp: 0
   EnhancementPagePickedUp: 0
+  LightningPagePickedUp: 0
+  GhostPagePickedUp: 0
   destination: {x: 0, y: 0, z: 0}
   health: 100
   mana: 100
@@ -164624,6 +164626,7 @@ MonoBehaviour:
   LightningCloud: {fileID: 5994248062254321196, guid: a9f6b59d7a3e60c4a8cd5127512c0aa5, type: 3}
   EnhancedLightningCloud: {fileID: 7232741117274276593, guid: 7098c1aef9f4f22499b9b5922cb496e2, type: 3}
   Lvl2DioInt: 0
+  Lvl3DioInt: 0
 --- !u!114 &1095828965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219317,7 +219320,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 2100000, guid: 3b233d169f79d734b9e74c0d5f4deede, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -259778,6 +259781,10 @@ MonoBehaviour:
   EnhancementPage: {fileID: 689964841}
   HealingPageEMPTY: {fileID: 1438362895}
   EnhancementPageEMPTY: {fileID: 903305850}
+  LightningPage: {fileID: 0}
+  GhostPage: {fileID: 0}
+  LightningPageEMPTY: {fileID: 0}
+  GhostPageEMPTY: {fileID: 0}
   SpellInputProducer: {fileID: 1111800000}
   SpellActivationProducer: {fileID: 1014369130}
   spellSoundEffects:
@@ -292266,7 +292273,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 2100000, guid: 3b233d169f79d734b9e74c0d5f4deede, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
