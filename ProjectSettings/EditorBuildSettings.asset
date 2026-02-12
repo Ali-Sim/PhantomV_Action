@@ -47,6 +47,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Actual Scenes/OutroLevelTwo.unity
     guid: f88cebc3185bf3648aec8fe26deec9ba
+  - enabled: 1
+    path: Assets/Scenes/Actual Scenes/OutroLevelThree.unity
+    guid: 51b1d3fb1482f2a4bbebb09adc6b8c0a
+  - enabled: 1
+    path: Assets/Scenes/Actual Scenes/LevelThree.unity
+    guid: ad1284e907573fa49a96ce8dd8548a8b
+  - enabled: 1
+    path: Assets/Scenes/Actual Scenes/IntroLevelThree.unity
+    guid: 2adb789885a2f3d4093cc32a77cfbdac
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 993ec8ab7eecda7488ebbcbc3f2e1798, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

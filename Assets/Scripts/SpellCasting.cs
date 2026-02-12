@@ -3,6 +3,7 @@ using UnityEngine;
 
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 
 public class SpellCasting : MonoBehaviour
@@ -392,10 +393,16 @@ public class SpellCasting : MonoBehaviour
                 break;
             case "DialogueTriggerLVL3(1)":
                 Lvl3DioInt = 1;
+                Destroy(other.gameObject);
                 break;
             case "DialogueTriggerLVL3(2)":
                 Lvl3DioInt = 3;
+                Destroy(other.gameObject);
                 break;
+            case "EndLevelThree":
+                SceneManager.LoadScene("OutroLevelThree");
+                break;
+
         }
     }
     void AllowEnemyMovement()

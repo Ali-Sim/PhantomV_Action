@@ -95,7 +95,7 @@ public class DialogueManager : MonoBehaviour
 
         }
 
-        if (SpellCastingVariable.GetComponent<SpellCasting>().FirstTimeShield == -1)
+        if ((SpellCastingVariable.GetComponent<SpellCasting>().FirstTimeShield == -1) && SceneManager.GetActiveScene().name == "LevelOneActual")
         {
             SpellCastingVariable.GetComponent<SpellCasting>().FirstTimeShield -= 1;
             Lvl01Dio03FUNC();   
@@ -131,19 +131,19 @@ public class DialogueManager : MonoBehaviour
         {
             case 1:
                 Lvl3Dio01FUNC();
-                SpellCastingVariable.GetComponent<SpellCasting>().Lvl2DioInt = 0;
-                break;
-            case 2:
-                Lvl3Dio02FUNC();
-                SpellCastingVariable.GetComponent<SpellCasting>().Lvl2DioInt = 0;
+                SpellCastingVariable.GetComponent<SpellCasting>().Lvl3DioInt = 0;
                 break;
             case 3:
-                Lvl02Dio03FUNC();
-                SpellCastingVariable.GetComponent<SpellCasting>().Lvl2DioInt = 0;
+                Lvl3Dio02FUNC();
+                SpellCastingVariable.GetComponent<SpellCasting>().Lvl3DioInt = 0;
+                break;
+            case 2:
+                Lvl3Dio04FUNC();
+                SpellCastingVariable.GetComponent<SpellCasting>().Lvl3DioInt = 0;
                 break;
             case 4:
-                Lvl02Dio04FUNC();
-                SpellCastingVariable.GetComponent<SpellCasting>().Lvl2DioInt = 0;
+                Lvl3Dio05FUNC();
+                SpellCastingVariable.GetComponent<SpellCasting>().Lvl3DioInt = 0;
                 break;
 
 
@@ -314,6 +314,9 @@ public class DialogueManager : MonoBehaviour
                 SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("EvilWizardHeadshot");
                 break;
 
+            case "Bartholomew":
+                SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("EvilWizardHeadshot");
+                break;
 
 
 

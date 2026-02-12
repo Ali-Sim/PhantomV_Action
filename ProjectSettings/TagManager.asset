@@ -30,6 +30,7 @@ TagManager:
   - GhostSpellPickup
   - DialogueTriggerLVL3(1)
   - DialogueTriggerLVL3(2)
+  - EndLevelThree
   layers:
   - Default
   - TransparentFX

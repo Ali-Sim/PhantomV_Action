@@ -42,7 +42,7 @@ public class CutsceneChecker : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == LevelThreeIntro)
         {
-            Invoke("LoadLeveLThree", 5.25f);
+            Invoke("LoadLeveLThree", 5f);
         }
 
         if (SceneManager.GetActiveScene().name == LevelThreeOutro)
