@@ -31,6 +31,10 @@ public class SpellcastInputs : MonoBehaviour
     public GameObject EnhancementPage;
     public GameObject HealingPageEMPTY;
     public GameObject EnhancementPageEMPTY;
+    public GameObject LightningPage;
+    public GameObject GhostPage;
+    public GameObject LightningPageEMPTY;
+    public GameObject GhostPageEMPTY;
 
     //audiosources and clips for the sound effects
     public AudioSource SpellInputProducer;
@@ -52,6 +56,8 @@ public class SpellcastInputs : MonoBehaviour
 
         HealingPage.SetActive(false);
         EnhancementPage.SetActive(false);
+        GhostPage.SetActive(false);
+        LightningPage.SetActive(false);
     }
 
     // Update is called once per frame
@@ -159,6 +165,18 @@ public class SpellcastInputs : MonoBehaviour
             
             BookImages[6] = EnhancementPage;
             EnhancementPageEMPTY.SetActive(false);
+        }
+
+        if (Player.GetComponent<SpellCasting>().LightningPagePickedUp)
+        {
+            BookImages[4] = LightningPage;
+            LightningPageEMPTY.SetActive(false);
+        }
+
+        if (Player.GetComponent<SpellCasting>().GhostPagePickedUp)
+        {
+            BookImages[5] = GhostPage;
+            GhostPageEMPTY.SetActive(false);
         }
     }
 

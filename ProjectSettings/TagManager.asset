@@ -26,6 +26,8 @@ TagManager:
   - LightningCloud
   - Water
   - DeathTrigger
+  - LightningSpellPickup
+  - GhostSpellPickup
   layers:
   - Default
   - TransparentFX
