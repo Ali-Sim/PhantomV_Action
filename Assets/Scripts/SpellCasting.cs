@@ -59,6 +59,7 @@ public class SpellCasting : MonoBehaviour
 
     //dialougetriggers
     public int Lvl2DioInt = 0;
+    public int Lvl3DioInt = 0;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -358,11 +359,13 @@ public class SpellCasting : MonoBehaviour
                 break;
 
             case "LightningSpellPickup":
+                Lvl3DioInt = 1;
                 LightningPagePickedUp = true;
                 Destroy(other.gameObject);
                 break;
 
             case "GhostSpellPickup":
+                Lvl3DioInt = 2;
                 GhostPagePickedUp = true;
                 Destroy(other.gameObject);
                 break;
