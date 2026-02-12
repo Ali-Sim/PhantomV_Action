@@ -33,6 +33,11 @@ public class DialogueManager : MonoBehaviour
     //Targets + Sheild
     public GameObject SpellCastingVariable;
 
+    public Animator finalCutsceneAnimator;
+    public GameObject finalRockSpeaker;
+
+    public GameObject bgSpeaker;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -59,7 +64,18 @@ public class DialogueManager : MonoBehaviour
             OpenTextBox(14);
         }
 
-        SpellCastingVariable  = GameObject.Find("PlayerMain");
+        if (SceneManager.GetActiveScene().name == "OutroLevelThree")
+        {
+            Invoke("Lvl3Dio03FUNC", 8.5f);
+            finalRockSpeaker.SetActive(false);
+            bgSpeaker.SetActive(true);
+        }
+
+        if (SceneManager.GetActiveScene().name != "OutroLevelThree")
+        {
+            SpellCastingVariable = GameObject.Find("PlayerMain");
+        }
+        
 
     }
 
@@ -107,6 +123,29 @@ public class DialogueManager : MonoBehaviour
                 Lvl02Dio05FUNC();
                 SpellCastingVariable.GetComponent<SpellCasting>().Lvl2DioInt = 0;
                 break;
+
+
+        }
+
+        switch (SpellCastingVariable.GetComponent<SpellCasting>().Lvl3DioInt)
+        {
+            case 1:
+                Lvl3Dio01FUNC();
+                SpellCastingVariable.GetComponent<SpellCasting>().Lvl2DioInt = 0;
+                break;
+            case 2:
+                Lvl3Dio02FUNC();
+                SpellCastingVariable.GetComponent<SpellCasting>().Lvl2DioInt = 0;
+                break;
+            case 3:
+                Lvl02Dio03FUNC();
+                SpellCastingVariable.GetComponent<SpellCasting>().Lvl2DioInt = 0;
+                break;
+            case 4:
+                Lvl02Dio04FUNC();
+                SpellCastingVariable.GetComponent<SpellCasting>().Lvl2DioInt = 0;
+                break;
+
 
 
         }
@@ -268,6 +307,14 @@ public class DialogueManager : MonoBehaviour
             case "Arthur Good-Spellow":
                 SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("GoodSpellowHeadshot");
                 break;
+            case "Kaslvas The EVIL":
+                SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("KaslavasTheEvilHeadshot");
+                break;
+            case "Evil Wizards":
+                SpeakingFace.GetComponent<Image>().sprite = Resources.Load<Sprite>("EvilWizardHeadshot");
+                break;
+
+
 
 
         }
@@ -573,6 +620,8 @@ public class DialogueManager : MonoBehaviour
 
         StopCoroutine(dioCor);
 
+        finalCutsceneAnimator.SetTrigger("Next");
+
         OpenTextBox(31);
 
 
@@ -583,6 +632,8 @@ public class DialogueManager : MonoBehaviour
 
         StopCoroutine(dioCor);
 
+        finalCutsceneAnimator.SetTrigger("Next");
+
         OpenTextBox(32);
 
         while (textBoxOpen)
@@ -591,6 +642,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         StopCoroutine(dioCor);
+
+        finalCutsceneAnimator.SetTrigger("Next");
 
         OpenTextBox(33);
 
@@ -603,6 +656,8 @@ public class DialogueManager : MonoBehaviour
 
         StopCoroutine(dioCor);
 
+        finalCutsceneAnimator.SetTrigger("Next");
+
         OpenTextBox(34);
 
         while (textBoxOpen)
@@ -611,6 +666,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         StopCoroutine(dioCor);
+
+        finalCutsceneAnimator.SetTrigger("Next");
 
         OpenTextBox(35);
 
@@ -621,6 +678,19 @@ public class DialogueManager : MonoBehaviour
 
         StopCoroutine(dioCor);
 
+        finalCutsceneAnimator.SetTrigger("Next");
+
+        OpenTextBox(36);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        finalCutsceneAnimator.SetTrigger("Next");
+
         OpenTextBox(37);
 
         while (textBoxOpen)
@@ -630,6 +700,15 @@ public class DialogueManager : MonoBehaviour
 
         StopCoroutine(dioCor);
 
+        finalCutsceneAnimator.SetTrigger("Next");
+        bgSpeaker.SetActive(false);
+        finalRockSpeaker.SetActive(true);
+        
+
+        yield return new WaitForSeconds(16f);
+
+        finalRockSpeaker.SetActive(false);
+        bgSpeaker.SetActive(true);
         OpenTextBox(38);
 
         while (textBoxOpen)
@@ -638,6 +717,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         StopCoroutine(dioCor);
+
+        finalCutsceneAnimator.SetTrigger("Next");
 
         OpenTextBox(39);
 
@@ -648,6 +729,8 @@ public class DialogueManager : MonoBehaviour
 
         StopCoroutine(dioCor);
 
+        finalCutsceneAnimator.SetTrigger("Next");
+
         OpenTextBox(40);
 
         while (textBoxOpen)
@@ -657,7 +740,16 @@ public class DialogueManager : MonoBehaviour
 
         StopCoroutine(dioCor);
 
+        finalCutsceneAnimator.SetTrigger("Next");
+
         OpenTextBox(41);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        SceneManager.LoadScene("WIN");
 
     }
 
@@ -679,6 +771,17 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(Lvl03Dio03ENDANIMATION());
     }
 
+    public void Lvl3Dio04FUNC()
+    {
+        StopAllCoroutines();
+        OpenTextBox(42);
+    }
+
+    public void Lvl3Dio05FUNC()
+    {
+        StopAllCoroutines();
+        OpenTextBox(43);
+    }
 
 
 
