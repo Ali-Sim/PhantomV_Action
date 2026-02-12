@@ -72,50 +72,7 @@ public class EnemyDetect : MonoBehaviour
         }
     }
 
-    /*private void StopMovement()
-    {
-        isMoving = false;
-
-        if (stanceRoutine != null)
-        {
-            StopCoroutine(stanceRoutine);
-            stanceRoutine = null;
-        }
-        SetStance(0); // Return to Idle/Default stance
-        enemyStance[0].SetActive(false);
-        EnemyAttack1.SetActive(true);
-        Invoke("EnemySecondAttack", 1.5f);
-        Invoke("EndEnemyAttack", 3f);
-        
-        
-    }
-
-    IEnumerator StanceLoop()
-    {
-        int currentIndex = 0;
-        while (isMoving)
-        {
-            SetStance(currentIndex);
-
-            // Increment index and loop back to 0 if we hit the end
-            currentIndex = (currentIndex + 1) % enemyStance.Length;
-
-            yield return new WaitForSeconds(animationSpeed);
-        }
-    }
-
-    /*void SetStance(int index)
-    {
-        for (int i = 0; i < enemyStance.Length; i++)
-        {
-            if (enemyStance[i] != null)
-            {
-                
-                enemyStance[i].SetActive(i == index);
-                
-            }
-        }
-    }*/
+    
 
     void EnemySecondAttack()
     {
