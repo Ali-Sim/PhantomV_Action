@@ -38,7 +38,7 @@ public class DialogueManager : MonoBehaviour
     {
         //How to call items in the CSV - grid[x, y] where x and y are numbers starting from 0 (A1 on the excel sheet would be 0,0 and A2 on the excell sheet would be 0,1)
         //How to call certain characters - grid[2 + currentTextIndex, characterID]
-        csvDialogue = Resources.Load<TextAsset>("CSVFiles/ActualDialogue");
+        csvDialogue = Resources.Load<TextAsset>("CSVFiles/ActualDialogue-2");
         dialougeGrid = getCSVGrid(csvDialogue.text);
 
         dialougeBox.SetActive(false);
@@ -225,6 +225,7 @@ public class DialogueManager : MonoBehaviour
         {
             nameTxt.text = commaCheckName;
             dioCor = StartCoroutine(Dialogue(commaCheckTxt));
+            ChangeCharacter();
 
         }
 
@@ -232,17 +233,23 @@ public class DialogueManager : MonoBehaviour
         {
             nameTxt.text = commaCheckName;
             dioCor = StartCoroutine(Dialogue(commaCheckTxt));
+            ChangeCharacter();
         }
 
         else //if they click forwards before the text types, skip to the end and finish the text
         {
-            doneTyping = true;
-            StopCoroutine(dioCor);
-            nameTxt.text = commaCheckName;
-            dialougeTxt.text = commaCheckTxt;
+            if (SceneManager.GetActiveScene().name != "OutroLevelThree")
+            {
+                doneTyping = true;
+                StopCoroutine(dioCor);
+                nameTxt.text = commaCheckName;
+                dialougeTxt.text = commaCheckTxt;
+                ChangeCharacter();
+            }
+            
         }
 
-        ChangeCharacter();
+        
     }
 
     void ChangeCharacter()
@@ -474,6 +481,203 @@ public class DialogueManager : MonoBehaviour
         OpenTextBox(21);
     }
 
+
+    //level three
+    public IEnumerator Lvl03Dio01()
+    {
+        OpenTextBox(22);
+
+        textBoxOpen = true;
+
+
+        while (textBoxOpen)
+        {
+
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(23);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(24);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(25);
+
+    }
+
+    public IEnumerator Lvl03Dio02()
+    {
+        OpenTextBox(26);
+
+        textBoxOpen = true;
+
+
+        while (textBoxOpen)
+        {
+
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(27);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(28);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(29);
+
+    }
+
+    public IEnumerator Lvl03Dio03ENDANIMATION()
+    {
+
+        OpenTextBox(30);
+
+        textBoxOpen = true;
+
+
+        while (textBoxOpen)
+        {
+
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(31);
+
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(32);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(33);
+
+
+        while (textBoxOpen)
+        {
+
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(34);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(35);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(37);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(38);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(39);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(40);
+
+        while (textBoxOpen)
+        {
+            yield return new WaitForSeconds(inBetweenNumber);
+        }
+
+        StopCoroutine(dioCor);
+
+        OpenTextBox(41);
+
+    }
+
+    public void Lvl3Dio01FUNC()
+    {
+        StopAllCoroutines();
+        StartCoroutine(Lvl03Dio01());
+    }
+
+    public void Lvl3Dio02FUNC()
+    {
+        StopAllCoroutines();
+        StartCoroutine(Lvl03Dio02());
+    }
+
+    public void Lvl3Dio03FUNC()
+    {
+        StopAllCoroutines();
+        StartCoroutine(Lvl03Dio03ENDANIMATION());
+    }
 
 
 
