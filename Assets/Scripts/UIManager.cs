@@ -65,7 +65,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Player.GetComponent<SpellCasting>().health == 0) && DeathCheck == 0)
+        if ((Player.GetComponent<SpellCasting>().health <= 0) && DeathCheck == 0)
         {
             GameOver();
             DeathCheck += 1;
