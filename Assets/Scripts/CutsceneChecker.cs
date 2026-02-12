@@ -12,9 +12,9 @@ public class CutsceneChecker : MonoBehaviour
     string LevelTwoIntro = "IntroLevelTwo";
     string LevelTwo = "LvlTwoProto";
     string LevelTwoOutro = "OutroLevelTwo";
-    string LevelThreeIntro = "Credits";
-    string LevelThree = "N/A";
-    string LevelThreeOutro = "Controls";
+    string LevelThreeIntro = "IntroLevelThree";
+    string LevelThree = "LeveLThree";
+    string LevelThreeOutro = "OutroLevelThree";
     string winScene = "WIN";
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,6 +39,16 @@ public class CutsceneChecker : MonoBehaviour
         {
             Invoke("LoadLevelThreeIntro", 7f);
         }
+
+        if (SceneManager.GetActiveScene().name == LevelThreeIntro)
+        {
+            Invoke("LoadLeveLThree", 5.25f);
+        }
+
+        if (SceneManager.GetActiveScene().name == LevelThreeOutro)
+        {
+            //
+        }
     }
 
     // Update is called once per frame
@@ -56,9 +66,9 @@ public class CutsceneChecker : MonoBehaviour
                 {
                     LoadLevelOneEnd();
                 }
-                else if (SceneManager.GetActiveScene().name == LevelTwoIntro)
+                else if (SceneManager.GetActiveScene().name == LevelThree)
                 {
-                    SceneManager.LoadScene(winScene);
+                    SceneManager.LoadScene(LevelThreeOutro);
                 }
                     break;
 
@@ -86,6 +96,21 @@ public class CutsceneChecker : MonoBehaviour
     }
 
     void LoadLevelThreeIntro()
+    {
+        SceneManager.LoadScene(LevelThreeIntro);
+    }
+
+    void LoadLeveLThree()
+    {
+        SceneManager.LoadScene(LevelThree);
+    }
+
+    void LoadLeveLThreeoOutro()
+    {
+        SceneManager.LoadScene(LevelThreeOutro);
+    }
+
+    void LoadWinScene()
     {
         SceneManager.LoadScene(winScene);
     }

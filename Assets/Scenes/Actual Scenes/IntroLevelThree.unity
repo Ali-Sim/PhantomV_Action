@@ -98443,7 +98443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1646416303}
-  - component: {fileID: 1646416302}
+  - component: {fileID: 1646416304}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -98451,79 +98451,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1646416302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1646416301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1531dcdf98e803440bf577c35685a49c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpellcastInputs
-  PageNum: 0
-  combos:
-  - qe
-  - frq
-  - qreeq
-  - efr
-  - fqereq
-  - erfqee
-  - rrr
-  Spells:
-  - Fireball
-  - Whirlwind
-  - Shield
-  - Healing
-  - Lightning Cloud
-  - Ghost
-  - Enhancement
-  Values: 0a0000001e000000320000001e00000046000000460000001e000000
-  PlayerInput: 0
-  CurrentCombo: 
-  CurrentSpell: 
-  CurrentValue: 10
-  SpellHeld: 0
-  Player: {fileID: 0}
-  fireBall: {fileID: 0}
-  whirlWind: {fileID: 0}
-  healing: {fileID: 0}
-  enhancement: {fileID: 0}
-  shield: {fileID: 0}
-  lightningcloud: {fileID: 0}
-  ghost: {fileID: 0}
-  BookImages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  KeyImages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  HealingPage: {fileID: 0}
-  EnhancementPage: {fileID: 0}
-  HealingPageEMPTY: {fileID: 0}
-  EnhancementPageEMPTY: {fileID: 0}
-  SpellInputProducer: {fileID: 0}
-  SpellActivationProducer: {fileID: 0}
-  spellSoundEffects:
-  - {fileID: 8300000, guid: fae327c54b2ca744aba7e9fe579428c8, type: 3}
-  - {fileID: 8300000, guid: 316475e5a6ea70648be94646ece5152c, type: 3}
-  - {fileID: 8300000, guid: 4b0fcf5a3b89f5347a45b896ca869f15, type: 3}
-  - {fileID: 8300000, guid: d05c396f60cec4d438dafb498271d429, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 8300000, guid: 382f014b17968d54aacf7d168bd24d75, type: 3}
-  bellSoundEffects:
-  - {fileID: 8300000, guid: 422e38be9f0e5f149a1a1eb385331776, type: 3}
-  - {fileID: 8300000, guid: e6f4ce2f2c900c04b96feda83e394fe3, type: 3}
 --- !u!4 &1646416303
 Transform:
   m_ObjectHideFlags: 0
@@ -98539,6 +98466,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1646416304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646416301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8fcc46a1b22f047b3787b07967d012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CutsceneChecker
 --- !u!1 &1649784071
 GameObject:
   m_ObjectHideFlags: 0
@@ -114772,7 +114711,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5939899580025860426, guid: e98b0a5721027364aa15da127869dee8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.48
+      value: 6.2
       objectReference: {fileID: 0}
     - target: {fileID: 5939899580025860426, guid: e98b0a5721027364aa15da127869dee8, type: 3}
       propertyPath: m_LocalPosition.y
