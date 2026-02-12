@@ -359,13 +359,13 @@ public class SpellCasting : MonoBehaviour
                 break;
 
             case "LightningSpellPickup":
-                Lvl3DioInt = 1;
+                Lvl3DioInt = 2;
                 LightningPagePickedUp = true;
                 Destroy(other.gameObject);
                 break;
 
             case "GhostSpellPickup":
-                Lvl3DioInt = 2;
+                Lvl3DioInt = 4;
                 GhostPagePickedUp = true;
                 Destroy(other.gameObject);
                 break;
@@ -389,6 +389,12 @@ public class SpellCasting : MonoBehaviour
             case "DeathTrigger":
                 health = 0;
                 UpdateData();
+                break;
+            case "DialogueTriggerLVL3(1)":
+                Lvl3DioInt = 1;
+                break;
+            case "DialogueTriggerLVL3(2)":
+                Lvl3DioInt = 3;
                 break;
         }
     }

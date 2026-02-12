@@ -8497,118 +8497,63 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5341128972598850845, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
+    - target: {fileID: 2337937643964090233, guid: 69e5ee559582eb647b72d7f4aafdd3e5, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 389099323}
-    - target: {fileID: 5341128972598850845, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-      propertyPath: fireBall
+    - target: {fileID: 3189559710962581423, guid: 69e5ee559582eb647b72d7f4aafdd3e5, type: 3}
+      propertyPath: player
       value: 
-      objectReference: {fileID: 8878910977266861798, guid: d2f515b16827214439abde02db9cafe8, type: 3}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
+      objectReference: {fileID: 389099323}
+    - target: {fileID: 6479928160058652137, guid: 69e5ee559582eb647b72d7f4aafdd3e5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.58
       objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
+    - target: {fileID: 6479928160058652137, guid: 69e5ee559582eb647b72d7f4aafdd3e5, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.1407115
       objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
+    - target: {fileID: 6479928160058652137, guid: 69e5ee559582eb647b72d7f4aafdd3e5, type: 3}
       propertyPath: m_LocalPosition.z
       value: -11.717
       objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
+    - target: {fileID: 6479928160058652137, guid: 69e5ee559582eb647b72d7f4aafdd3e5, type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.007340095
       objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
+    - target: {fileID: 6479928160058652137, guid: 69e5ee559582eb647b72d7f4aafdd3e5, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
+    - target: {fileID: 6479928160058652137, guid: 69e5ee559582eb647b72d7f4aafdd3e5, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0.9999731
       objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
+    - target: {fileID: 6479928160058652137, guid: 69e5ee559582eb647b72d7f4aafdd3e5, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
+    - target: {fileID: 6479928160058652137, guid: 69e5ee559582eb647b72d7f4aafdd3e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
+    - target: {fileID: 6479928160058652137, guid: 69e5ee559582eb647b72d7f4aafdd3e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180.841
       objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
+    - target: {fileID: 6479928160058652137, guid: 69e5ee559582eb647b72d7f4aafdd3e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9199593199937570948, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
+    - target: {fileID: 9199593199937570948, guid: 69e5ee559582eb647b72d7f4aafdd3e5, type: 3}
       propertyPath: m_Name
       value: CrossbowEnemy (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4378046268713467541, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-    - {fileID: 5341128972598850845, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9199593199937570948, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 265098939}
-    - targetCorrespondingSourceObject: {fileID: 9199593199937570948, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 265098938}
-    - targetCorrespondingSourceObject: {fileID: 3512234012708254530, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 716116943}
-  m_SourcePrefab: {fileID: 100100000, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
---- !u!1 &265098932 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9199593199937570948, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-  m_PrefabInstance: {fileID: 265098931}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &265098933 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-  m_PrefabInstance: {fileID: 265098931}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &265098938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265098932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2dfe28f95500794cb87227c86e5f1ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CrossbowDetect
-  enemy: {fileID: 0}
-  player: {fileID: 0}
-  fireBall: {fileID: 0}
-  firePoint: {fileID: 0}
-  projectileSpeed: 10
-  canShoot: 1
-  canMove: 1
---- !u!114 &265098939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265098932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24a9efa4a4583aa4c9ac286caaa5109b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CrossbowEnemy
-  hitbox: {fileID: 716116939}
-  player: {fileID: 389099323}
-  lives: 100
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 69e5ee559582eb647b72d7f4aafdd3e5, type: 3}
 --- !u!1 &271946939
 GameObject:
   m_ObjectHideFlags: 0
@@ -16107,6 +16052,8 @@ MonoBehaviour:
   gravity: -9.81
   HealthPagePickedUp: 0
   EnhancementPagePickedUp: 0
+  LightningPagePickedUp: 0
+  GhostPagePickedUp: 0
   destination: {x: 0, y: 0, z: 0}
   health: 100
   mana: 100
@@ -16135,6 +16082,7 @@ MonoBehaviour:
   LightningCloud: {fileID: 0}
   EnhancedLightningCloud: {fileID: 0}
   Lvl2DioInt: 0
+  Lvl3DioInt: 0
 --- !u!114 &389099325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19478,6 +19426,10 @@ MonoBehaviour:
   EnhancementPage: {fileID: 1534472810}
   HealingPageEMPTY: {fileID: 1534472810}
   EnhancementPageEMPTY: {fileID: 1534472810}
+  LightningPage: {fileID: 0}
+  GhostPage: {fileID: 0}
+  LightningPageEMPTY: {fileID: 0}
+  GhostPageEMPTY: {fileID: 0}
   SpellInputProducer: {fileID: 561647071}
   SpellActivationProducer: {fileID: 451966202}
   spellSoundEffects:
@@ -21501,30 +21453,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47937f15baf10b244bc38b5c575802cd, type: 3}
---- !u!1 &716116939 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3512234012708254530, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-  m_PrefabInstance: {fileID: 265098931}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &716116943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716116939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7228d1c82d9b7694584029b462ceeb91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CrossbowStationary
-  enemy: {fileID: 265098932}
-  player: {fileID: 389099323}
-  fireBall: {fileID: 8878910977266861798, guid: d2f515b16827214439abde02db9cafe8, type: 3}
-  firePoint: {fileID: 265098933}
-  projectileSpeed: 10
-  canShoot: 1
-  canMove: 0
 --- !u!4 &718087407 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3919220263628464992, guid: 5c670b2627cbdae439b9a4f425a29a15, type: 3}

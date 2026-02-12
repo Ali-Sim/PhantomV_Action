@@ -28,6 +28,8 @@ TagManager:
   - DeathTrigger
   - LightningSpellPickup
   - GhostSpellPickup
+  - DialogueTriggerLVL3(1)
+  - DialogueTriggerLVL3(2)
   layers:
   - Default
   - TransparentFX
