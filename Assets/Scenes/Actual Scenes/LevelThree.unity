@@ -47181,6 +47181,8 @@ MonoBehaviour:
   finalCutsceneAnimator: {fileID: 0}
   finalRockSpeaker: {fileID: 0}
   bgSpeaker: {fileID: 0}
+  secondSound: {fileID: 0}
+  thirdSound: {fileID: 0}
 --- !u!1 &557222410
 GameObject:
   m_ObjectHideFlags: 0
@@ -147349,7 +147351,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 870e3d3e6f490a74489f1544aa86c370, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.049
+  m_Volume: 0.224
   m_Pitch: 1
   Loop: 1
   Mute: 0
