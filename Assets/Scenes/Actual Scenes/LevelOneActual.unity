@@ -1886,7 +1886,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 2100000, guid: 3b233d169f79d734b9e74c0d5f4deede, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27843,6 +27843,11 @@ MonoBehaviour:
   currentTextIndex: 0
   lengthOfDialouge: 0
   SpellCastingVariable: {fileID: 0}
+  finalCutsceneAnimator: {fileID: 0}
+  finalRockSpeaker: {fileID: 0}
+  bgSpeaker: {fileID: 0}
+  secondSound: {fileID: 0}
+  thirdSound: {fileID: 0}
 --- !u!1 &829817220
 GameObject:
   m_ObjectHideFlags: 0
@@ -29965,7 +29970,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 2100000, guid: 0a64eb44f13cc3f47bbb13974d86dfdc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30209,7 +30214,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.30588233, g: 0.41047698, b: 1, a: 1}
+      maxColor: {r: 0.8726415, g: 0.8920691, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -52767,7 +52772,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 2100000, guid: 8b1f55392012e2d4e9b0a21c53b8b30a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
