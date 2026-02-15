@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 
 public class SpellCasting : MonoBehaviour
@@ -35,6 +36,7 @@ public class SpellCasting : MonoBehaviour
     public int health, mana = 100;
     public float stamina = 100;
     public Slider healthBar, staminaBar, manaBar;
+    public TMP_Text ManaNumber;
 
     private Rigidbody rb;
 
@@ -271,6 +273,7 @@ public class SpellCasting : MonoBehaviour
         healthBar.value = health;
         staminaBar.value = stamina;
         manaBar.value = mana;
+        ManaNumber.text = mana.ToString();
     }
 
     private void PlayCastingSound()
