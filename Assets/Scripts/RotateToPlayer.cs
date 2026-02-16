@@ -13,8 +13,8 @@ public class RotateToPlayer : MonoBehaviour
 
     private void Start()
     {
-        playerTransform = GameObject.Find("PlayerMain").transform;
         Player = GameObject.Find("PlayerMain");
+        if (Player != null) { playerTransform = Player.transform; }
     }
 
     void OnTriggerEnter(Collider other)

@@ -16082,6 +16082,7 @@ MonoBehaviour:
   ActualShield: {fileID: 942468984}
   LightningCloud: {fileID: 0}
   EnhancedLightningCloud: {fileID: 0}
+  UIManager: {fileID: 0}
   Lvl2DioInt: 0
   Lvl3DioInt: 0
 --- !u!114 &389099325
@@ -16103,6 +16104,7 @@ MonoBehaviour:
   lookSpeed: 2
   lookXLimit: 45
   defaultHeight: 2
+  UIManager: {fileID: 0}
 --- !u!143 &389099326
 CharacterController:
   m_ObjectHideFlags: 0
@@ -19445,6 +19447,7 @@ MonoBehaviour:
   bellSoundEffects:
   - {fileID: 8300000, guid: 422e38be9f0e5f149a1a1eb385331776, type: 3}
   - {fileID: 8300000, guid: e6f4ce2f2c900c04b96feda83e394fe3, type: 3}
+  UIManager: {fileID: 0}
 --- !u!4 &588658592
 Transform:
   m_ObjectHideFlags: 0
@@ -46391,7 +46394,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: a2a14325ad18f41489da724d06573793, type: 3}
+  m_Texture: {fileID: 2800000, guid: 63cf8f01f484227499e9756c7eb1e4f3, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

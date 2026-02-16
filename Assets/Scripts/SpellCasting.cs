@@ -138,12 +138,26 @@ public class SpellCasting : MonoBehaviour
                 case "Shield":
                     if (EnhancementActive)
                     {
+                        mana -= 50;
+                        UpdateData();
                         ActualShield.GetComponent<ShieldHealth>().HealthShield = 200;
                         EnhancementActive = false;
+                        ActualShield.GetComponent<ShieldHealth>().ShieldAlive = true;
+                        ActualShield.GetComponent<ShieldHealth>().StopCoroutineExtra();
+                        ActualShield.GetComponent<ShieldHealth>().StartCoroutineExtra();
+                        break;
                     }
-                    ActualShield.SetActive(true);
-                    FirstTimeShield--;
-
+                    else 
+                    {
+                        mana -= 50;
+                        UpdateData();
+                        ActualShield.SetActive(true);
+                        FirstTimeShield--;
+                        ActualShield.GetComponent<ShieldHealth>().ShieldAlive = true;
+                        ActualShield.GetComponent<ShieldHealth>().StopCoroutineExtra();
+                        ActualShield.GetComponent<ShieldHealth>().StartCoroutineExtra();
+                    }
+                   
                     break;
 
                 case "Healing":
@@ -228,6 +242,8 @@ public class SpellCasting : MonoBehaviour
                         break;
 
                 case "Ghost":
+                    mana -= 70;
+                    UpdateData();
                     GhostActive = true;
                     Invoke("ResetGhost", 10f);
                     break;

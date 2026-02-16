@@ -24890,6 +24890,7 @@ MonoBehaviour:
   bellSoundEffects:
   - {fileID: 8300000, guid: 422e38be9f0e5f149a1a1eb385331776, type: 3}
   - {fileID: 8300000, guid: e6f4ce2f2c900c04b96feda83e394fe3, type: 3}
+  UIManager: {fileID: 0}
 --- !u!4 &372828314
 Transform:
   m_ObjectHideFlags: 0
@@ -33626,6 +33627,7 @@ MonoBehaviour:
   ActualShield: {fileID: 1904155444}
   LightningCloud: {fileID: 5994248062254321196, guid: a9f6b59d7a3e60c4a8cd5127512c0aa5, type: 3}
   EnhancedLightningCloud: {fileID: 7232741117274276593, guid: 7098c1aef9f4f22499b9b5922cb496e2, type: 3}
+  UIManager: {fileID: 0}
   Lvl2DioInt: 0
   Lvl3DioInt: 0
 --- !u!114 &462540816
@@ -33647,6 +33649,7 @@ MonoBehaviour:
   lookSpeed: 2
   lookXLimit: 45
   defaultHeight: 2
+  UIManager: {fileID: 0}
 --- !u!143 &462540817
 CharacterController:
   m_ObjectHideFlags: 0
@@ -100047,8 +100050,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.7, y: -0.000049591}
-  m_SizeDelta: {x: 173.79, y: 131.623}
+  m_AnchoredPosition: {x: 0.000041962, y: 25}
+  m_SizeDelta: {x: 173.79, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &855131865
 MonoBehaviour:
@@ -100072,8 +100075,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 100
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fcf8cea8622559743a16214e72ddc987, type: 2}
-  m_sharedMaterial: {fileID: 3045245207123082713, guid: fcf8cea8622559743a16214e72ddc987, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -100136,7 +100139,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: -0.9953728}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -127171,7 +127174,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: a2a14325ad18f41489da724d06573793, type: 3}
+  m_Texture: {fileID: 2800000, guid: 63cf8f01f484227499e9756c7eb1e4f3, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

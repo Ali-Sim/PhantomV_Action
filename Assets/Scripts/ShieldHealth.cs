@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class ShieldHealth : MonoBehaviour
 {
@@ -8,10 +9,14 @@ public class ShieldHealth : MonoBehaviour
     public GameObject ShieldFULL;
     public GameObject ShieldHalf;
     public GameObject ShieldLow;
+
+    public bool ShieldAlive = false;
+
+    public Coroutine ShieldDestroy;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Player = GameObject.Find("PlayerMain");
     }
 
     // Update is called once per frame
@@ -51,7 +56,32 @@ public class ShieldHealth : MonoBehaviour
                 Player.GetComponent<SpellCasting>().FirstTimeShield--;
                 Player.GetComponent<SpellCasting>().ActualShield.SetActive(false);
                 HealthShield = 100;
+                ShieldAlive = false;
+                StopCoroutineExtra();
             }
         }
+    }
+
+
+    IEnumerator ShieldAutoDestroy()
+    {
+        yield return new WaitForSeconds(30f);
+        if (ShieldAlive)
+        {
+            Player.GetComponent<SpellCasting>().FirstTimeShield--;
+            Player.GetComponent<SpellCasting>().ActualShield.SetActive(false);
+            HealthShield = 100;
+        }
+
+    }
+
+    public void StartCoroutineExtra()
+    {
+        ShieldDestroy = StartCoroutine(ShieldAutoDestroy());
+    }
+
+    public void StopCoroutineExtra()
+    {
+        StopAllCoroutines();
     }
 }
