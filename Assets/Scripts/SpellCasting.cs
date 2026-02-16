@@ -60,6 +60,8 @@ public class SpellCasting : MonoBehaviour
     public GameObject LightningCloud;
     public GameObject EnhancedLightningCloud;
 
+    public GameObject UIManager;
+
     //dialougetriggers
     public int Lvl2DioInt = 0;
     public int Lvl3DioInt = 0;
@@ -70,7 +72,7 @@ public class SpellCasting : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         StartCoroutine(ManaIncrement(0.5f));
         ActualShield.SetActive(false);
-        
+        UIManager = GameObject.Find("UIManager");
     }
 
     // Update is called once per frame
@@ -89,7 +91,7 @@ public class SpellCasting : MonoBehaviour
         
             
 
-        if (Input.GetMouseButtonDown(0) && GameManager.GetComponent<SpellcastInputs>().CurrentValue <= mana && GameManager.GetComponent<SpellcastInputs>().SpellHeld == true)
+        if (Input.GetMouseButtonDown(0) && GameManager.GetComponent<SpellcastInputs>().CurrentValue <= mana && GameManager.GetComponent<SpellcastInputs>().SpellHeld == true && !UIManager.GetComponent<UIManager>().Paused)
         {
             //plays the casting sound effect for each spell
             PlayCastingSound();

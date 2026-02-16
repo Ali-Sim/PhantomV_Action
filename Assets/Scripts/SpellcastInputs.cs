@@ -43,6 +43,10 @@ public class SpellcastInputs : MonoBehaviour
     public AudioClip[] spellSoundEffects = new AudioClip[7]; //  0 = "Fireball", 1 = "Whirlwind", 2 = "Shield", 3 = "Healing", 4 = "Lightning Cloud", 5 = "Ghost", 6 = "Enhancement"
     public AudioClip[] bellSoundEffects = new AudioClip[2]; // 0 = Good Bell, 1 = Bad Bell
 
+    //UI Manager
+
+    public GameObject UIManager;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -58,6 +62,7 @@ public class SpellcastInputs : MonoBehaviour
         EnhancementPage.SetActive(false);
         GhostPage.SetActive(false);
         LightningPage.SetActive(false);
+
     }
 
     // Update is called once per frame

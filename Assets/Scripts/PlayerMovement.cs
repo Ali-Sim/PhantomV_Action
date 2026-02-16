@@ -19,11 +19,14 @@ public class PlayerMovement : MonoBehaviour
 
     private bool canMove = true;
 
+    public GameObject UIManager;
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        UIManager = GameObject.Find("UIManager");
 
     }
 
@@ -55,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
         characterController.Move(moveDirection * Time.deltaTime);
 
-        if (canMove)
+        if (canMove && !UIManager.GetComponent<UIManager>().Paused)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);

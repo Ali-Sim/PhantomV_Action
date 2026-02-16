@@ -9,6 +9,11 @@ public class RangedEnemy : MonoBehaviour
     public Animator WizardAnim;
     public void Update()
     {
+        
+    }
+
+    private void FixedUpdate()
+    {
         if (hitbox.GetComponent<RangedEnemyDetect>().canMove == true)
         {
             WizardAnim.SetBool("WalkingBool", true);
