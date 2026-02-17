@@ -62,6 +62,7 @@ public class SpellCasting : MonoBehaviour
     public GameObject EnhancedLightningCloud;
 
     public GameObject UIManager;
+    public GameObject Hitmarker;
 
     //dialougetriggers
     public int Lvl2DioInt = 0;
@@ -74,6 +75,7 @@ public class SpellCasting : MonoBehaviour
         StartCoroutine(ManaIncrement(0.5f));
         ActualShield.SetActive(false);
         UIManager = GameObject.Find("UIManager");
+        Hitmarker.SetActive(false);
     }
 
     // Update is called once per frame
@@ -476,4 +478,8 @@ public class SpellCasting : MonoBehaviour
         GhostActive = false;
     }
 
+    void ResetHitmarker()
+    {
+        Hitmarker.SetActive(false);
+    }
 }

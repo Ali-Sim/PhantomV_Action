@@ -5,11 +5,11 @@ public class RangedEnemy : MonoBehaviour
 {
     public GameObject hitbox, player;
     public int lives = 100;
-
+    public GameObject Player;
     public Animator WizardAnim;
     public void Update()
     {
-        
+        Player = GameObject.Find("PlayerMain");
     }
 
     private void FixedUpdate()
@@ -27,7 +27,9 @@ public class RangedEnemy : MonoBehaviour
         switch(other.gameObject.tag)
         {
             case "Fireball":
-                lives-= 35;
+                Player.GetComponent<SpellCasting>().Hitmarker.SetActive(true);
+                Player.GetComponent<SpellCasting>().Invoke("ResetHitmarker", .2f);
+                lives -= 35;
                 if (lives <= 0)
                 {
                     Destroy(gameObject);
@@ -41,6 +43,8 @@ public class RangedEnemy : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "LightningCloud":
+                Player.GetComponent<SpellCasting>().Hitmarker.SetActive(true);
+                Player.GetComponent<SpellCasting>().Invoke("ResetHitmarker", .2f);
                 lives -= 100;
                 Invoke("DestroyEnemy", 1f);
                 break;

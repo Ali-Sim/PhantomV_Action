@@ -17,7 +17,7 @@ public class Fireball : MonoBehaviour
             //print("Target");
         }
 
-        else if (other.gameObject.tag != "Player" && other.gameObject.tag != "Fireball" && other.gameObject.tag != "Tree" && other.gameObject.tag != "Hitbox" && other.gameObject.tag != "Crossbow" && other.gameObject.tag != "DialogueTrigger1" && other.gameObject.tag != "DialogueTrigger2" && other.gameObject.tag != "DialogueTrigger3" && other.gameObject.tag != "Shield" && other.gameObject.tag != "DialogueTriggerLVL3(1)" && other.gameObject.tag != "DialogueTriggerLVL3(2)" && !collided)
+        else if (other.gameObject.tag != "Player" && other.gameObject.tag != "Fireball" && other.gameObject.tag != "Tree" && other.gameObject.tag != "Hitbox" && other.gameObject.tag != "Crossbow" && other.gameObject.tag != "DialogueTrigger1" && other.gameObject.tag != "DialogueTrigger2" && other.gameObject.tag != "DialogueTrigger3" && other.gameObject.tag != "Shield" && other.gameObject.tag != "DialogueTriggerLVL3(1)" && other.gameObject.tag != "DialogueTriggerLVL3(2)" && other.gameObject.tag != "ManaPotion" && !collided)
         {
             GameObject fbSound = Instantiate(fireBallSound, transform.position, Quaternion.identity);
             collided = true;

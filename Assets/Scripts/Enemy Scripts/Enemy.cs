@@ -14,8 +14,10 @@ public class Enemy : MonoBehaviour
                 {
                     EnemyHealth -= 100;
                     Player.GetComponent<SpellCasting>().EnhancementActive = false;
+                    Player.GetComponent<SpellCasting>().Hitmarker.SetActive(true);
+                    Player.GetComponent<SpellCasting>().Invoke("ResetHitmarker", .2f);
                 }
-                else { EnemyHealth -= 50; }
+                else { EnemyHealth -= 50; Player.GetComponent<SpellCasting>().Hitmarker.SetActive(true); Player.GetComponent<SpellCasting>().Invoke("ResetHitmarker", .2f); }
 
                 if (EnemyHealth <= 0)
                 {
@@ -34,6 +36,8 @@ public class Enemy : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "LightningCloud":
+                Player.GetComponent<SpellCasting>().Hitmarker.SetActive(true);
+                Player.GetComponent<SpellCasting>().Invoke("ResetHitmarker", .2f);
                 EnemyHealth -= 100;
                 Invoke("DestroyEnemy", 1f);
                 break;
