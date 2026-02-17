@@ -16077,6 +16077,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 8300000, guid: 0da65dd1b05b6ce41a670cfc66cfe4f0, type: 3}
+  PotionSound: {fileID: 8300000, guid: a302748f5842d474daa9bf2a58df852e, type: 3}
   TargetCount: 0
   FirstTimeShield: 1
   ActualShield: {fileID: 942468984}

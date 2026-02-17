@@ -31,6 +31,7 @@ TagManager:
   - DialogueTriggerLVL3(1)
   - DialogueTriggerLVL3(2)
   - EndLevelThree
+  - ManaPotion
   layers:
   - Default
   - TransparentFX

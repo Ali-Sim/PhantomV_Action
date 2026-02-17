@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Unity.VisualScripting;
 
 
 public class SpellCasting : MonoBehaviour
@@ -50,7 +51,7 @@ public class SpellCasting : MonoBehaviour
     //audiosource and sound effects
     public AudioSource SpellCastingProducer;
     public AudioClip[] spellSoundEffects = new AudioClip[7]; //  0 = "Fireball", 1 = "Whirlwind", 2 = "Shield", 3 = "Healing", 4 = "Lightning Cloud", 5 = "Ghost", 6 = "Enhancement"
-
+    public AudioClip PotionSound;
     public int TargetCount = 0;
     //AFTER DESTROYING ALL TARGETS PLAY DIALOGUE
     public int FirstTimeShield = 2;
@@ -422,6 +423,21 @@ public class SpellCasting : MonoBehaviour
                 break;
             case "EndLevelThree":
                 SceneManager.LoadScene("OutroLevelThree");
+                break;
+            case "ManaPotion":
+                mana += 40;
+
+                SpellCastingProducer.clip = PotionSound;
+                SpellCastingProducer.Play();
+
+                if (mana >= 100)
+                {
+                    mana = 100;
+                    manaIncBool = false;
+                }
+
+                UpdateData();
+                Destroy(other.gameObject);
                 break;
 
         }
