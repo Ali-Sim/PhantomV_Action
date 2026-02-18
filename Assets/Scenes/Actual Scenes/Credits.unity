@@ -2118,17 +2118,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Aidan Hendrix - Lead Programmer
+  m_text: 'Alejandro Armas - Producer + UI/Scene Management & Animations
 
-    Alejandro Armas - UI/Scene Management
-    & Animations
+    Nylah
+    Connor - Lead Artist
 
-    Alivia Simmons - Level Design & Art
+    Aidan Hendrix - Lead Programmer
 
-    Marcus Gaudreau -
-    Programmer
+    Alivia Simmons
+    - Level Design & Art
 
-    Nylah Connor - Lead Artist'
+    Marcus Gaudreau - Programmer
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fcf8cea8622559743a16214e72ddc987, type: 2}
   m_sharedMaterial: {fileID: 3045245207123082713, guid: fcf8cea8622559743a16214e72ddc987, type: 2}
@@ -2168,9 +2170,9 @@ MonoBehaviour:
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: -49.24
+  m_lineSpacing: -47.39
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 31.2
+  m_paragraphSpacing: 69
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
@@ -2194,7 +2196,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 367.36823, z: 704.1222, w: 0}
+  m_margin: {x: 0, y: 367.36823, z: 602.74164, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4198,7 +4200,7 @@ MonoBehaviour:
     Tree of Life - Fantasy RPG | Royalty-free Music - Pixabay\r\nThe Longest Journey
     | Royalty-free Music - Pixabay\r\nWizard Rider - Enchanted Fantasy Orchestral
     Loop | Royalty-free Music - Pixabay\r\nFantasy Classical Themes | Royalty-free
-    Music - Pixabay\nhttps://pixabay.com/music/metal-intense-black-metal-instrumental-304729/\nhttps://pixabay.com/music/pulses-%e8%b7%a1%e5%9c%b0-ruins-168316/\n\nFree
+    Music - Pixabay\nhttps://pixabay.com/music/metal-intense-black-metal-instrumental-304729/\nhttps://pixabay.com/music/pulses-%e8%b7%a1%e5%9c%b0-ruins-168316/\nhttps://pixabay.com/sound-effects/film-special-effects-whoosh-cinematic-376875/\nhttps://pixabay.com/sound-effects/sfx-bell-like-horror-cinematic-ping-sound-effect-453118/\nhttps://pixabay.com/sound-effects/city-earth-rumble-128880/\n\nFree
     Sound Assets:\nhttps://freesound.org/people/steffcaffrey/sounds/452379/\n\nFonts\nEdu
     SA Hand - Tina Anderson, Corey Anderson\nGrenze Gotisch - Omnibus-Type\r\n\r\n\n"
   m_isRightToLeft: 0
@@ -4242,7 +4244,7 @@ MonoBehaviour:
   m_wordSpacing: 0
   m_lineSpacing: -49.24
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 31.2
+  m_paragraphSpacing: 23
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
