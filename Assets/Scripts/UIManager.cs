@@ -180,4 +180,24 @@ public class UIManager : MonoBehaviour
         Paused = false;
     }
 
+    public void SkipLevel()
+    {
+        if(SceneManager.GetActiveScene().name == "LevelOneActual")
+        {
+            SceneManager.LoadScene("IntroLevelTwo");
+        }
+
+        else if (SceneManager.GetActiveScene().name == "LvlTwoProto")
+        {
+            SceneManager.LoadScene("IntroLevelThree");
+        }
+
+        else if (SceneManager.GetActiveScene().name == "LevelThree")
+        {
+            SceneManager.LoadScene("OutroLevelThree");
+        }
+
+        Time.timeScale = 1f;
+    }
+
 }
