@@ -7440,9 +7440,14 @@ MonoBehaviour:
   CurrentSpell: 
   CurrentValue: 10
   SpellHeld: 0
+  Player: {fileID: 0}
   fireBall: {fileID: 0}
   whirlWind: {fileID: 0}
   healing: {fileID: 0}
+  enhancement: {fileID: 0}
+  shield: {fileID: 0}
+  lightningcloud: {fileID: 0}
+  ghost: {fileID: 0}
   BookImages:
   - {fileID: 0}
   - {fileID: 0}
@@ -7456,6 +7461,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  HealingPage: {fileID: 0}
+  EnhancementPage: {fileID: 0}
+  HealingPageEMPTY: {fileID: 0}
+  EnhancementPageEMPTY: {fileID: 0}
+  LightningPage: {fileID: 0}
+  GhostPage: {fileID: 0}
+  LightningPageEMPTY: {fileID: 0}
+  GhostPageEMPTY: {fileID: 0}
   SpellInputProducer: {fileID: 0}
   SpellActivationProducer: {fileID: 0}
   spellSoundEffects:
@@ -7469,6 +7482,7 @@ MonoBehaviour:
   bellSoundEffects:
   - {fileID: 8300000, guid: 422e38be9f0e5f149a1a1eb385331776, type: 3}
   - {fileID: 8300000, guid: e6f4ce2f2c900c04b96feda83e394fe3, type: 3}
+  UIManager: {fileID: 0}
 --- !u!4 &588658592
 Transform:
   m_ObjectHideFlags: 0
@@ -17413,6 +17427,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c670b2627cbdae439b9a4f425a29a15, type: 3}
+--- !u!1 &1309718391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1309718393}
+  - component: {fileID: 1309718394}
+  m_Layer: 0
+  m_Name: MenuSingletonFinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1309718393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309718391}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.35725, y: 0.14071, z: -14.53575}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1309718394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309718391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23df221480e76b54781ff4e78d0bf1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicDeleter
 --- !u!1 &1324564763
 GameObject:
   m_ObjectHideFlags: 0
@@ -28389,71 +28447,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141318037}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &4652266312167117008
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5341128972598850845, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 389099323}
-    - target: {fileID: 5341128972598850845, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-      propertyPath: fireBall
-      value: 
-      objectReference: {fileID: 8878910977266861798, guid: d2f515b16827214439abde02db9cafe8, type: 3}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 29.869
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.1407115
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -9.713
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6479928160058652137, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9199593199937570948, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
-      propertyPath: m_Name
-      value: CrossbowEnemy
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 64e9a423dc8f4b241948247d737e6837, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -28486,7 +28479,6 @@ SceneRoots:
   - {fileID: 942423821}
   - {fileID: 734260604}
   - {fileID: 1301939053}
-  - {fileID: 4652266312167117008}
   - {fileID: 2089478304}
   - {fileID: 1398029151}
   - {fileID: 1108144544}
@@ -28500,3 +28492,4 @@ SceneRoots:
   - {fileID: 1708073142}
   - {fileID: 448477540}
   - {fileID: 995885049}
+  - {fileID: 1309718393}

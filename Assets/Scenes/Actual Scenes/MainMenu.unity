@@ -663,11 +663,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1758047091}
+  - {fileID: 447163190}
   - {fileID: 1233065351}
   - {fileID: 1937907814}
   - {fileID: 2022010194}
   - {fileID: 69117756}
-  - {fileID: 447163190}
   - {fileID: 160647203}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -727,7 +727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1410,6 +1410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1419482076}
   - component: {fileID: 1419482075}
+  - component: {fileID: 1419482077}
   m_Layer: 0
   m_Name: MenuSoundEffectBG
   m_TagString: Untagged
@@ -1529,6 +1530,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1419482077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419482074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf84a025d748cea41b516c2dbd7c2d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicSingleton
 --- !u!1 &1633904907
 GameObject:
   m_ObjectHideFlags: 0
